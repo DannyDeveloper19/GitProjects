@@ -1,0 +1,5 @@
+C:\Users\dhsim\source\repos\Market Manager\Connection\bin\Debug\Connection.dll
+C:\Users\dhsim\source\repos\Market Manager\Connection\bin\Debug\Connection.pdb
+C:\Users\dhsim\source\repos\Market Manager\Connection\obj\Debug\Connection.csproj.CoreCompileInputs.cache
+C:\Users\dhsim\source\repos\Market Manager\Connection\obj\Debug\Connection.dll
+C:\Users\dhsim\source\repos\Market Manager\Connection\obj\Debug\Connection.pdb

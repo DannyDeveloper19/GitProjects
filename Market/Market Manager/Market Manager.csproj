@@ -1,0 +1,204 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{55C4E264-EA08-477C-87A8-90BD81F82FB0}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Market_Manager</RootNamespace>
+    <AssemblyName>Market Manager</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Connection">
+      <HintPath>..\Connection\bin\Debug\Connection.dll</HintPath>
+    </Reference>
+    <Reference Include="Security">
+      <HintPath>..\Security\bin\Debug\Security.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Administration\EmployerQuery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administration\EmployerQuery.Designer.cs">
+      <DependentUpon>EmployerQuery.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Administration\NewEmployer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administration\NewEmployer.Designer.cs">
+      <DependentUpon>NewEmployer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admission\CustomerProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admission\CustomerProfile.Designer.cs">
+      <DependentUpon>CustomerProfile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admission\Customers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admission\Customers.Designer.cs">
+      <DependentUpon>Customers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admission\NewCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admission\NewCustomer.Designer.cs">
+      <DependentUpon>NewCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admission\Return.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admission\Return.Designer.cs">
+      <DependentUpon>Return.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Customer.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Sales\Facture.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sales\Facture.Designer.cs">
+      <DependentUpon>Facture.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sales\FactureQuery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sales\FactureQuery.Designer.cs">
+      <DependentUpon>FactureQuery.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sales\ItemQuery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sales\ItemQuery.Designer.cs">
+      <DependentUpon>ItemQuery.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Shared\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Shared\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Shared\Manager_System.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Shared\Manager_System.Designer.cs">
+      <DependentUpon>Manager_System.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EmployerModel.cs" />
+    <Compile Include="Administration\Employer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administration\Employer.Designer.cs">
+      <DependentUpon>Employer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sales\SalesControl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sales\SalesControl.Designer.cs">
+      <DependentUpon>SalesControl.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Administration\EmployerQuery.resx">
+      <DependentUpon>EmployerQuery.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administration\NewEmployer.resx">
+      <DependentUpon>NewEmployer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admission\CustomerProfile.resx">
+      <DependentUpon>CustomerProfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admission\Customers.resx">
+      <DependentUpon>Customers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admission\NewCustomer.resx">
+      <DependentUpon>NewCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sales\ItemQuery.resx">
+      <DependentUpon>ItemQuery.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Shared\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Shared\Manager_System.resx">
+      <DependentUpon>Manager_System.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administration\Employer.resx">
+      <DependentUpon>Employer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sales\SalesControl.resx">
+      <DependentUpon>SalesControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resourses\Camera.png" />
+    <Content Include="Resourses\cslogin.ico" />
+    <Content Include="Resourses\exit.ico" />
+    <Content Include="Resourses\exit.png" />
+    <Content Include="Resourses\upload.png" />
+    <Content Include="Resourses\Login.ico" />
+    <Content Include="Resourses\Manager.ico" />
+    <Content Include="Resourses\manager.png" />
+    <Content Include="Resourses\user_person.png" />
+    <None Include="Resourses\search.png" />
+    <Content Include="Resourses\shop.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

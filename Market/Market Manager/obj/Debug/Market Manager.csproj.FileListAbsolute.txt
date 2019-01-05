@@ -1,0 +1,24 @@
+C:\Users\dhsim\source\repos\Market Manager\Market Manager\bin\Debug\Market Manager.exe.config
+C:\Users\dhsim\source\repos\Market Manager\Market Manager\bin\Debug\Market Manager.exe
+C:\Users\dhsim\source\repos\Market Manager\Market Manager\bin\Debug\Market Manager.pdb
+C:\Users\dhsim\source\repos\Market Manager\Market Manager\obj\Debug\Market Manager.csprojAssemblyReference.cache
+C:\Users\dhsim\source\repos\Market Manager\Market Manager\obj\Debug\Market_Manager.Properties.Resources.resources
+C:\Users\dhsim\source\repos\Market Manager\Market Manager\obj\Debug\Market Manager.csproj.GenerateResource.cache
+C:\Users\dhsim\source\repos\Market Manager\Market Manager\obj\Debug\Market Manager.csproj.CoreCompileInputs.cache
+C:\Users\dhsim\source\repos\Market Manager\Market Manager\obj\Debug\Market Manager.exe
+C:\Users\dhsim\source\repos\Market Manager\Market Manager\obj\Debug\Market Manager.pdb
+C:\Users\dhsim\source\repos\Market Manager\Market Manager\obj\Debug\Market_Manager.CustomerQuery.resources
+C:\Users\dhsim\source\repos\Market Manager\Market Manager\obj\Debug\Market_Manager.SalesControl.resources
+C:\Users\dhsim\source\repos\Market Manager\Market Manager\obj\Debug\Market_Manager.ItemQuery.resources
+C:\Users\dhsim\source\repos\Market Manager\Market Manager\obj\Debug\Market_Manager.Customer.resources
+C:\Users\dhsim\source\repos\Market Manager\Market Manager\bin\Debug\Connection.dll
+C:\Users\dhsim\source\repos\Market Manager\Market Manager\bin\Debug\Connection.pdb
+C:\Users\dhsim\source\repos\Market Manager\Market Manager\obj\Debug\Market Manager.csproj.CopyComplete
+C:\Users\dhsim\source\repos\Market Manager\Market Manager\obj\Debug\Market_Manager.Login.resources
+C:\Users\dhsim\source\repos\Market Manager\Market Manager\bin\Debug\Security.dll
+C:\Users\dhsim\source\repos\Market Manager\Market Manager\bin\Debug\Security.pdb
+C:\Users\dhsim\source\repos\Market Manager\Market Manager\obj\Debug\Market_Manager.Manager_System.resources
+C:\Users\dhsim\source\repos\Market Manager\Market Manager\obj\Debug\Market_Manager.Profile.resources
+C:\Users\dhsim\source\repos\Market Manager\Market Manager\obj\Debug\Market_Manager.Administration.EmployerQuery.resources
+C:\Users\dhsim\source\repos\Market Manager\Market Manager\obj\Debug\Market_Manager.Administration.NewEmployer.resources
+C:\Users\dhsim\source\repos\Market Manager\Market Manager\obj\Debug\Market_Manager.Admission.NewCustomer.resources

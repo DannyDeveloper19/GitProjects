@@ -52,17 +52,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Administration\EmployerQuery.cs">
+    <Compile Include="Administration\Employer\EmployerQuery.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Administration\EmployerQuery.Designer.cs">
+    <Compile Include="Administration\Employer\EmployerQuery.Designer.cs">
       <DependentUpon>EmployerQuery.cs</DependentUpon>
     </Compile>
-    <Compile Include="Administration\NewEmployer.cs">
+    <Compile Include="Administration\Employer\NewEmployer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Administration\NewEmployer.Designer.cs">
+    <Compile Include="Administration\Employer\NewEmployer.Designer.cs">
       <DependentUpon>NewEmployer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Administration\Warehouse\NewItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administration\Warehouse\NewItem.Designer.cs">
+      <DependentUpon>NewItem.cs</DependentUpon>
     </Compile>
     <Compile Include="Admission\CustomerProfile.cs">
       <SubType>Form</SubType>
@@ -107,10 +113,10 @@
     <Compile Include="Sales\FactureQuery.Designer.cs">
       <DependentUpon>FactureQuery.cs</DependentUpon>
     </Compile>
-    <Compile Include="Sales\ItemQuery.cs">
+    <Compile Include="Administration\Warehouse\ItemQuery.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Sales\ItemQuery.Designer.cs">
+    <Compile Include="Administration\Warehouse\ItemQuery.Designer.cs">
       <DependentUpon>ItemQuery.cs</DependentUpon>
     </Compile>
     <Compile Include="Security\Login.cs">
@@ -126,10 +132,10 @@
       <DependentUpon>Manager_System.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\EmployerModel.cs" />
-    <Compile Include="Administration\Employer.cs">
+    <Compile Include="Administration\Employer\Employer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Administration\Employer.Designer.cs">
+    <Compile Include="Administration\Employer\Employer.Designer.cs">
       <DependentUpon>Employer.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -140,11 +146,14 @@
     <Compile Include="Sales\SalesControl.Designer.cs">
       <DependentUpon>SalesControl.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Administration\EmployerQuery.resx">
+    <EmbeddedResource Include="Administration\Employer\EmployerQuery.resx">
       <DependentUpon>EmployerQuery.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Administration\NewEmployer.resx">
+    <EmbeddedResource Include="Administration\Employer\NewEmployer.resx">
       <DependentUpon>NewEmployer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administration\Warehouse\NewItem.resx">
+      <DependentUpon>NewItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Admission\CustomerProfile.resx">
       <DependentUpon>CustomerProfile.cs</DependentUpon>
@@ -155,7 +164,7 @@
     <EmbeddedResource Include="Admission\NewCustomer.resx">
       <DependentUpon>NewCustomer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Sales\ItemQuery.resx">
+    <EmbeddedResource Include="Administration\Warehouse\ItemQuery.resx">
       <DependentUpon>ItemQuery.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Security\Login.resx">
@@ -164,7 +173,7 @@
     <EmbeddedResource Include="Manager_System.resx">
       <DependentUpon>Manager_System.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Administration\Employer.resx">
+    <EmbeddedResource Include="Administration\Employer\Employer.resx">
       <DependentUpon>Employer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -200,6 +209,9 @@
     <Content Include="Resourses\user_person.png" />
     <None Include="Resourses\search.png" />
     <Content Include="Resourses\shop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Administration\Departments\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

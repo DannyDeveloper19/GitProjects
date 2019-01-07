@@ -46,3 +46,4 @@ C:\GitProjects\Market\Market Manager\obj\Debug\Market Manager.csproj.CoreCompile
 C:\GitProjects\Market\Market Manager\obj\Debug\Market Manager.csproj.CopyComplete
 C:\GitProjects\Market\Market Manager\obj\Debug\Market Manager.exe
 C:\GitProjects\Market\Market Manager\obj\Debug\Market Manager.pdb
+C:\GitProjects\Market\Market Manager\obj\Debug\Market_Manager.Administration.Warehouse.New_Item.resources

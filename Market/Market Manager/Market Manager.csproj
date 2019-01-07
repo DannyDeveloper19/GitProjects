@@ -88,6 +88,7 @@
     <Compile Include="Admission\Return.Designer.cs">
       <DependentUpon>Return.cs</DependentUpon>
     </Compile>
+    <Compile Include="DataConnection\Data.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>

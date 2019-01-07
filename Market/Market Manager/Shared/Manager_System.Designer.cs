@@ -105,6 +105,7 @@
             | System.Windows.Forms.Keys.P)));
             this.profileToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.profileToolStripMenuItem.Text = "Profile";
+            this.profileToolStripMenuItem.Click += new System.EventHandler(this.profileToolStripMenuItem_Click);
             // 
             // logOutToolStripMenuItem
             // 
@@ -186,7 +187,7 @@
             // salesToolStripMenuItem
             // 
             this.salesToolStripMenuItem.Name = "salesToolStripMenuItem";
-            this.salesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.salesToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
             this.salesToolStripMenuItem.Text = "Factures";
             // 
             // tsmProcess
@@ -202,20 +203,20 @@
             // billingToolStripMenuItem
             // 
             this.billingToolStripMenuItem.Name = "billingToolStripMenuItem";
-            this.billingToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.billingToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
             this.billingToolStripMenuItem.Text = "Billing";
             this.billingToolStripMenuItem.Click += new System.EventHandler(this.billingToolStripMenuItem_Click);
             // 
             // returnsToolStripMenuItem
             // 
             this.returnsToolStripMenuItem.Name = "returnsToolStripMenuItem";
-            this.returnsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.returnsToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
             this.returnsToolStripMenuItem.Text = "Returns";
             // 
             // detailsToolStripMenuItem
             // 
             this.detailsToolStripMenuItem.Name = "detailsToolStripMenuItem";
-            this.detailsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.detailsToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
             this.detailsToolStripMenuItem.Text = "Details";
             // 
             // tsmQuery
@@ -234,39 +235,39 @@
             // customerToolStripMenuItem
             // 
             this.customerToolStripMenuItem.Name = "customerToolStripMenuItem";
-            this.customerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.customerToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
             this.customerToolStripMenuItem.Text = "Customers";
             this.customerToolStripMenuItem.Click += new System.EventHandler(this.customerToolStripMenuItem_Click);
             // 
             // toolStripMenuItem5
             // 
             this.toolStripMenuItem5.Name = "toolStripMenuItem5";
-            this.toolStripMenuItem5.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem5.Size = new System.Drawing.Size(142, 22);
             this.toolStripMenuItem5.Text = "&Departments";
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(142, 22);
             this.toolStripMenuItem1.Text = "&Items";
             this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(142, 22);
             this.toolStripMenuItem2.Text = "&Supplied";
             // 
             // toolStripMenuItem3
             // 
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(142, 22);
             this.toolStripMenuItem3.Text = "&Units";
             // 
             // toolStripMenuItem4
             // 
             this.toolStripMenuItem4.Name = "toolStripMenuItem4";
-            this.toolStripMenuItem4.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem4.Size = new System.Drawing.Size(142, 22);
             this.toolStripMenuItem4.Text = "&Users";
             // 
             // toolStrip

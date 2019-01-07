@@ -297,6 +297,7 @@
             this.Controls.Add(this.ptPicture);
             this.Name = "Profile";
             this.Text = "Employer Info";
+            this.Load += new System.EventHandler(this.Profile_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ptPicture)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);

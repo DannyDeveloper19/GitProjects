@@ -24,7 +24,6 @@ namespace Market_Manager
             _frmLogin = frmlogin;
             this.MinimumSize = Screen.PrimaryScreen.WorkingArea.Size;
             this.ControlBox = false;
-            MessageBox.Show(this.employer.employer_role + " "+ this.employer.employer_name);
         }
 
         private void ShowNewForm(object sender, EventArgs e)
@@ -151,15 +150,21 @@ namespace Market_Manager
             switch (employer.employer_role)
             {
                 case "employer":
-                    toolStrip.Hide();
-                    tsmManager.Enabled = false;
-                    tsmReport.Enabled = false;
-                    tsmQuery.Enabled = false;
+                    tsmManager.Visible = false;
+                    tsmReport.Visible = false;
+                    tsmQuery.Visible = false;
                     break;
                 
                 default:
                     break;
             }
+        }
+
+        private void profileToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Profile profile = new Profile(this.employer);
+            profile.StartPosition = FormStartPosition.CenterScreen;
+            profile.Show();
         }
     }
 }

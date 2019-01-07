@@ -72,6 +72,7 @@
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.newEmployerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listEmployerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.removeCustomerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.toolStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
@@ -146,7 +147,8 @@
             // 
             this.CustomerStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.newCustomerToolStripMenuItem,
-            this.listCustomersToolStripMenuItem});
+            this.listCustomersToolStripMenuItem,
+            this.removeCustomerToolStripMenuItem});
             this.CustomerStripMenuItem.Name = "CustomerStripMenuItem";
             this.CustomerStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.CustomerStripMenuItem.Text = "&Customers";
@@ -416,6 +418,12 @@
             this.listEmployerToolStripMenuItem.Text = "List Employer";
             this.listEmployerToolStripMenuItem.Click += new System.EventHandler(this.listEmployerToolStripMenuItem_Click);
             // 
+            // removeCustomerToolStripMenuItem
+            // 
+            this.removeCustomerToolStripMenuItem.Name = "removeCustomerToolStripMenuItem";
+            this.removeCustomerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.removeCustomerToolStripMenuItem.Text = "Remove Customer";
+            // 
             // Manager_System
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -486,6 +494,7 @@
         private System.Windows.Forms.ToolStripMenuItem listCustomersToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem newEmployerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem listEmployerToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem removeCustomerToolStripMenuItem;
     }
 }
 

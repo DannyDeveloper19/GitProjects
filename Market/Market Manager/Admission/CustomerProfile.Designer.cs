@@ -89,6 +89,7 @@
             // 
             this.txtCode.Location = new System.Drawing.Point(86, 35);
             this.txtCode.Name = "txtCode";
+            this.txtCode.ReadOnly = true;
             this.txtCode.Size = new System.Drawing.Size(100, 20);
             this.txtCode.TabIndex = 4;
             // 
@@ -96,6 +97,7 @@
             // 
             this.txtName.Location = new System.Drawing.Point(83, 67);
             this.txtName.Name = "txtName";
+            this.txtName.ReadOnly = true;
             this.txtName.Size = new System.Drawing.Size(184, 20);
             this.txtName.TabIndex = 5;
             // 
@@ -104,6 +106,7 @@
             this.txtAddress.Location = new System.Drawing.Point(80, 220);
             this.txtAddress.Multiline = true;
             this.txtAddress.Name = "txtAddress";
+            this.txtAddress.ReadOnly = true;
             this.txtAddress.Size = new System.Drawing.Size(187, 62);
             this.txtAddress.TabIndex = 6;
             // 
@@ -111,6 +114,7 @@
             // 
             this.txtPhone.Location = new System.Drawing.Point(83, 146);
             this.txtPhone.Name = "txtPhone";
+            this.txtPhone.ReadOnly = true;
             this.txtPhone.Size = new System.Drawing.Size(184, 20);
             this.txtPhone.TabIndex = 7;
             // 
@@ -128,6 +132,7 @@
             // 
             this.textBox1.Location = new System.Drawing.Point(83, 105);
             this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(184, 20);
             this.textBox1.TabIndex = 14;
             // 
@@ -153,6 +158,7 @@
             // 
             this.textBox2.Location = new System.Drawing.Point(80, 185);
             this.textBox2.Name = "textBox2";
+            this.textBox2.ReadOnly = true;
             this.textBox2.Size = new System.Drawing.Size(187, 20);
             this.textBox2.TabIndex = 17;
             // 

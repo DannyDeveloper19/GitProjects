@@ -153,23 +153,25 @@
             // 
             // btnCancel
             // 
+            this.btnCancel.BackColor = System.Drawing.Color.SteelBlue;
             this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.Location = new System.Drawing.Point(315, 59);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(129, 28);
             this.btnCancel.TabIndex = 13;
             this.btnCancel.Text = "Cancel";
-            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.UseVisualStyleBackColor = false;
             // 
             // btnAccept
             // 
+            this.btnAccept.BackColor = System.Drawing.Color.SteelBlue;
             this.btnAccept.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAccept.Location = new System.Drawing.Point(315, 25);
             this.btnAccept.Name = "btnAccept";
             this.btnAccept.Size = new System.Drawing.Size(129, 28);
             this.btnAccept.TabIndex = 12;
             this.btnAccept.Text = "Accept";
-            this.btnAccept.UseVisualStyleBackColor = true;
+            this.btnAccept.UseVisualStyleBackColor = false;
             // 
             // btnBenefits
             // 

@@ -113,16 +113,16 @@
     <Compile Include="Sales\ItemQuery.Designer.cs">
       <DependentUpon>ItemQuery.cs</DependentUpon>
     </Compile>
-    <Compile Include="Shared\Login.cs">
+    <Compile Include="Security\Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Shared\Login.Designer.cs">
+    <Compile Include="Security\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="Shared\Manager_System.cs">
+    <Compile Include="Manager_System.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Shared\Manager_System.Designer.cs">
+    <Compile Include="Manager_System.Designer.cs">
       <DependentUpon>Manager_System.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\EmployerModel.cs" />
@@ -158,10 +158,10 @@
     <EmbeddedResource Include="Sales\ItemQuery.resx">
       <DependentUpon>ItemQuery.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Shared\Login.resx">
+    <EmbeddedResource Include="Security\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Shared\Manager_System.resx">
+    <EmbeddedResource Include="Manager_System.resx">
       <DependentUpon>Manager_System.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Administration\Employer.resx">

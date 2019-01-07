@@ -22,3 +22,27 @@ C:\Users\dhsim\source\repos\Market Manager\Market Manager\obj\Debug\Market_Manag
 C:\Users\dhsim\source\repos\Market Manager\Market Manager\obj\Debug\Market_Manager.Administration.EmployerQuery.resources
 C:\Users\dhsim\source\repos\Market Manager\Market Manager\obj\Debug\Market_Manager.Administration.NewEmployer.resources
 C:\Users\dhsim\source\repos\Market Manager\Market Manager\obj\Debug\Market_Manager.Admission.NewCustomer.resources
+C:\GitProjects\Market\Market Manager\bin\Debug\Market Manager.exe.config
+C:\GitProjects\Market\Market Manager\bin\Debug\Market Manager.exe
+C:\GitProjects\Market\Market Manager\bin\Debug\Market Manager.pdb
+C:\GitProjects\Market\Market Manager\bin\Debug\Connection.dll
+C:\GitProjects\Market\Market Manager\bin\Debug\Security.dll
+C:\GitProjects\Market\Market Manager\bin\Debug\Connection.pdb
+C:\GitProjects\Market\Market Manager\bin\Debug\Security.pdb
+C:\GitProjects\Market\Market Manager\obj\Debug\Market Manager.csprojAssemblyReference.cache
+C:\GitProjects\Market\Market Manager\obj\Debug\Market_Manager.Administration.EmployerQuery.resources
+C:\GitProjects\Market\Market Manager\obj\Debug\Market_Manager.Administration.NewEmployer.resources
+C:\GitProjects\Market\Market Manager\obj\Debug\Market_Manager.Customer.resources
+C:\GitProjects\Market\Market Manager\obj\Debug\Market_Manager.CustomerQuery.resources
+C:\GitProjects\Market\Market Manager\obj\Debug\Market_Manager.Admission.NewCustomer.resources
+C:\GitProjects\Market\Market Manager\obj\Debug\Market_Manager.ItemQuery.resources
+C:\GitProjects\Market\Market Manager\obj\Debug\Market_Manager.Login.resources
+C:\GitProjects\Market\Market Manager\obj\Debug\Market_Manager.Manager_System.resources
+C:\GitProjects\Market\Market Manager\obj\Debug\Market_Manager.Profile.resources
+C:\GitProjects\Market\Market Manager\obj\Debug\Market_Manager.Properties.Resources.resources
+C:\GitProjects\Market\Market Manager\obj\Debug\Market_Manager.SalesControl.resources
+C:\GitProjects\Market\Market Manager\obj\Debug\Market Manager.csproj.GenerateResource.cache
+C:\GitProjects\Market\Market Manager\obj\Debug\Market Manager.csproj.CoreCompileInputs.cache
+C:\GitProjects\Market\Market Manager\obj\Debug\Market Manager.csproj.CopyComplete
+C:\GitProjects\Market\Market Manager\obj\Debug\Market Manager.exe
+C:\GitProjects\Market\Market Manager\obj\Debug\Market Manager.pdb

@@ -39,11 +39,16 @@
             this.CustomerStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newCustomerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listCustomersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.removeCustomerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.departmentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.itemsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addProductToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.inventoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.supToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.unitsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.newEmployerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listEmployerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmReport = new System.Windows.Forms.ToolStripMenuItem();
             this.salesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmProcess = new System.Windows.Forms.ToolStripMenuItem();
@@ -70,9 +75,6 @@
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.newEmployerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.listEmployerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.removeCustomerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.toolStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
@@ -156,16 +158,22 @@
             // newCustomerToolStripMenuItem
             // 
             this.newCustomerToolStripMenuItem.Name = "newCustomerToolStripMenuItem";
-            this.newCustomerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.newCustomerToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
             this.newCustomerToolStripMenuItem.Text = "New Customer";
             this.newCustomerToolStripMenuItem.Click += new System.EventHandler(this.newCustomerToolStripMenuItem_Click);
             // 
             // listCustomersToolStripMenuItem
             // 
             this.listCustomersToolStripMenuItem.Name = "listCustomersToolStripMenuItem";
-            this.listCustomersToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.listCustomersToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
             this.listCustomersToolStripMenuItem.Text = "List Customers";
             this.listCustomersToolStripMenuItem.Click += new System.EventHandler(this.listCustomersToolStripMenuItem_Click);
+            // 
+            // removeCustomerToolStripMenuItem
+            // 
+            this.removeCustomerToolStripMenuItem.Name = "removeCustomerToolStripMenuItem";
+            this.removeCustomerToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.removeCustomerToolStripMenuItem.Text = "Remove Customer";
             // 
             // departmentsToolStripMenuItem
             // 
@@ -175,9 +183,26 @@
             // 
             // itemsToolStripMenuItem
             // 
+            this.itemsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addProductToolStripMenuItem,
+            this.inventoryToolStripMenuItem});
             this.itemsToolStripMenuItem.Name = "itemsToolStripMenuItem";
             this.itemsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.itemsToolStripMenuItem.Text = "&Items";
+            this.itemsToolStripMenuItem.Text = "&Storage";
+            // 
+            // addProductToolStripMenuItem
+            // 
+            this.addProductToolStripMenuItem.Name = "addProductToolStripMenuItem";
+            this.addProductToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.addProductToolStripMenuItem.Text = "Add Product";
+            this.addProductToolStripMenuItem.Click += new System.EventHandler(this.addProductToolStripMenuItem_Click);
+            // 
+            // inventoryToolStripMenuItem
+            // 
+            this.inventoryToolStripMenuItem.Name = "inventoryToolStripMenuItem";
+            this.inventoryToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.inventoryToolStripMenuItem.Text = "Inventory";
+            this.inventoryToolStripMenuItem.Click += new System.EventHandler(this.inventoryToolStripMenuItem_Click);
             // 
             // supToolStripMenuItem
             // 
@@ -200,6 +225,20 @@
             this.usersToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.usersToolStripMenuItem.Text = "&Employers";
             // 
+            // newEmployerToolStripMenuItem
+            // 
+            this.newEmployerToolStripMenuItem.Name = "newEmployerToolStripMenuItem";
+            this.newEmployerToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.newEmployerToolStripMenuItem.Text = "New Employer";
+            this.newEmployerToolStripMenuItem.Click += new System.EventHandler(this.newEmployerToolStripMenuItem_Click);
+            // 
+            // listEmployerToolStripMenuItem
+            // 
+            this.listEmployerToolStripMenuItem.Name = "listEmployerToolStripMenuItem";
+            this.listEmployerToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.listEmployerToolStripMenuItem.Text = "List Employer";
+            this.listEmployerToolStripMenuItem.Click += new System.EventHandler(this.listEmployerToolStripMenuItem_Click);
+            // 
             // tsmReport
             // 
             this.tsmReport.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -211,7 +250,7 @@
             // salesToolStripMenuItem
             // 
             this.salesToolStripMenuItem.Name = "salesToolStripMenuItem";
-            this.salesToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
+            this.salesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.salesToolStripMenuItem.Text = "Factures";
             // 
             // tsmProcess
@@ -404,26 +443,6 @@
             this.toolStripStatusLabel.Size = new System.Drawing.Size(39, 17);
             this.toolStripStatusLabel.Text = "Status";
             // 
-            // newEmployerToolStripMenuItem
-            // 
-            this.newEmployerToolStripMenuItem.Name = "newEmployerToolStripMenuItem";
-            this.newEmployerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.newEmployerToolStripMenuItem.Text = "New Employer";
-            this.newEmployerToolStripMenuItem.Click += new System.EventHandler(this.newEmployerToolStripMenuItem_Click);
-            // 
-            // listEmployerToolStripMenuItem
-            // 
-            this.listEmployerToolStripMenuItem.Name = "listEmployerToolStripMenuItem";
-            this.listEmployerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.listEmployerToolStripMenuItem.Text = "List Employer";
-            this.listEmployerToolStripMenuItem.Click += new System.EventHandler(this.listEmployerToolStripMenuItem_Click);
-            // 
-            // removeCustomerToolStripMenuItem
-            // 
-            this.removeCustomerToolStripMenuItem.Name = "removeCustomerToolStripMenuItem";
-            this.removeCustomerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.removeCustomerToolStripMenuItem.Text = "Remove Customer";
-            // 
             // Manager_System
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -495,6 +514,8 @@
         private System.Windows.Forms.ToolStripMenuItem newEmployerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem listEmployerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem removeCustomerToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addProductToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem inventoryToolStripMenuItem;
     }
 }
 

@@ -8,13 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Market_Manager.Sales
+namespace Market_Manager.Administration
 {
-    public partial class FactureQuery : Form
+    public partial class NewEmployer : Form
     {
-        public FactureQuery()
+        public NewEmployer()
         {
             InitializeComponent();
+        }
+
+        private void btnAccept_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

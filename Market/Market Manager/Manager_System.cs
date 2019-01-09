@@ -1,4 +1,5 @@
 ﻿using Market_Manager.Administration;
+using Market_Manager.Administration.Warehouse;
 using Market_Manager.Admission;
 using Market_Manager.Models;
 using System;
@@ -175,6 +176,22 @@ namespace Market_Manager
             newEmployer.MdiParent = this;
             newEmployer.StartPosition = FormStartPosition.CenterScreen;
             newEmployer.Show();
+        }
+
+        private void addProductToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            New_Item new_Item = new New_Item();
+            new_Item.MdiParent = this;
+            new_Item.StartPosition = FormStartPosition.CenterScreen;
+            new_Item.Show();
+        }
+
+        private void inventoryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ItemQuery itemQuery = new ItemQuery();
+            itemQuery.StartPosition = FormStartPosition.CenterScreen;
+            itemQuery.MdiParent = this;
+            itemQuery.Show();
         }
     }
 }

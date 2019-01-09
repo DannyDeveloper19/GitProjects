@@ -47,3 +47,4 @@ C:\GitProjects\Market\Market Manager\obj\Debug\Market Manager.csproj.CopyComplet
 C:\GitProjects\Market\Market Manager\obj\Debug\Market Manager.exe
 C:\GitProjects\Market\Market Manager\obj\Debug\Market Manager.pdb
 C:\GitProjects\Market\Market Manager\obj\Debug\Market_Manager.Administration.Warehouse.New_Item.resources
+C:\GitProjects\Market\Market Manager\obj\Debug\Market_Manager.Sales.FactureQuery.resources

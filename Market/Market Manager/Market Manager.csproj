@@ -113,10 +113,10 @@
     <Compile Include="Sales\Facture.Designer.cs">
       <DependentUpon>Facture.cs</DependentUpon>
     </Compile>
-    <Compile Include="Sales\FactureQuery.cs">
+    <Compile Include="Administration\Factures\FactureQuery.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Sales\FactureQuery.Designer.cs">
+    <Compile Include="Administration\Factures\FactureQuery.Designer.cs">
       <DependentUpon>FactureQuery.cs</DependentUpon>
     </Compile>
     <Compile Include="Administration\Warehouse\ItemQuery.cs">
@@ -173,6 +173,9 @@
     <EmbeddedResource Include="Administration\Warehouse\ItemQuery.resx">
       <DependentUpon>ItemQuery.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Administration\Factures\FactureQuery.resx">
+      <DependentUpon>FactureQuery.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Security\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -204,16 +207,19 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resourses\add.png" />
     <Content Include="Resourses\Camera.png" />
     <Content Include="Resourses\cslogin.ico" />
     <Content Include="Resourses\exit.ico" />
     <Content Include="Resourses\exit.png" />
+    <Content Include="Resourses\minus.png" />
+    <Content Include="Resourses\search.ico" />
     <Content Include="Resourses\upload.png" />
     <Content Include="Resourses\Login.ico" />
     <Content Include="Resourses\Manager.ico" />
     <Content Include="Resourses\manager.png" />
     <Content Include="Resourses\user_person.png" />
-    <None Include="Resourses\search.png" />
+    <Content Include="Resourses\search.png" />
     <Content Include="Resourses\shop.png" />
   </ItemGroup>
   <ItemGroup>

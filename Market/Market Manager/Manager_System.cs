@@ -131,7 +131,6 @@ namespace Market_Manager
                 case "employer":
                     tsmManager.Visible = false;
                     tsmReport.Visible = false;
-                    tsmQuery.Visible = false;
                     break;
                 
                 default:

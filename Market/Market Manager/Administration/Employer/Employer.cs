@@ -12,9 +12,10 @@ using System.Windows.Forms;
 
 namespace Market_Manager
 {
-    public partial class Profile : Form
+    public partial class Profile : Base
     {
         EmployerModel _employer;
+        string mode = "";
         public Profile()
         {
             InitializeComponent();
@@ -22,7 +23,7 @@ namespace Market_Manager
         public Profile(EmployerModel employer)
         {
             InitializeComponent();
-            this._employer = employer;
+            this._employer = employer;            
         }
 
         private void Profile_Load(object sender, EventArgs e)
@@ -36,6 +37,62 @@ namespace Market_Manager
             txtAddress.Text = data.Tables[0].Rows[0]["employer_address"].ToString();
             data = Utilities.execute(string.Format("Select role_name from Roles inner join Employer_Role on Employer_Role.id_role = Roles.id_role where Employer_Role.id_employer = '{0}'", _employer.id_employer));
             txtRole.Text = data.Tables[0].Rows[0]["role_name"].ToString();
+            Mode("info");
+            
+        }
+        private void Mode( string mode)
+        {
+            switch (mode)
+            {
+                case "edit":
+                    this.mode = mode;
+                    foreach (var item in this.Controls.OfType<TextBox>())
+                    {
+                        if (item.Name != "txtId")
+                        {
+                            item.BackColor = this.BackColor;
+                            item.ReadOnly = false;
+                        }
+
+                    }
+                    foreach (var item in groupBox2.Controls.OfType<TextBox>())
+                    {
+                        item.BackColor = this.BackColor;
+                        item.ReadOnly = false;
+                    }
+                    this.Text = "Edit Information";
+                    break;
+                default:
+                    this.mode = mode;
+                    foreach (var item in this.Controls.OfType<TextBox>())
+                    {
+                        item.ReadOnly = true;
+                        item.BackColor = Color.Silver;
+                    }
+
+                    foreach (var item in groupBox2.Controls.OfType<TextBox>())
+                    {
+                        item.ReadOnly = true;
+                        item.BackColor = Color.Silver;
+                    }
+                    
+                    this.Text = "Employer Information";
+                    break;
+            }
+        }
+        private void btnEProfile_Click(object sender, EventArgs e)
+        {
+            Mode("edit");
+            
+        }
+
+        private void btnAccept_Click(object sender, EventArgs e)
+        {
+            if (mode == "edit")
+            {
+                MessageBox.Show("Your changes have been saved!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Mode("info");                
+            }
         }
     }
 }

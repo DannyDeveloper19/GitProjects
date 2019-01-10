@@ -28,5 +28,6 @@ namespace Market_Manager.Administration
             NewEmployer newEmployer = new NewEmployer();
             newEmployer.ShowDialog();
         }
+
     }
 }

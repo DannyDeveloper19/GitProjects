@@ -55,13 +55,6 @@
             this.billingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.returnsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.detailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmQuery = new System.Windows.Forms.ToolStripMenuItem();
-            this.customerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip = new System.Windows.Forms.ToolStrip();
             this.newToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.openToolStripButton = new System.Windows.Forms.ToolStripButton();
@@ -87,8 +80,7 @@
             this.tsmAccount,
             this.tsmManager,
             this.tsmReport,
-            this.tsmProcess,
-            this.tsmQuery});
+            this.tsmProcess});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
             this.menuStrip.Size = new System.Drawing.Size(632, 24);
@@ -110,7 +102,7 @@
             this.profileToolStripMenuItem.Name = "profileToolStripMenuItem";
             this.profileToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Alt) 
             | System.Windows.Forms.Keys.P)));
-            this.profileToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
+            this.profileToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.profileToolStripMenuItem.Text = "Profile";
             this.profileToolStripMenuItem.Click += new System.EventHandler(this.profileToolStripMenuItem_Click);
             // 
@@ -119,7 +111,7 @@
             this.logOutToolStripMenuItem.Name = "logOutToolStripMenuItem";
             this.logOutToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Alt) 
             | System.Windows.Forms.Keys.L)));
-            this.logOutToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
+            this.logOutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.logOutToolStripMenuItem.Text = "Log out";
             this.logOutToolStripMenuItem.Click += new System.EventHandler(this.logOutToolStripMenuItem_Click);
             // 
@@ -128,7 +120,7 @@
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             this.exitToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Alt) 
             | System.Windows.Forms.Keys.E)));
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -158,21 +150,21 @@
             // newCustomerToolStripMenuItem
             // 
             this.newCustomerToolStripMenuItem.Name = "newCustomerToolStripMenuItem";
-            this.newCustomerToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.newCustomerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.newCustomerToolStripMenuItem.Text = "New Customer";
             this.newCustomerToolStripMenuItem.Click += new System.EventHandler(this.newCustomerToolStripMenuItem_Click);
             // 
             // listCustomersToolStripMenuItem
             // 
             this.listCustomersToolStripMenuItem.Name = "listCustomersToolStripMenuItem";
-            this.listCustomersToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.listCustomersToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.listCustomersToolStripMenuItem.Text = "List Customers";
             this.listCustomersToolStripMenuItem.Click += new System.EventHandler(this.listCustomersToolStripMenuItem_Click);
             // 
             // removeCustomerToolStripMenuItem
             // 
             this.removeCustomerToolStripMenuItem.Name = "removeCustomerToolStripMenuItem";
-            this.removeCustomerToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.removeCustomerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.removeCustomerToolStripMenuItem.Text = "Remove Customer";
             // 
             // departmentsToolStripMenuItem
@@ -228,14 +220,14 @@
             // newEmployerToolStripMenuItem
             // 
             this.newEmployerToolStripMenuItem.Name = "newEmployerToolStripMenuItem";
-            this.newEmployerToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.newEmployerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.newEmployerToolStripMenuItem.Text = "New Employer";
             this.newEmployerToolStripMenuItem.Click += new System.EventHandler(this.newEmployerToolStripMenuItem_Click);
             // 
             // listEmployerToolStripMenuItem
             // 
             this.listEmployerToolStripMenuItem.Name = "listEmployerToolStripMenuItem";
-            this.listEmployerToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.listEmployerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.listEmployerToolStripMenuItem.Text = "List Employer";
             this.listEmployerToolStripMenuItem.Click += new System.EventHandler(this.listEmployerToolStripMenuItem_Click);
             // 
@@ -250,7 +242,7 @@
             // salesToolStripMenuItem
             // 
             this.salesToolStripMenuItem.Name = "salesToolStripMenuItem";
-            this.salesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.salesToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
             this.salesToolStripMenuItem.Text = "Factures";
             // 
             // tsmProcess
@@ -266,71 +258,21 @@
             // billingToolStripMenuItem
             // 
             this.billingToolStripMenuItem.Name = "billingToolStripMenuItem";
-            this.billingToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
+            this.billingToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.billingToolStripMenuItem.Text = "Billing";
             this.billingToolStripMenuItem.Click += new System.EventHandler(this.billingToolStripMenuItem_Click);
             // 
             // returnsToolStripMenuItem
             // 
             this.returnsToolStripMenuItem.Name = "returnsToolStripMenuItem";
-            this.returnsToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
+            this.returnsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.returnsToolStripMenuItem.Text = "Returns";
             // 
             // detailsToolStripMenuItem
             // 
             this.detailsToolStripMenuItem.Name = "detailsToolStripMenuItem";
-            this.detailsToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
+            this.detailsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.detailsToolStripMenuItem.Text = "Details";
-            // 
-            // tsmQuery
-            // 
-            this.tsmQuery.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.customerToolStripMenuItem,
-            this.toolStripMenuItem5,
-            this.toolStripMenuItem1,
-            this.toolStripMenuItem2,
-            this.toolStripMenuItem3,
-            this.toolStripMenuItem4});
-            this.tsmQuery.Name = "tsmQuery";
-            this.tsmQuery.Size = new System.Drawing.Size(59, 20);
-            this.tsmQuery.Text = "Queries";
-            // 
-            // customerToolStripMenuItem
-            // 
-            this.customerToolStripMenuItem.Name = "customerToolStripMenuItem";
-            this.customerToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
-            this.customerToolStripMenuItem.Text = "Customers";
-            // 
-            // toolStripMenuItem5
-            // 
-            this.toolStripMenuItem5.Name = "toolStripMenuItem5";
-            this.toolStripMenuItem5.Size = new System.Drawing.Size(142, 22);
-            this.toolStripMenuItem5.Text = "&Departments";
-            // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(142, 22);
-            this.toolStripMenuItem1.Text = "&Items";
-            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
-            // 
-            // toolStripMenuItem2
-            // 
-            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(142, 22);
-            this.toolStripMenuItem2.Text = "&Supplied";
-            // 
-            // toolStripMenuItem3
-            // 
-            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(142, 22);
-            this.toolStripMenuItem3.Text = "&Units";
-            // 
-            // toolStripMenuItem4
-            // 
-            this.toolStripMenuItem4.Name = "toolStripMenuItem4";
-            this.toolStripMenuItem4.Size = new System.Drawing.Size(142, 22);
-            this.toolStripMenuItem4.Text = "&Users";
             // 
             // toolStrip
             // 
@@ -492,16 +434,9 @@
         private System.Windows.Forms.ToolStripMenuItem unitsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem usersToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tsmReport;
-        private System.Windows.Forms.ToolStripMenuItem tsmQuery;
         private System.Windows.Forms.ToolStripMenuItem tsmProcess;
         private System.Windows.Forms.ToolStripMenuItem billingToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem detailsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem customerToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem5;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem4;
         private System.Windows.Forms.ToolStripMenuItem tsmAccount;
         private System.Windows.Forms.ToolStripMenuItem profileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem logOutToolStripMenuItem;

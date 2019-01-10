@@ -26,7 +26,7 @@ namespace Market_Manager
                 string password = dataSet.Tables[0].Rows[0]["employer_password"].ToString().Trim();
                 if (password != txtPassword.Text.Trim())
                 {
-                    MessageBox.Show("Password incorrect");
+                    MessageBox.Show("Password incorrect","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
                 }
                 else
                 {
@@ -45,7 +45,7 @@ namespace Market_Manager
             catch (Exception err)
             {
 
-                MessageBox.Show("Error: " + err.Message);
+                MessageBox.Show("Error: " + err.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

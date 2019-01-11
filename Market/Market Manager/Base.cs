@@ -27,7 +27,7 @@ namespace Market_Manager
             // 
             this.btnCancel.BackColor = System.Drawing.Color.SteelBlue;
             this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.Location = new System.Drawing.Point(123, 147);
+            this.btnCancel.Location = new System.Drawing.Point(223, 233);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(129, 28);
             this.btnCancel.TabIndex = 19;
@@ -39,7 +39,7 @@ namespace Market_Manager
             // 
             this.btnAccept.BackColor = System.Drawing.Color.SteelBlue;
             this.btnAccept.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAccept.Location = new System.Drawing.Point(123, 113);
+            this.btnAccept.Location = new System.Drawing.Point(223, 199);
             this.btnAccept.Name = "btnAccept";
             this.btnAccept.Size = new System.Drawing.Size(129, 28);
             this.btnAccept.TabIndex = 18;

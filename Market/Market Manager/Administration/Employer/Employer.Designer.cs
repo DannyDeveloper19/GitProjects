@@ -228,6 +228,7 @@
             this.btnCPassword.TabIndex = 0;
             this.btnCPassword.Text = "Change Password";
             this.btnCPassword.UseVisualStyleBackColor = true;
+            this.btnCPassword.Click += new System.EventHandler(this.btnCPassword_Click);
             // 
             // btnEProfile
             // 

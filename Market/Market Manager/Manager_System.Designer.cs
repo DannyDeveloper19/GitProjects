@@ -68,6 +68,7 @@
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.allBillsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.toolStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
@@ -158,7 +159,7 @@
             // 
             this.listCustomersToolStripMenuItem.Name = "listCustomersToolStripMenuItem";
             this.listCustomersToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.listCustomersToolStripMenuItem.Text = "List Customers";
+            this.listCustomersToolStripMenuItem.Text = "All Customers";
             this.listCustomersToolStripMenuItem.Click += new System.EventHandler(this.listCustomersToolStripMenuItem_Click);
             // 
             // removeCustomerToolStripMenuItem
@@ -228,7 +229,7 @@
             // 
             this.listEmployerToolStripMenuItem.Name = "listEmployerToolStripMenuItem";
             this.listEmployerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.listEmployerToolStripMenuItem.Text = "List Employer";
+            this.listEmployerToolStripMenuItem.Text = "All Employers";
             this.listEmployerToolStripMenuItem.Click += new System.EventHandler(this.listEmployerToolStripMenuItem_Click);
             // 
             // tsmReport
@@ -241,9 +242,11 @@
             // 
             // salesToolStripMenuItem
             // 
+            this.salesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.allBillsToolStripMenuItem});
             this.salesToolStripMenuItem.Name = "salesToolStripMenuItem";
-            this.salesToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
-            this.salesToolStripMenuItem.Text = "Factures";
+            this.salesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.salesToolStripMenuItem.Text = "&Invoices";
             // 
             // tsmProcess
             // 
@@ -385,6 +388,12 @@
             this.toolStripStatusLabel.Size = new System.Drawing.Size(39, 17);
             this.toolStripStatusLabel.Text = "Status";
             // 
+            // allBillsToolStripMenuItem
+            // 
+            this.allBillsToolStripMenuItem.Name = "allBillsToolStripMenuItem";
+            this.allBillsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.allBillsToolStripMenuItem.Text = "All Bills";
+            // 
             // Manager_System
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -451,6 +460,7 @@
         private System.Windows.Forms.ToolStripMenuItem removeCustomerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addProductToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem inventoryToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem allBillsToolStripMenuItem;
     }
 }
 

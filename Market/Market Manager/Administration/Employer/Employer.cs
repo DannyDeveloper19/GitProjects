@@ -1,4 +1,5 @@
 ﻿using Connection;
+using Market_Manager.Administration.Employer;
 using Market_Manager.Models;
 using System;
 using System.Collections.Generic;
@@ -23,7 +24,9 @@ namespace Market_Manager
         public Profile(EmployerModel employer)
         {
             InitializeComponent();
-            this._employer = employer;            
+            this._employer = employer;
+            btnStatement.Enabled = false;
+            btnBenefits.Enabled = false;
         }
 
         private void Profile_Load(object sender, EventArgs e)
@@ -93,6 +96,13 @@ namespace Market_Manager
                 MessageBox.Show("Your changes have been saved!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Mode("info");                
             }
+        }
+
+        private void btnCPassword_Click(object sender, EventArgs e)
+        {
+            ChangePassword changePassword = new ChangePassword();
+            changePassword.StartPosition = FormStartPosition.CenterScreen;
+            changePassword.ShowDialog();
         }
     }
 }

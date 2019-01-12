@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Market_Manager.Administration
 {
-    public partial class EmployerQuery : Form
+    public partial class EmployerQuery : Base
     {
         public EmployerQuery()
         {

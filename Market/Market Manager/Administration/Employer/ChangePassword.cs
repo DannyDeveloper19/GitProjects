@@ -3,20 +3,16 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Market_Manager.Administration
+namespace Market_Manager.Administration.Employer
 {
-    public partial class NewEmployer : Base
+    public partial class ChangePassword : Market_Manager.Base
     {
-        public NewEmployer()
+        public ChangePassword()
         {
             InitializeComponent();
         }
-
-        
     }
 }

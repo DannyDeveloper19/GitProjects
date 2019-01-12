@@ -42,13 +42,11 @@
             this.cPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cStock = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnPlace = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnItems = new System.Windows.Forms.Button();
             this.btnCustomer = new System.Windows.Forms.Button();
             this.btnNew = new System.Windows.Forms.Button();
             this.btnBilling = new System.Windows.Forms.Button();
-            this.btnExit = new System.Windows.Forms.Button();
             this.txtCount = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
@@ -56,13 +54,23 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txtCode = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dtgItems)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.Location = new System.Drawing.Point(600, 339);
+            this.btnCancel.Size = new System.Drawing.Size(110, 33);
+            // 
+            // btnAccept
+            // 
+            this.btnAccept.Location = new System.Drawing.Point(600, 107);
+            this.btnAccept.Size = new System.Drawing.Size(110, 33);
             // 
             // label1
             // 
@@ -96,7 +104,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(101, 48);
+            this.textBox1.Location = new System.Drawing.Point(102, 45);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 20);
             this.textBox1.TabIndex = 3;
@@ -113,7 +121,7 @@
             this.dtgItems.AllowUserToAddRows = false;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.SteelBlue;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlLight;
@@ -173,16 +181,6 @@
             this.cAmount.HeaderText = "Amount";
             this.cAmount.Name = "cAmount";
             // 
-            // btnPlace
-            // 
-            this.btnPlace.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPlace.Location = new System.Drawing.Point(600, 107);
-            this.btnPlace.Name = "btnPlace";
-            this.btnPlace.Size = new System.Drawing.Size(110, 33);
-            this.btnPlace.TabIndex = 10;
-            this.btnPlace.Text = "Place";
-            this.btnPlace.UseVisualStyleBackColor = true;
-            // 
             // btnDelete
             // 
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -235,16 +233,6 @@
             this.btnBilling.Text = "Billing";
             this.btnBilling.UseVisualStyleBackColor = true;
             // 
-            // btnExit
-            // 
-            this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExit.Location = new System.Drawing.Point(600, 339);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(110, 33);
-            this.btnExit.TabIndex = 16;
-            this.btnExit.Text = "Exit";
-            this.btnExit.UseVisualStyleBackColor = true;
-            // 
             // txtCount
             // 
             this.txtCount.BackColor = System.Drawing.Color.SteelBlue;
@@ -261,7 +249,7 @@
             // btnSearch
             // 
             this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearch.Location = new System.Drawing.Point(229, 45);
+            this.btnSearch.Location = new System.Drawing.Point(229, 43);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(75, 23);
             this.btnSearch.TabIndex = 19;
@@ -299,8 +287,8 @@
             this.groupBox1.Controls.Add(this.textBox6);
             this.groupBox1.Controls.Add(this.textBox4);
             this.groupBox1.Controls.Add(this.textBox5);
-            this.groupBox1.Controls.Add(this.textBox3);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Controls.Add(this.txtCode);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(44, 100);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(511, 58);
@@ -312,29 +300,29 @@
             // 
             this.textBox6.Location = new System.Drawing.Point(405, 19);
             this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(100, 21);
+            this.textBox6.Size = new System.Drawing.Size(100, 22);
             this.textBox6.TabIndex = 26;
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(273, 19);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 21);
-            this.textBox5.TabIndex = 25;
             // 
             // textBox4
             // 
             this.textBox4.Location = new System.Drawing.Point(137, 19);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 21);
+            this.textBox4.Size = new System.Drawing.Size(100, 22);
             this.textBox4.TabIndex = 24;
             // 
-            // textBox3
+            // textBox5
             // 
-            this.textBox3.Location = new System.Drawing.Point(6, 19);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 21);
-            this.textBox3.TabIndex = 23;
+            this.textBox5.Location = new System.Drawing.Point(273, 19);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(100, 22);
+            this.textBox5.TabIndex = 25;
+            // 
+            // txtCode
+            // 
+            this.txtCode.Location = new System.Drawing.Point(6, 19);
+            this.txtCode.Name = "txtCode";
+            this.txtCode.Size = new System.Drawing.Size(100, 22);
+            this.txtCode.TabIndex = 23;
             // 
             // SalesControl
             // 
@@ -347,13 +335,11 @@
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.txtCount);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnBilling);
             this.Controls.Add(this.btnNew);
             this.Controls.Add(this.btnCustomer);
             this.Controls.Add(this.btnItems);
             this.Controls.Add(this.btnDelete);
-            this.Controls.Add(this.btnPlace);
             this.Controls.Add(this.dtgItems);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
@@ -362,6 +348,25 @@
             this.Controls.Add(this.label1);
             this.Name = "SalesControl";
             this.Text = "Sales Control";
+            this.Controls.SetChildIndex(this.label1, 0);
+            this.Controls.SetChildIndex(this.label2, 0);
+            this.Controls.SetChildIndex(this.label3, 0);
+            this.Controls.SetChildIndex(this.textBox1, 0);
+            this.Controls.SetChildIndex(this.textBox2, 0);
+            this.Controls.SetChildIndex(this.dtgItems, 0);
+            this.Controls.SetChildIndex(this.btnDelete, 0);
+            this.Controls.SetChildIndex(this.btnItems, 0);
+            this.Controls.SetChildIndex(this.btnCustomer, 0);
+            this.Controls.SetChildIndex(this.btnNew, 0);
+            this.Controls.SetChildIndex(this.btnBilling, 0);
+            this.Controls.SetChildIndex(this.pictureBox1, 0);
+            this.Controls.SetChildIndex(this.txtCount, 0);
+            this.Controls.SetChildIndex(this.btnSearch, 0);
+            this.Controls.SetChildIndex(this.label4, 0);
+            this.Controls.SetChildIndex(this.txtEmployer, 0);
+            this.Controls.SetChildIndex(this.groupBox1, 0);
+            this.Controls.SetChildIndex(this.btnAccept, 0);
+            this.Controls.SetChildIndex(this.btnCancel, 0);
             ((System.ComponentModel.ISupportInitialize)(this.dtgItems)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
@@ -379,13 +384,11 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.DataGridView dtgItems;
-        private System.Windows.Forms.Button btnPlace;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnItems;
         private System.Windows.Forms.Button btnCustomer;
         private System.Windows.Forms.Button btnNew;
         private System.Windows.Forms.Button btnBilling;
-        private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.DataGridViewTextBoxColumn cCode;
         private System.Windows.Forms.DataGridViewTextBoxColumn cDescription;
@@ -400,6 +403,6 @@
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtCode;
     }
 }

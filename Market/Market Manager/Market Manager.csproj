@@ -76,10 +76,10 @@
     <Compile Include="Administration\Employer\NewEmployer.Designer.cs">
       <DependentUpon>NewEmployer.cs</DependentUpon>
     </Compile>
-    <Compile Include="Administration\Factures\Bill.cs">
+    <Compile Include="Administration\Bills\Bill.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Administration\Factures\Bill.Designer.cs">
+    <Compile Include="Administration\Bills\Bill.Designer.cs">
       <DependentUpon>Bill.cs</DependentUpon>
     </Compile>
     <Compile Include="Administration\Warehouse\NewItem.cs">
@@ -88,34 +88,34 @@
     <Compile Include="Administration\Warehouse\NewItem.Designer.cs">
       <DependentUpon>NewItem.cs</DependentUpon>
     </Compile>
-    <Compile Include="Admission\CustomerProfile.cs">
+    <Compile Include="Customer_Service\CustomerProfile.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Admission\CustomerProfile.Designer.cs">
+    <Compile Include="Customer_Service\CustomerProfile.Designer.cs">
       <DependentUpon>CustomerProfile.cs</DependentUpon>
     </Compile>
-    <Compile Include="Admission\Customers.cs">
+    <Compile Include="Customer_Service\Customers.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Admission\Customers.Designer.cs">
+    <Compile Include="Customer_Service\Customers.Designer.cs">
       <DependentUpon>Customers.cs</DependentUpon>
     </Compile>
-    <Compile Include="Admission\NewCustomer.cs">
+    <Compile Include="Customer_Service\NewCustomer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Admission\NewCustomer.Designer.cs">
+    <Compile Include="Customer_Service\NewCustomer.Designer.cs">
       <DependentUpon>NewCustomer.cs</DependentUpon>
     </Compile>
-    <Compile Include="Admission\RemoveCustomer.cs">
+    <Compile Include="Customer_Service\RemoveCustomer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Admission\RemoveCustomer.Designer.cs">
+    <Compile Include="Customer_Service\RemoveCustomer.Designer.cs">
       <DependentUpon>RemoveCustomer.cs</DependentUpon>
     </Compile>
-    <Compile Include="Admission\Return.cs">
+    <Compile Include="Customer_Service\Return.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Admission\Return.Designer.cs">
+    <Compile Include="Customer_Service\Return.Designer.cs">
       <DependentUpon>Return.cs</DependentUpon>
     </Compile>
     <Compile Include="Base.cs">
@@ -128,16 +128,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Sales\Facture.cs">
+    <Compile Include="Sales\Billing.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Sales\Facture.Designer.cs">
-      <DependentUpon>Facture.cs</DependentUpon>
+    <Compile Include="Sales\Billing.Designer.cs">
+      <DependentUpon>Billing.cs</DependentUpon>
     </Compile>
-    <Compile Include="Administration\Factures\Bills.cs">
+    <Compile Include="Administration\Bills\Bills.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Administration\Factures\Bills.Designer.cs">
+    <Compile Include="Administration\Bills\Bills.Designer.cs">
       <DependentUpon>Bills.cs</DependentUpon>
     </Compile>
     <Compile Include="Administration\Warehouse\ItemQuery.cs">
@@ -185,29 +185,32 @@
     <EmbeddedResource Include="Administration\Employer\NewEmployer.resx">
       <DependentUpon>NewEmployer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Administration\Factures\Bill.resx">
+    <EmbeddedResource Include="Administration\Bills\Bill.resx">
       <DependentUpon>Bill.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Administration\Warehouse\NewItem.resx">
       <DependentUpon>NewItem.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Admission\CustomerProfile.resx">
+    <EmbeddedResource Include="Customer_Service\CustomerProfile.resx">
       <DependentUpon>CustomerProfile.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Admission\Customers.resx">
+    <EmbeddedResource Include="Customer_Service\Customers.resx">
       <DependentUpon>Customers.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Admission\NewCustomer.resx">
+    <EmbeddedResource Include="Customer_Service\NewCustomer.resx">
       <DependentUpon>NewCustomer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Administration\Warehouse\ItemQuery.resx">
       <DependentUpon>ItemQuery.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Administration\Factures\Bills.resx">
+    <EmbeddedResource Include="Administration\Bills\Bills.resx">
       <DependentUpon>Bills.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Base.resx">
       <DependentUpon>Base.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sales\Billing.resx">
+      <DependentUpon>Billing.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Security\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

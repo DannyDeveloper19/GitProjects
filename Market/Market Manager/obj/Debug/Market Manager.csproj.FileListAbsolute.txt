@@ -52,3 +52,4 @@ C:\GitProjects\Market\Market Manager\obj\Debug\Market Manager.exe
 C:\GitProjects\Market\Market Manager\obj\Debug\Market Manager.pdb
 C:\GitProjects\Market\Market Manager\obj\Debug\Market_Manager.Administration.Employer.ChangePassword.resources
 C:\GitProjects\Market\Market Manager\obj\Debug\Market_Manager.Administration.Factures.Bill.resources
+C:\GitProjects\Market\Market Manager\obj\Debug\Market_Manager.Sales.Billing.resources

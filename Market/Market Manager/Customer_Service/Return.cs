@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Market_Manager.Sales
+namespace Market_Manager.Admission
 {
-    public partial class Facture : Form
+    public partial class Return : Form
     {
-        public Facture()
+        public Return()
         {
             InitializeComponent();
         }

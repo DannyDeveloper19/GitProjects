@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Market_Manager
 {
-    public partial class SalesControl : Form
+    public partial class SalesControl : Base
     {
         public SalesControl()
         {

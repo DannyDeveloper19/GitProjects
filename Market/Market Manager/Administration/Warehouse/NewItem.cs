@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Market_Manager.Administration.Warehouse
 {
-    public partial class New_Item : Form
+    public partial class New_Item : Base
     {
         int count = 0;
         public New_Item()

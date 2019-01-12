@@ -36,11 +36,19 @@
             this.txtBrand = new System.Windows.Forms.TextBox();
             this.txtPrice = new System.Windows.Forms.TextBox();
             this.txtQuantity = new System.Windows.Forms.TextBox();
-            this.btnAccept = new System.Windows.Forms.Button();
-            this.btnCancel = new System.Windows.Forms.Button();
             this.btnMinus = new System.Windows.Forms.Button();
             this.btnSum = new System.Windows.Forms.Button();
             this.SuspendLayout();
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.Location = new System.Drawing.Point(279, 224);
+            this.btnCancel.Size = new System.Drawing.Size(75, 34);
+            // 
+            // btnAccept
+            // 
+            this.btnAccept.Location = new System.Drawing.Point(151, 224);
+            this.btnAccept.Size = new System.Drawing.Size(75, 34);
             // 
             // label1
             // 
@@ -120,29 +128,6 @@
             this.txtQuantity.TabIndex = 7;
             this.txtQuantity.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // btnAccept
-            // 
-            this.btnAccept.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnAccept.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAccept.Location = new System.Drawing.Point(151, 223);
-            this.btnAccept.Name = "btnAccept";
-            this.btnAccept.Size = new System.Drawing.Size(75, 34);
-            this.btnAccept.TabIndex = 10;
-            this.btnAccept.Text = "Accept";
-            this.btnAccept.UseVisualStyleBackColor = false;
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.Location = new System.Drawing.Point(279, 223);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(75, 34);
-            this.btnCancel.TabIndex = 11;
-            this.btnCancel.Text = "Cancel";
-            this.btnCancel.UseVisualStyleBackColor = false;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
-            // 
             // btnMinus
             // 
             this.btnMinus.BackgroundImage = global::Market_Manager.Properties.Resources.minus;
@@ -171,8 +156,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(470, 286);
-            this.Controls.Add(this.btnCancel);
-            this.Controls.Add(this.btnAccept);
             this.Controls.Add(this.btnMinus);
             this.Controls.Add(this.btnSum);
             this.Controls.Add(this.txtQuantity);
@@ -186,6 +169,18 @@
             this.Name = "New_Item";
             this.Text = "Add Product";
             this.Load += new System.EventHandler(this.New_Item_Load);
+            this.Controls.SetChildIndex(this.label1, 0);
+            this.Controls.SetChildIndex(this.label2, 0);
+            this.Controls.SetChildIndex(this.label3, 0);
+            this.Controls.SetChildIndex(this.label4, 0);
+            this.Controls.SetChildIndex(this.txtName, 0);
+            this.Controls.SetChildIndex(this.txtBrand, 0);
+            this.Controls.SetChildIndex(this.txtPrice, 0);
+            this.Controls.SetChildIndex(this.txtQuantity, 0);
+            this.Controls.SetChildIndex(this.btnSum, 0);
+            this.Controls.SetChildIndex(this.btnMinus, 0);
+            this.Controls.SetChildIndex(this.btnAccept, 0);
+            this.Controls.SetChildIndex(this.btnCancel, 0);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -203,7 +198,5 @@
         private System.Windows.Forms.TextBox txtQuantity;
         private System.Windows.Forms.Button btnSum;
         private System.Windows.Forms.Button btnMinus;
-        private System.Windows.Forms.Button btnAccept;
-        private System.Windows.Forms.Button btnCancel;
     }
 }

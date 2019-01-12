@@ -8,15 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Market_Manager.Administration
+namespace Market_Manager.Sales
 {
-    public partial class NewEmployer : Base
+    public partial class Billing : Form
     {
-        public NewEmployer()
+        public Billing()
         {
             InitializeComponent();
         }
-
-        
     }
 }

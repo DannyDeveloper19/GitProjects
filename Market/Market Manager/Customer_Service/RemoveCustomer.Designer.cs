@@ -1,6 +1,6 @@
-﻿namespace Market_Manager.Sales
+﻿namespace Market_Manager.Admission
 {
-    partial class Facture
+    partial class RemoveCustomer
     {
         /// <summary>
         /// Required designer variable.
@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Facture";
+            this.Text = "RemoveCustomer";
         }
 
         #endregion

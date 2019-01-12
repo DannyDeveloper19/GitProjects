@@ -1,6 +1,6 @@
-﻿namespace Market_Manager.Administration
+﻿namespace Market_Manager
 {
-    partial class EmployerQuery
+    partial class CustomerQuery
     {
         /// <summary>
         /// Required designer variable.
@@ -28,8 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EmployerQuery));
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustomerQuery));
+            this.dgvQuery = new System.Windows.Forms.DataGridView();
+            this.btnRefresh = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -37,41 +38,40 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtQuery = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
-            this.btnRefresh = new System.Windows.Forms.Button();
-            this.dgvQuery = new System.Windows.Forms.DataGridView();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnNew = new System.Windows.Forms.Button();
-            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvQuery)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(427, 453);
-            this.btnCancel.Size = new System.Drawing.Size(93, 36);
+            this.btnCancel.Location = new System.Drawing.Point(425, 454);
+            this.btnCancel.Size = new System.Drawing.Size(93, 28);
             // 
             // btnAccept
             // 
-            this.btnAccept.Location = new System.Drawing.Point(38, 453);
-            this.btnAccept.Size = new System.Drawing.Size(93, 36);
-            this.btnAccept.Click += new System.EventHandler(this.btnShow_Click);
+            this.btnAccept.Location = new System.Drawing.Point(36, 454);
+            this.btnAccept.Size = new System.Drawing.Size(93, 28);
+            this.btnAccept.Text = "Show";
             // 
-            // groupBox1
+            // dgvQuery
             // 
-            this.groupBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.txtQuery);
-            this.groupBox1.Controls.Add(this.btnSearch);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(38, 14);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(482, 79);
-            this.groupBox1.TabIndex = 22;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Search by";
+            this.dgvQuery.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvQuery.Location = new System.Drawing.Point(36, 106);
+            this.dgvQuery.Name = "dgvQuery";
+            this.dgvQuery.Size = new System.Drawing.Size(482, 339);
+            this.dgvQuery.TabIndex = 3;
+            // 
+            // btnRefresh
+            // 
+            this.btnRefresh.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRefresh.Location = new System.Drawing.Point(294, 454);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(93, 28);
+            this.btnRefresh.TabIndex = 25;
+            this.btnRefresh.Text = "Refresh";
+            this.btnRefresh.UseVisualStyleBackColor = true;
             // 
             // label3
             // 
@@ -134,36 +134,35 @@
             this.btnSearch.TabIndex = 2;
             this.btnSearch.UseVisualStyleBackColor = true;
             // 
-            // btnRefresh
+            // groupBox1
             // 
-            this.btnRefresh.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRefresh.Location = new System.Drawing.Point(296, 453);
-            this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(93, 36);
-            this.btnRefresh.TabIndex = 20;
-            this.btnRefresh.Text = "Refresh";
-            this.btnRefresh.UseVisualStyleBackColor = true;
-            // 
-            // dgvQuery
-            // 
-            this.dgvQuery.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvQuery.Location = new System.Drawing.Point(38, 99);
-            this.dgvQuery.Name = "dgvQuery";
-            this.dgvQuery.Size = new System.Drawing.Size(482, 348);
-            this.dgvQuery.TabIndex = 18;
+            this.groupBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.txtQuery);
+            this.groupBox1.Controls.Add(this.btnSearch);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(36, 12);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(482, 79);
+            this.groupBox1.TabIndex = 28;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Search by";
             // 
             // btnNew
             // 
             this.btnNew.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNew.Location = new System.Drawing.Point(167, 453);
+            this.btnNew.Location = new System.Drawing.Point(162, 454);
             this.btnNew.Name = "btnNew";
-            this.btnNew.Size = new System.Drawing.Size(93, 36);
-            this.btnNew.TabIndex = 23;
+            this.btnNew.Size = new System.Drawing.Size(93, 28);
+            this.btnNew.TabIndex = 29;
             this.btnNew.Text = "New";
             this.btnNew.UseVisualStyleBackColor = true;
-            this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
             // 
-            // EmployerQuery
+            // CustomerQuery
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -172,35 +171,37 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.dgvQuery);
+            this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(572, 544);
+            this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(572, 544);
-            this.Name = "EmployerQuery";
-            this.Text = "Employers";
+            this.Name = "CustomerQuery";
+            this.Text = "Customer Query";
+            this.Load += new System.EventHandler(this.CustomerQuery_Load);
             this.Controls.SetChildIndex(this.dgvQuery, 0);
             this.Controls.SetChildIndex(this.btnRefresh, 0);
             this.Controls.SetChildIndex(this.groupBox1, 0);
             this.Controls.SetChildIndex(this.btnAccept, 0);
             this.Controls.SetChildIndex(this.btnCancel, 0);
             this.Controls.SetChildIndex(this.btnNew, 0);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvQuery)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvQuery)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtQuery;
-        private System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.Button btnRefresh;
         private System.Windows.Forms.DataGridView dgvQuery;
+        private System.Windows.Forms.Button btnRefresh;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtQuery;
+        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnNew;
     }
 }

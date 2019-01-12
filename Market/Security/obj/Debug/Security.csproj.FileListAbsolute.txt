@@ -6,7 +6,7 @@ C:\Users\dhsim\source\repos\Market Manager\Security\obj\Debug\Security.dll
 C:\Users\dhsim\source\repos\Market Manager\Security\obj\Debug\Security.pdb
 C:\GitProjects\Market\Security\bin\Debug\Security.dll
 C:\GitProjects\Market\Security\bin\Debug\Security.pdb
-C:\GitProjects\Market\Security\obj\Debug\Security.csprojAssemblyReference.cache
 C:\GitProjects\Market\Security\obj\Debug\Security.csproj.CoreCompileInputs.cache
 C:\GitProjects\Market\Security\obj\Debug\Security.dll
 C:\GitProjects\Market\Security\obj\Debug\Security.pdb
+C:\GitProjects\Market\Security\obj\Debug\Security.csprojAssemblyReference.cache

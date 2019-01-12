@@ -10,11 +10,21 @@ using System.Windows.Forms;
 
 namespace Market_Manager
 {
-    public partial class ItemQuery : Form
+    public partial class ItemQuery : Base
     {
         public ItemQuery()
         {
             InitializeComponent();
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

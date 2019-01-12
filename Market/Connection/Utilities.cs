@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 
@@ -12,7 +12,9 @@ namespace Connection
     {
         private static SqlConnection Connection
         {
-            get { return new SqlConnection("Data Source=DANNYLAPTOP\\SQLEXPRESS;Initial Catalog=BD_MarketManager;Integrated Security=True"); }
+            get {
+                return new SqlConnection("Data Source=DANNYLAPTOP\\SQLEXPRESS;Initial Catalog=BD_MarketManager;Integrated Security=True");
+            }
         }
 
         public static DataSet execute(string query)

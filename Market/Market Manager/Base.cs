@@ -63,5 +63,8 @@ namespace Market_Manager
         {
             this.Close();
         }
+
+        public virtual void Save() { }
+        public virtual void Remove() { }
     }
 }

@@ -49,6 +49,7 @@
             // 
             this.btnAccept.Location = new System.Drawing.Point(151, 224);
             this.btnAccept.Size = new System.Drawing.Size(75, 34);
+            this.btnAccept.Click += new System.EventHandler(this.btnAccept_Click);
             // 
             // label1
             // 

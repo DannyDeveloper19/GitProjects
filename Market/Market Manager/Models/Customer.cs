@@ -14,8 +14,9 @@ namespace Market_Manager.Models
         public string address { get; set; }
         public string phone { get; set; }
         public string email { get; set; }
+        public string dni { get; set; }
 
-        public CustomerModel(string id, string name, string lastname, string phone, string address, string email)
+        public CustomerModel(string id, string name, string lastname, string phone, string address, string email, string dni)
         {
             this.id = id;
             this.name = name;
@@ -23,6 +24,7 @@ namespace Market_Manager.Models
             this.phone = phone;
             this.address = address;
             this.email = email;
+            this.dni = dni;
         }
     }
 }

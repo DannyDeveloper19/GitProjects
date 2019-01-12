@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Market_Manager.DataConnection;
 
 namespace Market_Manager.Administration.Warehouse
 {
@@ -41,6 +42,31 @@ namespace Market_Manager.Administration.Warehouse
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnAccept_Click(object sender, EventArgs e)
+        {
+            
+
+        }
+
+        public override void Save()
+        {
+            try
+            {
+                var id = "PRT" + Security.Security.generateIdNumber();
+                var name = txtName.Text;
+                var mark = txtBrand.Text;
+                var price = double.Parse(txtPrice.Text);
+                var quantity = int.Parse(txtQuantity.Text);
+                Product_Data.updateProduct(new Models.Product(id, name, mark, price, quantity));
+                MessageBox.Show("New Product added", "Success", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("There were an error trying to add the product", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

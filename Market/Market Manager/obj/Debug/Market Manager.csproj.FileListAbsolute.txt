@@ -22,7 +22,6 @@ C:\Users\dhsim\source\repos\Market Manager\Market Manager\obj\Debug\Market_Manag
 C:\Users\dhsim\source\repos\Market Manager\Market Manager\obj\Debug\Market_Manager.Administration.EmployerQuery.resources
 C:\Users\dhsim\source\repos\Market Manager\Market Manager\obj\Debug\Market_Manager.Administration.NewEmployer.resources
 C:\Users\dhsim\source\repos\Market Manager\Market Manager\obj\Debug\Market_Manager.Admission.NewCustomer.resources
-C:\GitProjects\Market\Market Manager\obj\Debug\Market Manager.csprojAssemblyReference.cache
 C:\GitProjects\Market\Market Manager\obj\Debug\Market_Manager.Administration.EmployerQuery.resources
 C:\GitProjects\Market\Market Manager\obj\Debug\Market_Manager.Administration.Employer.EmployerRecord.resources
 C:\GitProjects\Market\Market Manager\obj\Debug\Market_Manager.Administration.NewEmployer.resources
@@ -53,3 +52,5 @@ C:\GitProjects\Market\Market Manager\obj\Debug\Market Manager.pdb
 C:\GitProjects\Market\Market Manager\obj\Debug\Market_Manager.Administration.Employer.ChangePassword.resources
 C:\GitProjects\Market\Market Manager\obj\Debug\Market_Manager.Administration.Factures.Bill.resources
 C:\GitProjects\Market\Market Manager\obj\Debug\Market_Manager.Sales.Billing.resources
+C:\GitProjects\Market\Market Manager\obj\Debug\Market_Manager.Admission.Return.resources
+C:\GitProjects\Market\Market Manager\obj\Debug\Market Manager.csprojAssemblyReference.cache

@@ -16,15 +16,15 @@ namespace Market_Manager.Admission
         {
             try
             {
-                string id = "MBR"+Security.Security.generateIdNumber();
-                string dni = txtDLN.Text;
-                string name = txtName.Text;
-                string lastname = txtLastname.Text;
-                string phone = txtPhone.Text;
-                string email = txtEmail.Text;
+                string id = "MBR"+Security.Security.generateIdNumber().Trim();
+                string dni = txtDLN.Text.Trim();
+                string name = txtName.Text.Trim();
+                string lastname = txtLastname.Text.Trim();
+                string phone = txtPhone.Text.Trim();
+                string email = txtEmail.Text.Trim();
 
                 string address = (txtApt.Text != "") 
-                    ? txtStreet.Text + ", Apt. "+ txtApt.Text + "" + txtCity.Text + ", " + cmbState.Text + ", " + txtZipCode.Text : txtStreet.Text + ", " + txtCity.Text + ", " + cmbState.Text + ", " + txtZipCode.Text;
+                    ? txtStreet.Text.Trim() + ", Apt. "+ txtApt.Text.Trim() + ", " + txtCity.Text.Trim() + ", " + cmbState.Text.Trim() + ", " + txtZipCode.Text.Trim() : txtStreet.Text.Trim() + ", " + txtCity.Text.Trim() + ", " + cmbState.Text.Trim() + ", " + txtZipCode.Text.Trim();
                 var newCustomer = new CustomerModel(id, name, lastname, phone, address, email, dni);
                 Customer_Data.newCustomer(newCustomer);
 

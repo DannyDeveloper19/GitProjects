@@ -88,9 +88,11 @@ namespace Market_Manager
 
         private void billingToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            SalesControl frmSControl = new SalesControl();
-            frmSControl.MdiParent = this;
-            frmSControl.StartPosition = FormStartPosition.CenterScreen;
+            SalesControl frmSControl = new SalesControl(employer)
+            {
+                MdiParent = this,
+                StartPosition = FormStartPosition.CenterScreen
+            };
             frmSControl.Show();
         }
 

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Market_Manager.DataConnection;
+using Market_Manager.Models;
 
 namespace Market_Manager.Administration.Warehouse
 {
@@ -46,7 +47,7 @@ namespace Market_Manager.Administration.Warehouse
 
         private void btnAccept_Click(object sender, EventArgs e)
         {
-            
+            Save();
 
         }
 
@@ -59,7 +60,7 @@ namespace Market_Manager.Administration.Warehouse
                 var mark = txtBrand.Text;
                 var price = double.Parse(txtPrice.Text);
                 var quantity = int.Parse(txtQuantity.Text);
-                Product_Data.updateProduct(new Models.Product(id, name, mark, price, quantity));
+                Product_Data.updateProduct(new Product(id, name, mark, price, quantity));
                 MessageBox.Show("New Product added", "Success", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             catch (Exception)

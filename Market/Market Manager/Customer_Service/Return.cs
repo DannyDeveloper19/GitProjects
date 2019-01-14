@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Market_Manager.Admission
 {
-    public partial class Return : Form
+    public partial class Return : Base
     {
         public Return()
         {

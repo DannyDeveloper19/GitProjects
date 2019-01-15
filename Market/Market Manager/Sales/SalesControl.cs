@@ -16,9 +16,10 @@ namespace Market_Manager
     {
         int count = 0;
         EmployerModel _employer;
-        CustomerModel _cusotmer;
-        double current_amount = 0;
+        CustomerModel _cusotmer { get; set; }
+        int in_stock = 0;
         string id_purshase;
+
         public SalesControl(EmployerModel employer)
         {
             InitializeComponent();
@@ -29,14 +30,14 @@ namespace Market_Manager
             txtQuantity.Enabled = false;
             btnSum.Enabled = false;
             btnMinus.Enabled = false;
-            this.id_purshase = "";
+            id_purshase = "SHP" + Security.Security.generateIdNumber();
             foreach (var item in Controls.OfType<Button>())
             {
-                if (item.Name != "btnSearch" || item.Name != "btnCancel")
-                {
-                    item.Enabled = false;
-                }
+                item.Enabled = false;
             }
+            btnCustomer.Enabled = true;
+            btnCancel.Enabled = true;
+            
         }
 
         private void btnItems_Click(object sender, EventArgs e)
@@ -54,21 +55,19 @@ namespace Market_Manager
         private void btnAccept_Click(object sender, EventArgs e)
         {
             try
-            {
-                if(this.id_purshase == "")
-                    this.id_purshase = "SHP" + Security.Security.generateIdNumber();
+            {                
                 var id_customer = _cusotmer.id;
                 var id_product = txtCode.Text;
                 var quantity = int.Parse(txtQuantity.Text);
-                if(quantity > 0)
-                    Product_Data.AddProduct(this.id_purshase, id_customer, id_product, quantity);
+                if(quantity > 0 && quantity <= in_stock)
+                    Product_Data.AddProduct(id_purshase, id_customer, id_product, quantity);
                 else
-                    MessageBox.Show("You must add the desired quantity", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("The amount must not be 0 or greater than "+in_stock.ToString(), "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
-                var listProduct = Purshase.GetPurshase(this.id_purshase, id_product);
-                this.current_amount += listProduct.amount;
+                var listProduct = Purshase.GetPurshase(id_purshase, id_product,id_customer);
                 DataGridViewRow row = new DataGridViewRow();
                 row.CreateCells(dgvProducts);
+               
                 row.Cells[0].Value = listProduct.id_product;
                 row.Cells[1].Value = listProduct.product_name;
                 row.Cells[2].Value = listProduct.product_mark;
@@ -83,18 +82,27 @@ namespace Market_Manager
                 txtMark.Text = "";
                 txtPrice.Text = "";
                 txtQuantity.Text = "0";
+                count = 0;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
-                MessageBox.Show("There was a problem adding the product", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error: "+ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void btnSum_Click(object sender, EventArgs e)
         {
-            count++;
-            txtQuantity.Text = count.ToString();
+            if (count < in_stock)
+            {
+                count++;
+                txtQuantity.Text = count.ToString();
+            }
+            else
+            {
+                MessageBox.Show("There are no more of this product in stock.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            
         }
 
         private void btnMinus_Click(object sender, EventArgs e)
@@ -131,11 +139,12 @@ namespace Market_Manager
                 txtNameProduct.Text = product.name;
                 txtMark.Text = product.mark;
                 txtPrice.Text = product.price.ToString();
-                txtQuantity.Text = product.quantity.ToString();
+                this.in_stock = product.quantity;
                 txtQuantity.Enabled = true;
                 btnSum.Enabled = true;
                 btnMinus.Enabled = true;
-                foreach (var item in Controls.OfType<Button>())
+                txtQuantity.Text = count.ToString();
+               foreach (var item in Controls.OfType<Button>())
                 {
                     if (!item.Enabled)
                         item.Enabled = true;
@@ -151,8 +160,7 @@ namespace Market_Manager
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            this.id_purshase = "";
-            this.current_amount = 0;
+            
         }
     }
 }

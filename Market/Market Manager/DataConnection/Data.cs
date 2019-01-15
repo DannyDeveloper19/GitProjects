@@ -50,6 +50,28 @@ namespace Market_Manager.DataConnection
             var dni = data.Tables[0].Rows[0]["customer_dni"].ToString().Trim();
             return new CustomerModel(id,name,lastname,phone,address,email,dni);
         }
+
+        public static List<CustomerModel> getAllCustomers()
+        {
+            var listCustomer = new List<CustomerModel>();
+            string cmd = string.Format("Select * from Customers");
+            DataSet data = Utilities.execute(cmd);
+            for (int i = 0; i < data.Tables[0].Rows.Count; i++)
+            {
+                var row = data.Tables[0].Rows[i]; 
+                var customer = new CustomerModel(
+                    row["id_customer"].ToString().Trim(),
+                    row["customer_name"].ToString().Trim(),
+                    row["customer_lastname"].ToString().Trim(),
+                    row["customer_address"].ToString().Trim(),
+                    row["customer_phone"].ToString().Trim(),
+                    row["customer_email"].ToString().Trim(),
+                    row["customer_dni"].ToString().Trim()
+                    );
+                listCustomer.Add(customer);
+            }
+            return listCustomer;
+        }
     }
     class Product_Data
         {
@@ -69,7 +91,8 @@ namespace Market_Manager.DataConnection
             var name = data.Tables[0].Rows[0]["item_name"].ToString().Trim();
             var mark = data.Tables[0].Rows[0]["item_mark"].ToString().Trim();
             var price =double.Parse(data.Tables[0].Rows[0]["item_price"].ToString().Trim());
-            return new Product(id, name, mark, price, 0);
+            var quantity = int.Parse(data.Tables[0].Rows[0]["item_quantity"].ToString().Trim());
+            return new Product(id, name, mark, price, quantity);
         }
 
             public static void AddProduct(string id_purshase, string id_customer, string id_item, int quantity)
@@ -82,9 +105,9 @@ namespace Market_Manager.DataConnection
 
     class Purshase
     {
-        public static Purshase_Product GetPurshase(string id_purshase, string id_product)
+        public static Purshase_Product GetPurshase(string id_purshase, string id_product, string id_customer)
         {
-            string cmd = string.Format("EXEC GetPurshase '{0}','{1}'", id_purshase,id_product);
+            string cmd = string.Format("EXEC GetPurshase '{0}','{1}','{2}'", id_purshase,id_product,id_customer);
             DataSet data = Utilities.execute(cmd);
 
             var id = data.Tables[0].Rows[0]["id_item"].ToString().Trim();

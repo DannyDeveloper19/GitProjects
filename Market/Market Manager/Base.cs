@@ -45,6 +45,7 @@ namespace Market_Manager
             this.btnAccept.TabIndex = 18;
             this.btnAccept.Text = "Accept";
             this.btnAccept.UseVisualStyleBackColor = false;
+            this.btnAccept.Click += new System.EventHandler(this.btnAccept_Click);
             // 
             // Base
             // 
@@ -61,10 +62,15 @@ namespace Market_Manager
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Cancel();
+        }
+
+        private void btnAccept_Click(object sender, EventArgs e)
+        {
+            Save();
         }
 
         public virtual void Save() { }
-        public virtual void Remove() { }
+        public virtual void Cancel() { }
     }
 }

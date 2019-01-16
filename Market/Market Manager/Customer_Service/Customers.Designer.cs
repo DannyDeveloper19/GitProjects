@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustomerQuery));
             this.dgvCustomers = new System.Windows.Forms.DataGridView();
             this.cId = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,26 +55,18 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(512, 452);
+            this.btnCancel.Location = new System.Drawing.Point(534, 452);
             this.btnCancel.Size = new System.Drawing.Size(93, 41);
             // 
             // btnAccept
             // 
-            this.btnAccept.Location = new System.Drawing.Point(123, 452);
+            this.btnAccept.Location = new System.Drawing.Point(145, 452);
             this.btnAccept.Size = new System.Drawing.Size(93, 41);
             this.btnAccept.Text = "Show";
             // 
             // dgvCustomers
             // 
             this.dgvCustomers.AllowUserToAddRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvCustomers.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvCustomers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCustomers.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.cId,
@@ -87,7 +78,7 @@
             this.cDLN});
             this.dgvCustomers.Location = new System.Drawing.Point(12, 97);
             this.dgvCustomers.Name = "dgvCustomers";
-            this.dgvCustomers.Size = new System.Drawing.Size(698, 339);
+            this.dgvCustomers.Size = new System.Drawing.Size(741, 339);
             this.dgvCustomers.TabIndex = 3;
             // 
             // cId
@@ -128,7 +119,7 @@
             // btnRefresh
             // 
             this.btnRefresh.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRefresh.Location = new System.Drawing.Point(381, 452);
+            this.btnRefresh.Location = new System.Drawing.Point(403, 452);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(93, 41);
             this.btnRefresh.TabIndex = 25;
@@ -139,7 +130,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(38, 48);
+            this.label3.Location = new System.Drawing.Point(39, 48);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(48, 16);
             this.label3.TabIndex = 7;
@@ -149,14 +140,14 @@
             // 
             this.textBox2.Location = new System.Drawing.Point(87, 45);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(290, 22);
+            this.textBox2.Size = new System.Drawing.Size(289, 22);
             this.textBox2.TabIndex = 6;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(212, 20);
+            this.label1.Location = new System.Drawing.Point(213, 20);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(45, 16);
             this.label1.TabIndex = 5;
@@ -192,7 +183,7 @@
             this.btnSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnSearch.Location = new System.Drawing.Point(402, 20);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(56, 44);
+            this.btnSearch.Size = new System.Drawing.Size(57, 44);
             this.btnSearch.TabIndex = 2;
             this.btnSearch.UseVisualStyleBackColor = true;
             // 
@@ -207,9 +198,9 @@
             this.groupBox1.Controls.Add(this.txtQuery);
             this.groupBox1.Controls.Add(this.btnSearch);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(228, 12);
+            this.groupBox1.Location = new System.Drawing.Point(271, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(482, 79);
+            this.groupBox1.Size = new System.Drawing.Size(483, 79);
             this.groupBox1.TabIndex = 28;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Search by";
@@ -217,7 +208,7 @@
             // btnNew
             // 
             this.btnNew.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNew.Location = new System.Drawing.Point(249, 452);
+            this.btnNew.Location = new System.Drawing.Point(271, 452);
             this.btnNew.Name = "btnNew";
             this.btnNew.Size = new System.Drawing.Size(93, 41);
             this.btnNew.TabIndex = 29;
@@ -228,7 +219,7 @@
             // 
             this.pictureBox1.Location = new System.Drawing.Point(12, 12);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(204, 79);
+            this.pictureBox1.Size = new System.Drawing.Size(253, 79);
             this.pictureBox1.TabIndex = 30;
             this.pictureBox1.TabStop = false;
             // 
@@ -236,16 +227,16 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(741, 505);
+            this.ClientSize = new System.Drawing.Size(765, 505);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnNew);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.dgvCustomers);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(757, 544);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(757, 544);
             this.Name = "CustomerQuery";
             this.Text = " Customers";
             this.Load += new System.EventHandler(this.CustomerQuery_Load);

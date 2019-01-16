@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ItemQuery));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnNew = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -54,26 +54,26 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(614, 346);
+            this.btnCancel.Location = new System.Drawing.Point(584, 346);
             this.btnCancel.Size = new System.Drawing.Size(93, 41);
             // 
             // btnAccept
             // 
-            this.btnAccept.Location = new System.Drawing.Point(614, 145);
+            this.btnAccept.Location = new System.Drawing.Point(584, 145);
             this.btnAccept.Size = new System.Drawing.Size(93, 41);
             // 
             // pictureBox1
             // 
             this.pictureBox1.Location = new System.Drawing.Point(21, 12);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(204, 79);
+            this.pictureBox1.Size = new System.Drawing.Size(180, 79);
             this.pictureBox1.TabIndex = 35;
             this.pictureBox1.TabStop = false;
             // 
             // btnNew
             // 
             this.btnNew.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNew.Location = new System.Drawing.Point(614, 210);
+            this.btnNew.Location = new System.Drawing.Point(584, 210);
             this.btnNew.Name = "btnNew";
             this.btnNew.Size = new System.Drawing.Size(93, 41);
             this.btnNew.TabIndex = 34;
@@ -91,9 +91,9 @@
             this.groupBox1.Controls.Add(this.txtQuery);
             this.groupBox1.Controls.Add(this.btnSearch);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(237, 12);
+            this.groupBox1.Location = new System.Drawing.Point(207, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(482, 79);
+            this.groupBox1.Size = new System.Drawing.Size(470, 79);
             this.groupBox1.TabIndex = 33;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Search by";
@@ -162,7 +162,7 @@
             // btnRefresh
             // 
             this.btnRefresh.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRefresh.Location = new System.Drawing.Point(614, 279);
+            this.btnRefresh.Location = new System.Drawing.Point(584, 279);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(93, 41);
             this.btnRefresh.TabIndex = 32;
@@ -172,14 +172,14 @@
             // dgvProducts
             // 
             this.dgvProducts.AllowUserToAddRows = false;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvProducts.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvProducts.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProducts.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.cId,
@@ -189,7 +189,7 @@
             this.cInStock});
             this.dgvProducts.Location = new System.Drawing.Point(21, 97);
             this.dgvProducts.Name = "dgvProducts";
-            this.dgvProducts.Size = new System.Drawing.Size(545, 339);
+            this.dgvProducts.Size = new System.Drawing.Size(547, 339);
             this.dgvProducts.TabIndex = 31;
             // 
             // cId
@@ -221,14 +221,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(741, 454);
+            this.ClientSize = new System.Drawing.Size(692, 454);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnNew);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.dgvProducts);
-            this.MaximumSize = new System.Drawing.Size(757, 493);
-            this.MinimumSize = new System.Drawing.Size(757, 493);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximumSize = new System.Drawing.Size(708, 493);
+            this.MinimumSize = new System.Drawing.Size(708, 493);
             this.Name = "ItemQuery";
             this.Text = "Iventory";
             this.Load += new System.EventHandler(this.ItemQuery_Load);

@@ -31,6 +31,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SalesControl));
             this.label3 = new System.Windows.Forms.Label();
             this.dgvProducts = new System.Windows.Forms.DataGridView();
             this.cCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -78,14 +79,12 @@
             // 
             this.btnCancel.Location = new System.Drawing.Point(600, 389);
             this.btnCancel.Size = new System.Drawing.Size(110, 33);
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnAccept
             // 
-            this.btnAccept.Location = new System.Drawing.Point(600, 157);
+            this.btnAccept.Location = new System.Drawing.Point(600, 351);
             this.btnAccept.Size = new System.Drawing.Size(110, 33);
-            this.btnAccept.Text = "Add";
-            this.btnAccept.Click += new System.EventHandler(this.btnAccept_Click);
+            this.btnAccept.Text = "Billing";
             // 
             // label3
             // 
@@ -213,12 +212,13 @@
             // btnBilling
             // 
             this.btnBilling.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBilling.Location = new System.Drawing.Point(600, 350);
+            this.btnBilling.Location = new System.Drawing.Point(600, 154);
             this.btnBilling.Name = "btnBilling";
             this.btnBilling.Size = new System.Drawing.Size(110, 33);
             this.btnBilling.TabIndex = 15;
-            this.btnBilling.Text = "Billing";
+            this.btnBilling.Text = "Add";
             this.btnBilling.UseVisualStyleBackColor = true;
+            this.btnBilling.Click += new System.EventHandler(this.btnBilling_Click);
             // 
             // txtCurrentAmount
             // 
@@ -486,6 +486,7 @@
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.dgvProducts);
             this.Controls.Add(this.label3);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "SalesControl";
             this.Text = "Sales Control";
             this.Controls.SetChildIndex(this.label3, 0);

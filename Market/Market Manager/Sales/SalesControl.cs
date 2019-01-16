@@ -56,53 +56,6 @@ namespace Market_Manager
             frmCQuery.ShowDialog();
         }
 
-        private void btnAccept_Click(object sender, EventArgs e)
-        {
-            try
-            {                
-                var id_customer = _cusotmer.id;
-                var id_product = txtCode.Text;
-                var quantity = int.Parse(txtQuantity.Text);
-                if(quantity > 0 && quantity <= in_stock)
-                    Product_Data.AddProduct(id_purshase, id_customer, id_product, quantity);
-                else
-                    MessageBox.Show("The amount must not be 0 or greater than "+in_stock.ToString(), "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
-                var listProduct = Purshase.GetPurshase(id_purshase, id_product,id_customer);
-                
-                DataGridViewRow row = new DataGridViewRow();
-                row.CreateCells(dgvProducts);
-                row.Cells[0].Value = listProduct.id_product;
-                if (dgvProducts.Rows.Contains(row))
-                {
-                    dgvProducts.Rows[dgvProducts.Rows.Count - 1].Cells[4].Value = listProduct.quantity_desired.ToString();
-                    dgvProducts.Rows[dgvProducts.Rows.Count - 1].Cells[5].Value = listProduct.amount.ToString();
-                }
-                else
-                {
-                    row.Cells[0].Value = listProduct.id_product;
-                    row.Cells[1].Value = listProduct.product_name;
-                    row.Cells[2].Value = listProduct.product_mark;
-                    row.Cells[3].Value = listProduct.product_price.ToString();
-                    row.Cells[4].Value = listProduct.quantity_desired.ToString();
-                    row.Cells[5].Value = listProduct.amount.ToString();
-                    dgvProducts.Rows.Add(row);
-                }               
-
-                txtCurrentAmount.Text = listProduct.total_amount.ToString();
-                txtCode.Text = "";
-                txtNameProduct.Text = "";
-                txtMark.Text = "";
-                txtPrice.Text = "";
-                txtQuantity.Text = "0";
-                count = 0;
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show("Error: "+ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
 
         private void btnSum_Click(object sender, EventArgs e)
         {
@@ -172,9 +125,101 @@ namespace Market_Manager
             
         }
 
-        private void btnCancel_Click(object sender, EventArgs e)
+        private void btnBilling_Click(object sender, EventArgs e)
         {
+            try
+            {
+                var id_customer = _cusotmer.id;
+                var id_product = txtCode.Text;
+                var quantity = int.Parse(txtQuantity.Text);
+                if (quantity > 0 && quantity <= in_stock)
+                    Product_Data.AddProduct(id_purshase, id_customer, id_product, quantity);
+                else
+                    MessageBox.Show("The amount must not be 0 or greater than " + in_stock.ToString(), "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                var listProduct = Purshase.GetPurshase(id_purshase, id_product, id_customer);
+
+                DataGridViewRow row = new DataGridViewRow();
+                row.CreateCells(dgvProducts);
+                row.Cells[0].Value = listProduct.id_product;
+                if (dgvProducts.Rows.Contains(row))
+                {
+                    dgvProducts.Rows[dgvProducts.Rows.Count - 1].Cells[4].Value = listProduct.quantity_desired.ToString();
+                    dgvProducts.Rows[dgvProducts.Rows.Count - 1].Cells[5].Value = listProduct.amount.ToString();
+                }
+                else
+                {
+                    row.Cells[0].Value = listProduct.id_product;
+                    row.Cells[1].Value = listProduct.product_name;
+                    row.Cells[2].Value = listProduct.product_mark;
+                    row.Cells[3].Value = listProduct.product_price.ToString();
+                    row.Cells[4].Value = listProduct.quantity_desired.ToString();
+                    row.Cells[5].Value = listProduct.amount.ToString();
+                    dgvProducts.Rows.Add(row);
+                }
+
+                txtCurrentAmount.Text = listProduct.total_amount.ToString();
+                txtCode.Text = "";
+                txtNameProduct.Text = "";
+                txtMark.Text = "";
+                txtPrice.Text = "";
+                txtQuantity.Text = "0";
+                count = 0;
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+
+        public override void Save()
+        {
+            try
+            {
+                var dialog = MessageBox.Show("Do you really want to process the order?", "Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                if (dialog == DialogResult.OK)
+                {
+                    Purshase.ProcessSaleOrder(this.id_purshase);
+                    _cusotmer = new CustomerModel();
+                    this.id_purshase = "SHP" + Security.Security.generateIdNumber();
+                    txtCustomerName.Text = "";
+                    txtCode.Text = "";
+                    dgvProducts.Rows.Clear();
+
+                }
+                MessageBox.Show("Order Processed!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+            }
+            catch (Exception ex)
+            {
+                //The sale could not be completed
+
+                MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.Close();
+            }
             
+        }
+        public override void Cancel()
+        {
+            try
+            {
+                var dialog = MessageBox.Show("Do you really want to cancel the order?", "Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                if (dialog == DialogResult.OK)
+                {
+                    Purshase.CancelSaleOrder(this.id_purshase);
+
+                }
+                MessageBox.Show("Order Cancelled!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                this.Close();
+
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("There was a problem cancelling de order", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

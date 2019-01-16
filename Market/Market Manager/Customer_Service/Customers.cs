@@ -65,5 +65,10 @@ namespace Market_Manager
             NewCustomer newCustomer = new NewCustomer();
             newCustomer.ShowDialog();
         }
+
+        public override void Cancel()
+        {
+            this.Close();
+        }
     }
 }

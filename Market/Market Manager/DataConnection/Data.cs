@@ -140,6 +140,18 @@ namespace Market_Manager.DataConnection
 
             return new Purshase_Product(id, name, mark, price, quantity_prod, amount, total);
         }
+
+        public static void ProcessSaleOrder(string id_purshase)
+        {
+            string cmd = string.Format("EXEC ProcessSaleOrder '{0}'", id_purshase);
+            Utilities.execute(cmd);
+        }
+
+        public static void CancelSaleOrder(string id_purshase)
+        {
+            string cmd = string.Format("EXEC CancelSaleOrder '{0}'",id_purshase);
+            Utilities.execute(cmd);
+        }
     }
     
 }

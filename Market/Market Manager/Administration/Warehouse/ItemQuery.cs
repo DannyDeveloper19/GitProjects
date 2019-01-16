@@ -18,15 +18,6 @@ namespace Market_Manager
             InitializeComponent();
         }
 
-        private void btnAdd_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void ItemQuery_Load(object sender, EventArgs e)
         {
@@ -51,6 +42,11 @@ namespace Market_Manager
 
                 MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        public override void Cancel()
+        {
+            this.Close();
         }
     }
 }

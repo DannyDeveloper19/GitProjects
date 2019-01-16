@@ -30,7 +30,14 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustomerQuery));
-            this.dgvQuery = new System.Windows.Forms.DataGridView();
+            this.dgvCustomers = new System.Windows.Forms.DataGridView();
+            this.cId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cLastname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cPhone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cDLN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnRefresh = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -41,31 +48,26 @@
             this.btnSearch = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnNew = new System.Windows.Forms.Button();
-            this.cId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cLastname = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cPhone = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cDLN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvQuery)).BeginInit();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCustomers)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(425, 454);
-            this.btnCancel.Size = new System.Drawing.Size(93, 28);
+            this.btnCancel.Location = new System.Drawing.Point(512, 452);
+            this.btnCancel.Size = new System.Drawing.Size(93, 41);
             // 
             // btnAccept
             // 
-            this.btnAccept.Location = new System.Drawing.Point(36, 454);
-            this.btnAccept.Size = new System.Drawing.Size(93, 28);
+            this.btnAccept.Location = new System.Drawing.Point(123, 452);
+            this.btnAccept.Size = new System.Drawing.Size(93, 41);
             this.btnAccept.Text = "Show";
             // 
-            // dgvQuery
+            // dgvCustomers
             // 
-            this.dgvQuery.AllowUserToAddRows = false;
+            this.dgvCustomers.AllowUserToAddRows = false;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -73,9 +75,9 @@
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvQuery.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvQuery.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvQuery.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvCustomers.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvCustomers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCustomers.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.cId,
             this.CName,
             this.cLastname,
@@ -83,17 +85,52 @@
             this.cAddress,
             this.cEmail,
             this.cDLN});
-            this.dgvQuery.Location = new System.Drawing.Point(36, 106);
-            this.dgvQuery.Name = "dgvQuery";
-            this.dgvQuery.Size = new System.Drawing.Size(482, 339);
-            this.dgvQuery.TabIndex = 3;
+            this.dgvCustomers.Location = new System.Drawing.Point(12, 97);
+            this.dgvCustomers.Name = "dgvCustomers";
+            this.dgvCustomers.Size = new System.Drawing.Size(698, 339);
+            this.dgvCustomers.TabIndex = 3;
+            // 
+            // cId
+            // 
+            this.cId.HeaderText = "Id";
+            this.cId.Name = "cId";
+            // 
+            // CName
+            // 
+            this.CName.HeaderText = "Name";
+            this.CName.Name = "CName";
+            // 
+            // cLastname
+            // 
+            this.cLastname.HeaderText = "Lastname";
+            this.cLastname.Name = "cLastname";
+            // 
+            // cPhone
+            // 
+            this.cPhone.HeaderText = "Phone";
+            this.cPhone.Name = "cPhone";
+            // 
+            // cAddress
+            // 
+            this.cAddress.HeaderText = "Address";
+            this.cAddress.Name = "cAddress";
+            // 
+            // cEmail
+            // 
+            this.cEmail.HeaderText = "Email";
+            this.cEmail.Name = "cEmail";
+            // 
+            // cDLN
+            // 
+            this.cDLN.HeaderText = "DLN";
+            this.cDLN.Name = "cDLN";
             // 
             // btnRefresh
             // 
             this.btnRefresh.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRefresh.Location = new System.Drawing.Point(294, 454);
+            this.btnRefresh.Location = new System.Drawing.Point(381, 452);
             this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(93, 28);
+            this.btnRefresh.Size = new System.Drawing.Size(93, 41);
             this.btnRefresh.TabIndex = 25;
             this.btnRefresh.Text = "Refresh";
             this.btnRefresh.UseVisualStyleBackColor = true;
@@ -170,7 +207,7 @@
             this.groupBox1.Controls.Add(this.txtQuery);
             this.groupBox1.Controls.Add(this.btnSearch);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(36, 12);
+            this.groupBox1.Location = new System.Drawing.Point(228, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(482, 79);
             this.groupBox1.TabIndex = 28;
@@ -180,79 +217,55 @@
             // btnNew
             // 
             this.btnNew.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNew.Location = new System.Drawing.Point(162, 454);
+            this.btnNew.Location = new System.Drawing.Point(249, 452);
             this.btnNew.Name = "btnNew";
-            this.btnNew.Size = new System.Drawing.Size(93, 28);
+            this.btnNew.Size = new System.Drawing.Size(93, 41);
             this.btnNew.TabIndex = 29;
             this.btnNew.Text = "New";
             this.btnNew.UseVisualStyleBackColor = true;
             // 
-            // cId
+            // pictureBox1
             // 
-            this.cId.HeaderText = "Id";
-            this.cId.Name = "cId";
-            // 
-            // CName
-            // 
-            this.CName.HeaderText = "Name";
-            this.CName.Name = "CName";
-            // 
-            // cLastname
-            // 
-            this.cLastname.HeaderText = "Lastname";
-            this.cLastname.Name = "cLastname";
-            // 
-            // cPhone
-            // 
-            this.cPhone.HeaderText = "Phone";
-            this.cPhone.Name = "cPhone";
-            // 
-            // cAddress
-            // 
-            this.cAddress.HeaderText = "Address";
-            this.cAddress.Name = "cAddress";
-            // 
-            // cEmail
-            // 
-            this.cEmail.HeaderText = "Email";
-            this.cEmail.Name = "cEmail";
-            // 
-            // cDLN
-            // 
-            this.cDLN.HeaderText = "DLN";
-            this.cDLN.Name = "cDLN";
+            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(204, 79);
+            this.pictureBox1.TabIndex = 30;
+            this.pictureBox1.TabStop = false;
             // 
             // CustomerQuery
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(556, 505);
+            this.ClientSize = new System.Drawing.Size(741, 505);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnNew);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnRefresh);
-            this.Controls.Add(this.dgvQuery);
+            this.Controls.Add(this.dgvCustomers);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(572, 544);
+            this.MaximumSize = new System.Drawing.Size(757, 544);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(572, 544);
+            this.MinimumSize = new System.Drawing.Size(757, 544);
             this.Name = "CustomerQuery";
-            this.Text = "Customer Query";
+            this.Text = " Customers";
             this.Load += new System.EventHandler(this.CustomerQuery_Load);
-            this.Controls.SetChildIndex(this.dgvQuery, 0);
+            this.Controls.SetChildIndex(this.dgvCustomers, 0);
             this.Controls.SetChildIndex(this.btnRefresh, 0);
             this.Controls.SetChildIndex(this.groupBox1, 0);
             this.Controls.SetChildIndex(this.btnAccept, 0);
             this.Controls.SetChildIndex(this.btnCancel, 0);
             this.Controls.SetChildIndex(this.btnNew, 0);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvQuery)).EndInit();
+            this.Controls.SetChildIndex(this.pictureBox1, 0);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCustomers)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.DataGridView dgvQuery;
+        private System.Windows.Forms.DataGridView dgvCustomers;
         private System.Windows.Forms.Button btnRefresh;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBox2;
@@ -270,5 +283,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn cAddress;
         private System.Windows.Forms.DataGridViewTextBoxColumn cEmail;
         private System.Windows.Forms.DataGridViewTextBoxColumn cDLN;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

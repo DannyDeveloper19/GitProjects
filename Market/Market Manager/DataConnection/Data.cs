@@ -95,6 +95,26 @@ namespace Market_Manager.DataConnection
             return new Product(id, name, mark, price, quantity);
         }
 
+        public static List<Product> getAllProducts()
+        {
+            var listProducts = new List<Product>();
+            string cmd = string.Format("Select * from Items where item_status = 'in stock'");
+            DataSet data = Utilities.execute(cmd);
+            for (int i = 0; i < data.Tables[0].Rows.Count; i++)
+            {
+                var row = data.Tables[0].Rows[i];
+                var product = new Product(
+                    row["id_item"].ToString().Trim(),
+                    row["item_name"].ToString().Trim(),
+                    row["item_mark"].ToString().Trim(),
+                    double.Parse(row["item_price"].ToString().Trim()),
+                    int.Parse(row["item_quantity"].ToString().Trim())
+                    );
+                listProducts.Add(product);
+            }
+            return listProducts;
+        }
+
             public static void AddProduct(string id_purshase, string id_customer, string id_item, int quantity)
         {
             string cmd = string.Format("EXEC AddProduct '{0}','{1}','{2}','{3}'", id_purshase, id_customer, id_item, quantity);

@@ -32,7 +32,7 @@ namespace Market_Manager
                 foreach (var item in Customer_Data.getAllCustomers())
                 {
                     DataGridViewRow row = new DataGridViewRow();
-                    row.CreateCells(dgvQuery);
+                    row.CreateCells(dgvCustomers);
 
                     row.Cells[0].Value = item.id;
                     row.Cells[1].Value = item.name;
@@ -41,7 +41,7 @@ namespace Market_Manager
                     row.Cells[4].Value = item.phone;
                     row.Cells[5].Value = item.email;
                     row.Cells[6].Value = item.dni;
-                    dgvQuery.Rows.Add(row);
+                    dgvCustomers.Rows.Add(row);
                 }
                 
             }

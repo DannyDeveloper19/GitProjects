@@ -43,12 +43,16 @@ namespace Market_Manager
         private void btnItems_Click(object sender, EventArgs e)
         {
             ItemQuery frmIQuery = new ItemQuery();
+            Button button = frmIQuery.Controls.OfType<Button>().Where(btn =>  btn.Name == "btnNew").Single();
+            button.Enabled = false;
             frmIQuery.ShowDialog();
         }
 
         private void btnCustomer_Click(object sender, EventArgs e)
         {
             CustomerQuery frmCQuery = new CustomerQuery();
+            Button button = frmCQuery.Controls.OfType<Button>().Where(btn => btn.Name == "btnNew").Single();
+            button.Enabled = false;
             frmCQuery.ShowDialog();
         }
 
@@ -65,16 +69,25 @@ namespace Market_Manager
                     MessageBox.Show("The amount must not be 0 or greater than "+in_stock.ToString(), "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
                 var listProduct = Purshase.GetPurshase(id_purshase, id_product,id_customer);
+                
                 DataGridViewRow row = new DataGridViewRow();
                 row.CreateCells(dgvProducts);
-               
                 row.Cells[0].Value = listProduct.id_product;
-                row.Cells[1].Value = listProduct.product_name;
-                row.Cells[2].Value = listProduct.product_mark;
-                row.Cells[3].Value = listProduct.product_price.ToString();
-                row.Cells[4].Value = listProduct.quantity_desired.ToString();
-                row.Cells[5].Value = listProduct.amount.ToString();
-                dgvProducts.Rows.Add(row);
+                if (dgvProducts.Rows.Contains(row))
+                {
+                    dgvProducts.Rows[dgvProducts.Rows.Count - 1].Cells[4].Value = listProduct.quantity_desired.ToString();
+                    dgvProducts.Rows[dgvProducts.Rows.Count - 1].Cells[5].Value = listProduct.amount.ToString();
+                }
+                else
+                {
+                    row.Cells[0].Value = listProduct.id_product;
+                    row.Cells[1].Value = listProduct.product_name;
+                    row.Cells[2].Value = listProduct.product_mark;
+                    row.Cells[3].Value = listProduct.product_price.ToString();
+                    row.Cells[4].Value = listProduct.quantity_desired.ToString();
+                    row.Cells[5].Value = listProduct.amount.ToString();
+                    dgvProducts.Rows.Add(row);
+                }               
 
                 txtCurrentAmount.Text = listProduct.total_amount.ToString();
                 txtCode.Text = "";
@@ -122,6 +135,7 @@ namespace Market_Manager
                 _cusotmer = customer;
                 txtCustomerName.Text = customer.name + " " + customer.lastname;
                 btnFind.Enabled = true;
+                btnItems.Enabled = true;
             }
             catch (Exception)
             {

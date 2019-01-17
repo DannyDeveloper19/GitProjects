@@ -39,23 +39,73 @@ namespace Market_Manager
             btnCancel.Enabled = true;
             
         }
-
+     
         private void btnItems_Click(object sender, EventArgs e)
         {
             ItemQuery frmIQuery = new ItemQuery();
+            frmIQuery.itemSelected = new ItemQuery.UpdateItem(UpdateProductEventHandler);
             Button button = frmIQuery.Controls.OfType<Button>().Where(btn =>  btn.Name == "btnNew").Single();
             button.Enabled = false;
+            Button btnAccept = frmIQuery.Controls.OfType<Button>().Where(btn => btn.Name == "btnAccept").Single();
+            btnAccept.Text = "Select";
             frmIQuery.ShowDialog();
+        }
+
+        private void UpdateProductEventHandler(object sender)
+        {
+            try
+            {
+                txtCode.Text = sender.ToString();
+                var product = Product_Data.getProduct(sender.ToString());
+                txtNameProduct.Text = product.name;
+                txtMark.Text = product.mark;
+                txtPrice.Text = product.price.ToString();
+                this.in_stock = product.quantity;
+                txtQuantity.Enabled = true;
+                btnSum.Enabled = true;
+                btnMinus.Enabled = true;
+                txtQuantity.Text = count.ToString();
+                foreach (var item in Controls.OfType<Button>())
+                {
+                    if (!item.Enabled)
+                        item.Enabled = true;
+                }
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("There was a problem looking for the product, try with Products action.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnCustomer_Click(object sender, EventArgs e)
         {
             CustomerQuery frmCQuery = new CustomerQuery();
-            Button button = frmCQuery.Controls.OfType<Button>().Where(btn => btn.Name == "btnNew").Single();
-            button.Enabled = false;
+            frmCQuery.customerSelected = new CustomerQuery.UpdateCustomer(UpdateCustomerEventHandler);
+            Button btnNew = frmCQuery.Controls.OfType<Button>().Where(btn => btn.Name == "btnNew").Single();
+            Button btnAccept = frmCQuery.Controls.OfType<Button>().Where(btn => btn.Name == "btnAccept").Single();
+            btnAccept.Text = "Select";
+            btnNew.Enabled = false;
             frmCQuery.ShowDialog();
         }
 
+        private void UpdateCustomerEventHandler(object sender)
+        {
+            try
+            {
+                txtCustomerId.Text = sender.ToString();
+                var customer = Customer_Data.getCustomer(sender.ToString());
+                _cusotmer = customer;
+                txtCustomerName.Text = customer.name + " " + customer.lastname;
+                btnFind.Enabled = true;
+                btnItems.Enabled = true;
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("There was a problem looking for the customer, try with Customer action.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
 
         private void btnSum_Click(object sender, EventArgs e)
         {
@@ -139,16 +189,22 @@ namespace Market_Manager
 
                 var listProduct = Purshase.GetPurshase(id_purshase, id_product, id_customer);
 
-                DataGridViewRow row = new DataGridViewRow();
-                row.CreateCells(dgvProducts);
-                row.Cells[0].Value = listProduct.id_product;
-                if (dgvProducts.Rows.Contains(row))
+                bool exists = false;
+                for (int i = 0; i < dgvProducts.Rows.Count; i++)
                 {
-                    dgvProducts.Rows[dgvProducts.Rows.Count - 1].Cells[4].Value = listProduct.quantity_desired.ToString();
-                    dgvProducts.Rows[dgvProducts.Rows.Count - 1].Cells[5].Value = listProduct.amount.ToString();
+                    var row = dgvProducts.Rows[i];
+                    if(row.Cells[0].Value.ToString() == listProduct.id_product)
+                    {
+                        row.Cells[4].Value = listProduct.quantity_desired.ToString();
+                        row.Cells[5].Value = listProduct.amount.ToString();
+                        exists = true;
+                        break;
+                    }
                 }
-                else
+                if (!exists)
                 {
+                    DataGridViewRow row = new DataGridViewRow();
+                    row.CreateCells(dgvProducts);
                     row.Cells[0].Value = listProduct.id_product;
                     row.Cells[1].Value = listProduct.product_name;
                     row.Cells[2].Value = listProduct.product_mark;
@@ -157,6 +213,7 @@ namespace Market_Manager
                     row.Cells[5].Value = listProduct.amount.ToString();
                     dgvProducts.Rows.Add(row);
                 }
+                
 
                 txtCurrentAmount.Text = listProduct.total_amount.ToString();
                 txtCode.Text = "";
@@ -209,10 +266,11 @@ namespace Market_Manager
                 if (dialog == DialogResult.OK)
                 {
                     Purshase.CancelSaleOrder(this.id_purshase);
+                    MessageBox.Show("Order Cancelled!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    this.Close();
 
                 }
-                MessageBox.Show("Order Cancelled!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                this.Close();
+                
 
             }
             catch (Exception)

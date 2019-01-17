@@ -18,6 +18,8 @@ namespace Market_Manager
             InitializeComponent();
         }
 
+        public delegate void UpdateItem(object sender);
+        public UpdateItem itemSelected;
 
         private void ItemQuery_Load(object sender, EventArgs e)
         {
@@ -43,7 +45,15 @@ namespace Market_Manager
                 MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
+        public override void Save()
+        {
+            var idProduct = dgvProducts.Rows[dgvProducts.SelectedCells[0].RowIndex].Cells[0].Value.ToString();
+            if (itemSelected != null)
+            {
+                itemSelected(idProduct);
+            }
+            this.Close();
+        }
         public override void Cancel()
         {
             this.Close();

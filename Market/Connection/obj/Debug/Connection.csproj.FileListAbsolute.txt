@@ -8,3 +8,4 @@ C:\GitProjects\Market\Connection\bin\Debug\Connection.pdb
 C:\GitProjects\Market\Connection\obj\Debug\Connection.csproj.CoreCompileInputs.cache
 C:\GitProjects\Market\Connection\obj\Debug\Connection.dll
 C:\GitProjects\Market\Connection\obj\Debug\Connection.pdb
+C:\GitProjects\Market\Connection\obj\Debug\Connection.csprojAssemblyReference.cache

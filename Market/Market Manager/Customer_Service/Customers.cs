@@ -15,16 +15,15 @@ namespace Market_Manager
 {
     public partial class CustomerQuery : Base
     {
-        SalesControl _sales;
-        public CustomerQuery()
+       public CustomerQuery()
         {
             InitializeComponent();
         }
-        public CustomerQuery(SalesControl sales)
-        {
-            this._sales = sales;
-        }
+     
 
+        public delegate void UpdateCustomer(object sender);
+        public UpdateCustomer customerSelected;
+        
         private void CustomerQuery_Load(object sender, EventArgs e)
         {
             try
@@ -66,9 +65,22 @@ namespace Market_Manager
             newCustomer.ShowDialog();
         }
 
+        public override void Save()
+        {
+            var id_customer = dgvCustomers.Rows[dgvCustomers.SelectedCells[0].RowIndex].Cells[0].Value.ToString();
+            if (customerSelected != null)
+            {
+                customerSelected(id_customer);
+            }
+            this.Close();
+        }
+
         public override void Cancel()
         {
             this.Close();
         }
+   
     }
+
+    
 }

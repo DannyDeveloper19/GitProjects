@@ -89,18 +89,20 @@
             // txtIdNumber
             // 
             this.txtIdNumber.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtIdNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtIdNumber.Location = new System.Drawing.Point(122, 43);
             this.txtIdNumber.Name = "txtIdNumber";
-            this.txtIdNumber.Size = new System.Drawing.Size(217, 20);
+            this.txtIdNumber.Size = new System.Drawing.Size(217, 22);
             this.txtIdNumber.TabIndex = 4;
             // 
             // txtPassword
             // 
             this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPassword.Location = new System.Drawing.Point(122, 97);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(217, 20);
+            this.txtPassword.Size = new System.Drawing.Size(217, 22);
             this.txtPassword.TabIndex = 5;
             // 
             // Login

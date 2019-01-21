@@ -25,21 +25,22 @@ namespace Market_Manager
             InitializeComponent();
             this._employer = employer;
             txtEmployer.Text = employer.employer_name;
+            InitializeSale();            
+        }
+
+        private void InitializeSale()
+        {
             txtCurrentAmount.Text = "0";
             btnFind.Enabled = false;
             txtQuantity.Enabled = false;
             btnSum.Enabled = false;
             btnMinus.Enabled = false;
             id_purshase = "SHP" + Security.Security.generateIdNumber();
-            foreach (var item in Controls.OfType<Button>())
+            foreach (var item in Controls.OfType<Button>().Where(btn => btn.Name != "btnCustomer" && btn.Name != "btnCancel"))
             {
                 item.Enabled = false;
             }
-            btnCustomer.Enabled = true;
-            btnCancel.Enabled = true;
-            
         }
-     
         private void btnItems_Click(object sender, EventArgs e)
         {
             ItemQuery frmIQuery = new ItemQuery();
@@ -65,6 +66,7 @@ namespace Market_Manager
                 btnSum.Enabled = true;
                 btnMinus.Enabled = true;
                 txtQuantity.Text = count.ToString();
+
                 foreach (var item in Controls.OfType<Button>())
                 {
                     if (!item.Enabled)
@@ -99,6 +101,7 @@ namespace Market_Manager
                 txtCustomerName.Text = customer.name + " " + customer.lastname;
                 btnFind.Enabled = true;
                 btnItems.Enabled = true;
+                btnSearch.Enabled = false;
             }
             catch (Exception)
             {
@@ -139,6 +142,7 @@ namespace Market_Manager
                 txtCustomerName.Text = customer.name + " " + customer.lastname;
                 btnFind.Enabled = true;
                 btnItems.Enabled = true;
+                btnSearch.Enabled = false;
             }
             catch (Exception)
             {
@@ -161,6 +165,7 @@ namespace Market_Manager
                 btnSum.Enabled = true;
                 btnMinus.Enabled = true;
                 txtQuantity.Text = count.ToString();
+               
                foreach (var item in Controls.OfType<Button>())
                 {
                     if (!item.Enabled)
@@ -174,8 +179,8 @@ namespace Market_Manager
             }
             
         }
-
-        private void btnBilling_Click(object sender, EventArgs e)
+         
+        private void btnAdd_Click(object sender, EventArgs e)
         {
             try
             {
@@ -183,17 +188,17 @@ namespace Market_Manager
                 var id_product = txtCode.Text;
                 var quantity = int.Parse(txtQuantity.Text);
                 if (quantity > 0 && quantity <= in_stock)
-                    Product_Data.AddProduct(id_purshase, id_customer, id_product, quantity);
+                    Purshase.AddProduct(id_purshase, id_customer, id_product, quantity);
                 else
                     MessageBox.Show("The amount must not be 0 or greater than " + in_stock.ToString(), "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
-                var listProduct = Purshase.GetPurshase(id_purshase, id_product, id_customer);
+                var listProduct = Purshase.GetProductSelected(id_purshase, id_product, id_customer);
 
                 bool exists = false;
                 for (int i = 0; i < dgvProducts.Rows.Count; i++)
                 {
                     var row = dgvProducts.Rows[i];
-                    if(row.Cells[0].Value.ToString() == listProduct.id_product)
+                    if (row.Cells[0].Value.ToString() == listProduct.id_product)
                     {
                         row.Cells[4].Value = listProduct.quantity_desired.ToString();
                         row.Cells[5].Value = listProduct.amount.ToString();
@@ -213,7 +218,7 @@ namespace Market_Manager
                     row.Cells[5].Value = listProduct.amount.ToString();
                     dgvProducts.Rows.Add(row);
                 }
-                
+
 
                 txtCurrentAmount.Text = listProduct.total_amount.ToString();
                 txtCode.Text = "";
@@ -222,6 +227,7 @@ namespace Market_Manager
                 txtPrice.Text = "";
                 txtQuantity.Text = "0";
                 count = 0;
+                btnFind.Enabled = true;
             }
             catch (Exception ex)
             {
@@ -230,12 +236,11 @@ namespace Market_Manager
             }
         }
 
-
         public override void Save()
         {
             try
             {
-                var dialog = MessageBox.Show("Do you really want to process the order?", "Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                var dialog = MessageBox.Show("Do you really want to process the order?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                 if (dialog == DialogResult.OK)
                 {
                     Purshase.ProcessSaleOrder(this.id_purshase);
@@ -246,31 +251,39 @@ namespace Market_Manager
                     dgvProducts.Rows.Clear();
 
                 }
-                MessageBox.Show("Order Processed!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-
+                MessageBox.Show("Order Processed!", "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                dialog = MessageBox.Show("Do you want to process a new order?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                if (dialog == DialogResult.OK)
+                {
+                    InitializeSale();
+                }
+                else
+                {
+                    this.Close();
+                }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 //The sale could not be completed
 
-                MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("The sale could not be completed.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 this.Close();
             }
-            
+
         }
         public override void Cancel()
         {
             try
             {
-                var dialog = MessageBox.Show("Do you really want to cancel the order?", "Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                var dialog = MessageBox.Show("Do you really want to cancel the order?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                 if (dialog == DialogResult.OK)
                 {
                     Purshase.CancelSaleOrder(this.id_purshase);
-                    MessageBox.Show("Order Cancelled!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("Order Cancelled!", "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     this.Close();
 
                 }
-                
+
 
             }
             catch (Exception)

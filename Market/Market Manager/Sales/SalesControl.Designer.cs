@@ -44,7 +44,7 @@
             this.btnItems = new System.Windows.Forms.Button();
             this.btnCustomer = new System.Windows.Forms.Button();
             this.btnNew = new System.Windows.Forms.Button();
-            this.btnBilling = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
             this.txtCurrentAmount = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -209,16 +209,16 @@
             this.btnNew.Text = "New";
             this.btnNew.UseVisualStyleBackColor = true;
             // 
-            // btnBilling
+            // btnAdd
             // 
-            this.btnBilling.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBilling.Location = new System.Drawing.Point(600, 154);
-            this.btnBilling.Name = "btnBilling";
-            this.btnBilling.Size = new System.Drawing.Size(110, 33);
-            this.btnBilling.TabIndex = 15;
-            this.btnBilling.Text = "Add";
-            this.btnBilling.UseVisualStyleBackColor = true;
-            this.btnBilling.Click += new System.EventHandler(this.btnBilling_Click);
+            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.Location = new System.Drawing.Point(600, 154);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(110, 33);
+            this.btnAdd.TabIndex = 15;
+            this.btnAdd.Text = "Add";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // txtCurrentAmount
             // 
@@ -479,7 +479,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.txtCurrentAmount);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.btnBilling);
+            this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnNew);
             this.Controls.Add(this.btnCustomer);
             this.Controls.Add(this.btnItems);
@@ -495,7 +495,7 @@
             this.Controls.SetChildIndex(this.btnItems, 0);
             this.Controls.SetChildIndex(this.btnCustomer, 0);
             this.Controls.SetChildIndex(this.btnNew, 0);
-            this.Controls.SetChildIndex(this.btnBilling, 0);
+            this.Controls.SetChildIndex(this.btnAdd, 0);
             this.Controls.SetChildIndex(this.pictureBox1, 0);
             this.Controls.SetChildIndex(this.txtCurrentAmount, 0);
             this.Controls.SetChildIndex(this.groupBox1, 0);
@@ -520,7 +520,7 @@
         private System.Windows.Forms.Button btnItems;
         private System.Windows.Forms.Button btnCustomer;
         private System.Windows.Forms.Button btnNew;
-        private System.Windows.Forms.Button btnBilling;
+        private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox txtCurrentAmount;
         private System.Windows.Forms.GroupBox groupBox1;

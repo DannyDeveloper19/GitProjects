@@ -2,6 +2,7 @@
 using Market_Manager.Administration.Warehouse;
 using Market_Manager.Admission;
 using Market_Manager.Models;
+using Market_Manager.Sales;
 using System;
 using System.Windows.Forms;
 
@@ -16,7 +17,7 @@ namespace Market_Manager
         {
             InitializeComponent();
             this.MinimumSize = Screen.PrimaryScreen.WorkingArea.Size;
-            this.ControlBox = false;
+            this.ControlBox = true;
            
         }
         public Manager_System(EmployerModel employer, Login frmlogin)
@@ -193,6 +194,22 @@ namespace Market_Manager
             itemQuery.StartPosition = FormStartPosition.CenterScreen;
             itemQuery.MdiParent = this;
             itemQuery.Show();
+        }
+
+        private void returnsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Return frmReturn = new Return();
+            frmReturn.MdiParent = this;
+            frmReturn.StartPosition = FormStartPosition.CenterScreen;
+            frmReturn.Show();
+        }
+
+        private void detailsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Details frmDetails = new Details();
+            frmDetails.MdiParent = this;
+            frmDetails.StartPosition = FormStartPosition.CenterScreen;
+            frmDetails.Show();
         }
     }
 }

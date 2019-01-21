@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Market_Manager.Models
 {
-    struct Purshase_Product
+    public struct Purshase_Product
     {
         public string id_product { get; set; }
         public string product_name { get; set; }

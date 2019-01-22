@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Security;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,7 +12,10 @@ namespace Market_Manager
     public class Base : Form
     {
         public Button btnCancel;
+        private IContainer components;
         public Button btnAccept;
+
+        public IContainer Components => components;
 
         public Base()
         {
@@ -72,5 +77,6 @@ namespace Market_Manager
 
         public virtual void Save() { }
         public virtual void Cancel() { }
+       
     }
 }

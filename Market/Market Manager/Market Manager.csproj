@@ -269,11 +269,24 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resourses\add.png" />
+    <Content Include="Resourses\AddPerson.ico" />
     <Content Include="Resourses\Camera.png" />
     <Content Include="Resourses\cslogin.ico" />
+    <Content Include="Resourses\CustomerInfo.ico" />
+    <Content Include="Resourses\customers.ico" />
+    <Content Include="Resourses\DeletePerson.ico" />
+    <Content Include="Resourses\EditPerson.ico" />
     <Content Include="Resourses\exit.ico" />
     <Content Include="Resourses\exit.png" />
+    <Content Include="Resourses\Folder.png" />
+    <Content Include="Resourses\Inventory.ico" />
     <Content Include="Resourses\minus.png" />
+    <Content Include="Resourses\Print.ico" />
+    <Content Include="Resourses\Print.png" />
+    <Content Include="Resourses\Return.ico" />
+    <Content Include="Resourses\ReturnDetail.ico" />
+    <Content Include="Resourses\Sale.ico" />
+    <Content Include="Resourses\Save.png" />
     <Content Include="Resourses\search.ico" />
     <Content Include="Resourses\upload.png" />
     <Content Include="Resourses\Login.ico" />

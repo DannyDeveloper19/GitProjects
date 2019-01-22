@@ -9,3 +9,4 @@ C:\GitProjects\Market\Security\bin\Debug\Security.pdb
 C:\GitProjects\Market\Security\obj\Debug\Security.csproj.CoreCompileInputs.cache
 C:\GitProjects\Market\Security\obj\Debug\Security.dll
 C:\GitProjects\Market\Security\obj\Debug\Security.pdb
+C:\GitProjects\Market\Security\obj\Debug\Security.csprojAssemblyReference.cache

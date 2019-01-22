@@ -17,8 +17,6 @@ namespace Market_Manager
         {
             InitializeComponent();
             this.MinimumSize = Screen.PrimaryScreen.WorkingArea.Size;
-            this.ControlBox = true;
-           
         }
         public Manager_System(EmployerModel employer, Login frmlogin)
         {
@@ -26,7 +24,6 @@ namespace Market_Manager
             this.employer = employer;
             _frmLogin = frmlogin;
             this.MinimumSize = Screen.PrimaryScreen.WorkingArea.Size;
-            this.ControlBox = false;
         }
 
         private void ShowNewForm(object sender, EventArgs e)

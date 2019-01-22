@@ -28,30 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NewCustomer));
             this.btnUpload = new System.Windows.Forms.Button();
             this.btnCamera = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.cmbState = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.txtZipCode = new System.Windows.Forms.TextBox();
-            this.txtCity = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.txtApt = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.txtStreet = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.ptPicture = new System.Windows.Forms.PictureBox();
-            this.txtEmail = new System.Windows.Forms.TextBox();
-            this.txtPhone = new System.Windows.Forms.TextBox();
-            this.txtName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtLastname = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtDLN = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.txtEmail = new Security.ValidateTxtBox();
+            this.txtPhone = new Security.ValidateTxtBox();
+            this.txtLastname = new Security.ValidateTxtBox();
+            this.txtName = new Security.ValidateTxtBox();
+            this.txtDLN = new Security.ValidateTxtBox();
+            this.cmbState = new Security.ValidateComboBox();
+            this.txtZipcode = new Security.ValidateTxtBox();
+            this.txtCity = new Security.ValidateTxtBox();
+            this.txtApt = new Security.ValidateTxtBox();
+            this.txtStreet = new Security.ValidateTxtBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptPicture)).BeginInit();
             this.SuspendLayout();
@@ -65,7 +66,6 @@
             // 
             this.btnAccept.Location = new System.Drawing.Point(87, 422);
             this.btnAccept.Size = new System.Drawing.Size(129, 40);
-            this.btnAccept.Click += new System.EventHandler(this.btnAccept_Click);
             // 
             // btnUpload
             // 
@@ -89,18 +89,18 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.cmbState);
-            this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.txtZipCode);
+            this.groupBox1.Controls.Add(this.txtZipcode);
             this.groupBox1.Controls.Add(this.txtCity);
-            this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.txtApt);
+            this.groupBox1.Controls.Add(this.txtStreet);
+            this.groupBox1.Controls.Add(this.label10);
+            this.groupBox1.Controls.Add(this.label9);
+            this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.txtStreet);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(39, 280);
+            this.groupBox1.Location = new System.Drawing.Point(23, 283);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(468, 124);
             this.groupBox1.TabIndex = 41;
@@ -111,20 +111,11 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(23, 93);
+            this.label10.Location = new System.Drawing.Point(36, 93);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(42, 16);
             this.label10.TabIndex = 9;
             this.label10.Text = "State:";
-            // 
-            // cmbState
-            // 
-            this.cmbState.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbState.FormattingEnabled = true;
-            this.cmbState.Location = new System.Drawing.Point(71, 86);
-            this.cmbState.Name = "cmbState";
-            this.cmbState.Size = new System.Drawing.Size(138, 24);
-            this.cmbState.TabIndex = 8;
             // 
             // label9
             // 
@@ -136,45 +127,21 @@
             this.label9.TabIndex = 7;
             this.label9.Text = "Zipcode:";
             // 
-            // txtZipCode
-            // 
-            this.txtZipCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtZipCode.Location = new System.Drawing.Point(337, 88);
-            this.txtZipCode.Name = "txtZipCode";
-            this.txtZipCode.Size = new System.Drawing.Size(84, 22);
-            this.txtZipCode.TabIndex = 6;
-            // 
-            // txtCity
-            // 
-            this.txtCity.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCity.Location = new System.Drawing.Point(261, 56);
-            this.txtCity.Name = "txtCity";
-            this.txtCity.Size = new System.Drawing.Size(160, 22);
-            this.txtCity.TabIndex = 5;
-            // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(222, 61);
+            this.label8.Location = new System.Drawing.Point(235, 61);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(33, 16);
             this.label8.TabIndex = 4;
             this.label8.Text = "City:";
             // 
-            // txtApt
-            // 
-            this.txtApt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtApt.Location = new System.Drawing.Point(117, 56);
-            this.txtApt.Name = "txtApt";
-            this.txtApt.Size = new System.Drawing.Size(99, 22);
-            this.txtApt.TabIndex = 3;
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(19, 61);
+            this.label7.Location = new System.Drawing.Point(32, 61);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(92, 16);
             this.label7.TabIndex = 2;
@@ -184,19 +151,11 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(19, 26);
+            this.label6.Location = new System.Drawing.Point(32, 26);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(46, 16);
             this.label6.TabIndex = 1;
             this.label6.Text = "Street:";
-            // 
-            // txtStreet
-            // 
-            this.txtStreet.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtStreet.Location = new System.Drawing.Point(71, 23);
-            this.txtStreet.Name = "txtStreet";
-            this.txtStreet.Size = new System.Drawing.Size(350, 22);
-            this.txtStreet.TabIndex = 0;
             // 
             // label1
             // 
@@ -219,33 +178,6 @@
             this.ptPicture.TabIndex = 32;
             this.ptPicture.TabStop = false;
             // 
-            // txtEmail
-            // 
-            this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmail.Location = new System.Drawing.Point(88, 227);
-            this.txtEmail.Multiline = true;
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(203, 24);
-            this.txtEmail.TabIndex = 31;
-            // 
-            // txtPhone
-            // 
-            this.txtPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPhone.Location = new System.Drawing.Point(87, 184);
-            this.txtPhone.Multiline = true;
-            this.txtPhone.Name = "txtPhone";
-            this.txtPhone.Size = new System.Drawing.Size(203, 24);
-            this.txtPhone.TabIndex = 30;
-            // 
-            // txtName
-            // 
-            this.txtName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtName.Location = new System.Drawing.Point(88, 91);
-            this.txtName.Multiline = true;
-            this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(203, 24);
-            this.txtName.TabIndex = 36;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -255,15 +187,6 @@
             this.label2.Size = new System.Drawing.Size(48, 16);
             this.label2.TabIndex = 33;
             this.label2.Text = "Name:";
-            // 
-            // txtLastname
-            // 
-            this.txtLastname.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLastname.Location = new System.Drawing.Point(88, 137);
-            this.txtLastname.Multiline = true;
-            this.txtLastname.Name = "txtLastname";
-            this.txtLastname.Size = new System.Drawing.Size(203, 24);
-            this.txtLastname.TabIndex = 37;
             // 
             // label5
             // 
@@ -285,15 +208,6 @@
             this.label3.TabIndex = 34;
             this.label3.Text = "Lastname:";
             // 
-            // txtDLN
-            // 
-            this.txtDLN.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDLN.Location = new System.Drawing.Point(87, 45);
-            this.txtDLN.Multiline = true;
-            this.txtDLN.Name = "txtDLN";
-            this.txtDLN.Size = new System.Drawing.Size(203, 24);
-            this.txtDLN.TabIndex = 45;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -304,11 +218,143 @@
             this.label4.TabIndex = 44;
             this.label4.Text = "DLN:";
             // 
+            // txtEmail
+            // 
+            this.txtEmail.Email = true;
+            this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmail.Letters = false;
+            this.txtEmail.Location = new System.Drawing.Point(87, 227);
+            this.txtEmail.Multiline = true;
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Numbers = false;
+            this.txtEmail.Size = new System.Drawing.Size(203, 24);
+            this.txtEmail.TabIndex = 50;
+            this.txtEmail.Validate = true;
+            // 
+            // txtPhone
+            // 
+            this.txtPhone.Email = false;
+            this.txtPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPhone.Letters = false;
+            this.txtPhone.Location = new System.Drawing.Point(87, 182);
+            this.txtPhone.MaxLength = 10;
+            this.txtPhone.Multiline = true;
+            this.txtPhone.Name = "txtPhone";
+            this.txtPhone.Numbers = true;
+            this.txtPhone.Size = new System.Drawing.Size(203, 24);
+            this.txtPhone.TabIndex = 49;
+            this.txtPhone.Validate = true;
+            // 
+            // txtLastname
+            // 
+            this.txtLastname.Email = false;
+            this.txtLastname.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLastname.Letters = true;
+            this.txtLastname.Location = new System.Drawing.Point(87, 134);
+            this.txtLastname.Multiline = true;
+            this.txtLastname.Name = "txtLastname";
+            this.txtLastname.Numbers = false;
+            this.txtLastname.Size = new System.Drawing.Size(203, 24);
+            this.txtLastname.TabIndex = 48;
+            this.txtLastname.Validate = true;
+            this.txtLastname.TextChanged += new System.EventHandler(this.txtLastname_TextChanged);
+            // 
+            // txtName
+            // 
+            this.txtName.Email = false;
+            this.txtName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtName.Letters = true;
+            this.txtName.Location = new System.Drawing.Point(87, 89);
+            this.txtName.Multiline = true;
+            this.txtName.Name = "txtName";
+            this.txtName.Numbers = false;
+            this.txtName.Size = new System.Drawing.Size(203, 24);
+            this.txtName.TabIndex = 47;
+            this.txtName.Validate = true;
+            this.txtName.TextChanged += new System.EventHandler(this.txtName_TextChanged);
+            // 
+            // txtDLN
+            // 
+            this.txtDLN.Email = false;
+            this.txtDLN.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDLN.Letters = false;
+            this.txtDLN.Location = new System.Drawing.Point(87, 42);
+            this.txtDLN.MaxLength = 8;
+            this.txtDLN.Multiline = true;
+            this.txtDLN.Name = "txtDLN";
+            this.txtDLN.Numbers = false;
+            this.txtDLN.Size = new System.Drawing.Size(203, 24);
+            this.txtDLN.TabIndex = 46;
+            this.txtDLN.Validate = true;
+            // 
+            // cmbState
+            // 
+            this.cmbState.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbState.FormattingEnabled = true;
+            this.cmbState.Location = new System.Drawing.Point(84, 90);
+            this.cmbState.Name = "cmbState";
+            this.cmbState.Size = new System.Drawing.Size(138, 24);
+            this.cmbState.TabIndex = 51;
+            this.cmbState.Validate = true;
+            // 
+            // txtZipcode
+            // 
+            this.txtZipcode.Email = false;
+            this.txtZipcode.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtZipcode.Letters = false;
+            this.txtZipcode.Location = new System.Drawing.Point(350, 90);
+            this.txtZipcode.MaxLength = 5;
+            this.txtZipcode.Name = "txtZipcode";
+            this.txtZipcode.Numbers = true;
+            this.txtZipcode.Size = new System.Drawing.Size(84, 22);
+            this.txtZipcode.TabIndex = 50;
+            this.txtZipcode.Validate = true;
+            // 
+            // txtCity
+            // 
+            this.txtCity.Email = false;
+            this.txtCity.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCity.Letters = true;
+            this.txtCity.Location = new System.Drawing.Point(274, 58);
+            this.txtCity.Name = "txtCity";
+            this.txtCity.Numbers = false;
+            this.txtCity.Size = new System.Drawing.Size(160, 22);
+            this.txtCity.TabIndex = 49;
+            this.txtCity.Validate = true;
+            // 
+            // txtApt
+            // 
+            this.txtApt.Email = false;
+            this.txtApt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtApt.Letters = false;
+            this.txtApt.Location = new System.Drawing.Point(123, 58);
+            this.txtApt.Name = "txtApt";
+            this.txtApt.Numbers = false;
+            this.txtApt.Size = new System.Drawing.Size(99, 22);
+            this.txtApt.TabIndex = 48;
+            this.txtApt.Validate = false;
+            // 
+            // txtStreet
+            // 
+            this.txtStreet.Email = false;
+            this.txtStreet.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtStreet.Letters = false;
+            this.txtStreet.Location = new System.Drawing.Point(84, 23);
+            this.txtStreet.Name = "txtStreet";
+            this.txtStreet.Numbers = false;
+            this.txtStreet.Size = new System.Drawing.Size(350, 22);
+            this.txtStreet.TabIndex = 47;
+            this.txtStreet.Validate = true;
+            // 
             // NewCustomer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(528, 490);
+            this.Controls.Add(this.txtEmail);
+            this.Controls.Add(this.txtPhone);
+            this.Controls.Add(this.txtLastname);
+            this.Controls.Add(this.txtName);
             this.Controls.Add(this.txtDLN);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.btnUpload);
@@ -316,22 +362,15 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.ptPicture);
-            this.Controls.Add(this.txtEmail);
-            this.Controls.Add(this.txtPhone);
-            this.Controls.Add(this.txtName);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.txtLastname);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label3);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "NewCustomer";
-            this.Text = "NewCustomer";
+            this.Text = "New Customer";
             this.Controls.SetChildIndex(this.label3, 0);
             this.Controls.SetChildIndex(this.label5, 0);
-            this.Controls.SetChildIndex(this.txtLastname, 0);
             this.Controls.SetChildIndex(this.label2, 0);
-            this.Controls.SetChildIndex(this.txtName, 0);
-            this.Controls.SetChildIndex(this.txtPhone, 0);
-            this.Controls.SetChildIndex(this.txtEmail, 0);
             this.Controls.SetChildIndex(this.ptPicture, 0);
             this.Controls.SetChildIndex(this.label1, 0);
             this.Controls.SetChildIndex(this.groupBox1, 0);
@@ -341,6 +380,10 @@
             this.Controls.SetChildIndex(this.btnCancel, 0);
             this.Controls.SetChildIndex(this.label4, 0);
             this.Controls.SetChildIndex(this.txtDLN, 0);
+            this.Controls.SetChildIndex(this.txtName, 0);
+            this.Controls.SetChildIndex(this.txtLastname, 0);
+            this.Controls.SetChildIndex(this.txtPhone, 0);
+            this.Controls.SetChildIndex(this.txtEmail, 0);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptPicture)).EndInit();
@@ -354,25 +397,25 @@
         private System.Windows.Forms.Button btnCamera;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.ComboBox cmbState;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox txtZipCode;
-        private System.Windows.Forms.TextBox txtCity;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox txtApt;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtStreet;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox ptPicture;
-        private System.Windows.Forms.TextBox txtEmail;
-        private System.Windows.Forms.TextBox txtPhone;
-        private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtLastname;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtDLN;
         private System.Windows.Forms.Label label4;
+        private Security.ValidateTxtBox txtDLN;
+        private Security.ValidateTxtBox txtName;
+        private Security.ValidateTxtBox txtLastname;
+        private Security.ValidateTxtBox txtPhone;
+        private Security.ValidateTxtBox txtEmail;
+        private Security.ValidateTxtBox txtStreet;
+        private Security.ValidateTxtBox txtZipcode;
+        private Security.ValidateTxtBox txtCity;
+        private Security.ValidateTxtBox txtApt;
+        private Security.ValidateComboBox cmbState;
     }
 }

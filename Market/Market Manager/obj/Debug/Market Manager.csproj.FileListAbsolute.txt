@@ -53,6 +53,6 @@ C:\GitProjects\Market\Market Manager\obj\Debug\Market_Manager.Administration.Emp
 C:\GitProjects\Market\Market Manager\obj\Debug\Market_Manager.Administration.Factures.Bill.resources
 C:\GitProjects\Market\Market Manager\obj\Debug\Market_Manager.Sales.Billing.resources
 C:\GitProjects\Market\Market Manager\obj\Debug\Market_Manager.Admission.Return.resources
-C:\GitProjects\Market\Market Manager\obj\Debug\Market Manager.csprojAssemblyReference.cache
 C:\GitProjects\Market\Market Manager\obj\Debug\Market_Manager.Sales.Details.resources
 C:\GitProjects\Market\Market Manager\obj\Debug\Market_Manager.Customer_Service.ReturnDetails.resources
+C:\GitProjects\Market\Market Manager\obj\Debug\Market Manager.csprojAssemblyReference.cache

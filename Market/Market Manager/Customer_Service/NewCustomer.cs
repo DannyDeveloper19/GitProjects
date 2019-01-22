@@ -14,32 +14,48 @@ namespace Market_Manager.Admission
 
         public override void Save()
         {
-            try
+            if (!Security.Validating.validateFields(this))
             {
-                string id = "MBR"+Security.Security.generateIdNumber().Trim();
-                string dni = txtDLN.Text.Trim();
-                string name = txtName.Text.Trim();
-                string lastname = txtLastname.Text.Trim();
-                string phone = txtPhone.Text.Trim();
-                string email = txtEmail.Text.Trim();
+                try
+                {
+                   /* string id = "MBR" + Security.Security.generateIdNumber().Trim();
+                    string dni = txtDLN.Text.Trim();
+                    string name = txtName.Text.Trim();
+                    string lastname = txtLastname.Text.Trim();
+                    string phone = txtPhone.Text.Trim();
+                    string email = txtEmail.Text.Trim();
 
-                string address = (txtApt.Text != "") 
-                    ? txtStreet.Text.Trim() + ", Apt. "+ txtApt.Text.Trim() + ", " + txtCity.Text.Trim() + ", " + cmbState.Text.Trim() + ", " + txtZipCode.Text.Trim() : txtStreet.Text.Trim() + ", " + txtCity.Text.Trim() + ", " + cmbState.Text.Trim() + ", " + txtZipCode.Text.Trim();
-                var newCustomer = new CustomerModel(id, name, lastname, phone, address, email, dni);
-                Customer_Data.newCustomer(newCustomer);
+                    string address = (txtApt.Text != "")
+                        ? txtStreet.Text.Trim() + ", Apt. " + txtApt.Text.Trim() + ", " + txtCity.Text.Trim() + ", " + cmbState.Text.Trim() + ", " + txtZipcode.Text.Trim() : txtStreet.Text.Trim() + ", " + txtCity.Text.Trim() + ", " + cmbState.Text.Trim() + ", " + txtZipcode.Text.Trim();
+                    var newCustomer = new CustomerModel(id, name, lastname, phone, address, email, dni);
+                    Customer_Data.newCustomer(newCustomer);*/
 
-                MessageBox.Show("New Customer added", "Success", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            }
-            catch (Exception)
-            {
+                    MessageBox.Show("New Customer added", "Success", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    this.Close();
+                }
+                catch (Exception)
+                {
 
-                MessageBox.Show("There were an error trying to add this user", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("There were an error trying to add this user", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 
-        private void btnAccept_Click(object sender, EventArgs e)
+        public override void Cancel()
         {
-            Save();
+            this.Close();
+        }
+
+        private void txtName_TextChanged(object sender, EventArgs e)
+        {
+            txtName.Text = System.Globalization.CultureInfo.CurrentCulture.TextInfo.ToTitleCase(txtName.Text);
+            txtName.SelectionStart = txtName.Text.Length;
+        }
+
+        private void txtLastname_TextChanged(object sender, EventArgs e)
+        {
+            txtLastname.Text = System.Globalization.CultureInfo.CurrentCulture.TextInfo.ToTitleCase(txtLastname.Text);
+            txtLastname.SelectionStart = txtLastname.Text.Length;
         }
     }
 }

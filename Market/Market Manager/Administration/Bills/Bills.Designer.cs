@@ -159,6 +159,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.dgvQuery);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FactureQuery";
             this.Text = "Factures";
             this.Controls.SetChildIndex(this.dgvQuery, 0);

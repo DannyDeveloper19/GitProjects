@@ -29,16 +29,16 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ItemQuery));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnNew = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtMark = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtQuery = new System.Windows.Forms.TextBox();
+            this.txtCode = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.btnRefresh = new System.Windows.Forms.Button();
             this.dgvProducts = new System.Windows.Forms.DataGridView();
@@ -84,11 +84,11 @@
             // 
             this.groupBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.txtName);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.txtMark);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.txtQuery);
+            this.groupBox1.Controls.Add(this.txtCode);
             this.groupBox1.Controls.Add(this.btnSearch);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(207, 12);
@@ -108,12 +108,12 @@
             this.label3.TabIndex = 7;
             this.label3.Text = "Name:";
             // 
-            // textBox2
+            // txtName
             // 
-            this.textBox2.Location = new System.Drawing.Point(87, 45);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(290, 22);
-            this.textBox2.TabIndex = 6;
+            this.txtName.Location = new System.Drawing.Point(87, 45);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(290, 22);
+            this.txtName.TabIndex = 6;
             // 
             // label1
             // 
@@ -125,12 +125,12 @@
             this.label1.TabIndex = 5;
             this.label1.Text = "Mark:";
             // 
-            // textBox1
+            // txtMark
             // 
-            this.textBox1.Location = new System.Drawing.Point(258, 17);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(119, 22);
-            this.textBox1.TabIndex = 4;
+            this.txtMark.Location = new System.Drawing.Point(258, 17);
+            this.txtMark.Name = "txtMark";
+            this.txtMark.Size = new System.Drawing.Size(119, 22);
+            this.txtMark.TabIndex = 4;
             // 
             // label2
             // 
@@ -142,12 +142,12 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Code:";
             // 
-            // txtQuery
+            // txtCode
             // 
-            this.txtQuery.Location = new System.Drawing.Point(87, 17);
-            this.txtQuery.Name = "txtQuery";
-            this.txtQuery.Size = new System.Drawing.Size(119, 22);
-            this.txtQuery.TabIndex = 1;
+            this.txtCode.Location = new System.Drawing.Point(87, 17);
+            this.txtCode.Name = "txtCode";
+            this.txtCode.Size = new System.Drawing.Size(119, 22);
+            this.txtCode.TabIndex = 1;
             // 
             // btnSearch
             // 
@@ -158,6 +158,7 @@
             this.btnSearch.Size = new System.Drawing.Size(56, 44);
             this.btnSearch.TabIndex = 2;
             this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // btnRefresh
             // 
@@ -172,14 +173,15 @@
             // dgvProducts
             // 
             this.dgvProducts.AllowUserToAddRows = false;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvProducts.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvProducts.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvProducts.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProducts.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.cId,
@@ -189,6 +191,7 @@
             this.cInStock});
             this.dgvProducts.Location = new System.Drawing.Point(21, 97);
             this.dgvProducts.Name = "dgvProducts";
+            this.dgvProducts.RowHeadersVisible = false;
             this.dgvProducts.Size = new System.Drawing.Size(547, 339);
             this.dgvProducts.TabIndex = 31;
             // 
@@ -231,7 +234,7 @@
             this.MaximumSize = new System.Drawing.Size(708, 493);
             this.MinimumSize = new System.Drawing.Size(708, 493);
             this.Name = "ItemQuery";
-            this.Text = "Iventory";
+            this.Text = "In Stock";
             this.Load += new System.EventHandler(this.ItemQuery_Load);
             this.Controls.SetChildIndex(this.btnAccept, 0);
             this.Controls.SetChildIndex(this.btnCancel, 0);
@@ -254,11 +257,11 @@
         private System.Windows.Forms.Button btnNew;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtMark;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtQuery;
+        private System.Windows.Forms.TextBox txtCode;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Button btnRefresh;
         private System.Windows.Forms.DataGridView dgvProducts;

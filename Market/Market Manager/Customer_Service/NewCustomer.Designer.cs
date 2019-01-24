@@ -32,6 +32,11 @@
             this.btnUpload = new System.Windows.Forms.Button();
             this.btnCamera = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cmbState = new Security.ValidateComboBox();
+            this.txtZipcode = new Security.ValidateTextBox();
+            this.txtCity = new Security.ValidateTextBox();
+            this.txtApt = new Security.ValidateTextBox();
+            this.txtStreet = new Security.ValidateTextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -43,16 +48,11 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtEmail = new Security.ValidateTxtBox();
-            this.txtPhone = new Security.ValidateTxtBox();
-            this.txtLastname = new Security.ValidateTxtBox();
-            this.txtName = new Security.ValidateTxtBox();
-            this.txtDLN = new Security.ValidateTxtBox();
-            this.cmbState = new Security.ValidateComboBox();
-            this.txtZipcode = new Security.ValidateTxtBox();
-            this.txtCity = new Security.ValidateTxtBox();
-            this.txtApt = new Security.ValidateTxtBox();
-            this.txtStreet = new Security.ValidateTxtBox();
+            this.txtEmail = new Security.ValidateTextBox();
+            this.txtPhone = new Security.ValidateTextBox();
+            this.txtLastname = new Security.ValidateTextBox();
+            this.txtName = new Security.ValidateTextBox();
+            this.txtDLN = new Security.ValidateTextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptPicture)).BeginInit();
             this.SuspendLayout();
@@ -106,6 +106,65 @@
             this.groupBox1.TabIndex = 41;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Address";
+            // 
+            // cmbState
+            // 
+            this.cmbState.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbState.FormattingEnabled = true;
+            this.cmbState.Location = new System.Drawing.Point(84, 90);
+            this.cmbState.Name = "cmbState";
+            this.cmbState.Size = new System.Drawing.Size(138, 24);
+            this.cmbState.TabIndex = 51;
+            this.cmbState.Validate = true;
+            // 
+            // txtZipcode
+            // 
+            this.txtZipcode.Email = false;
+            this.txtZipcode.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtZipcode.Letters = false;
+            this.txtZipcode.Location = new System.Drawing.Point(350, 90);
+            this.txtZipcode.MaxLength = 5;
+            this.txtZipcode.Name = "txtZipcode";
+            this.txtZipcode.Numbers = true;
+            this.txtZipcode.Size = new System.Drawing.Size(84, 22);
+            this.txtZipcode.TabIndex = 50;
+            this.txtZipcode.Validate = true;
+            // 
+            // txtCity
+            // 
+            this.txtCity.Email = false;
+            this.txtCity.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCity.Letters = true;
+            this.txtCity.Location = new System.Drawing.Point(274, 58);
+            this.txtCity.Name = "txtCity";
+            this.txtCity.Numbers = false;
+            this.txtCity.Size = new System.Drawing.Size(160, 22);
+            this.txtCity.TabIndex = 49;
+            this.txtCity.Validate = true;
+            // 
+            // txtApt
+            // 
+            this.txtApt.Email = false;
+            this.txtApt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtApt.Letters = false;
+            this.txtApt.Location = new System.Drawing.Point(123, 58);
+            this.txtApt.Name = "txtApt";
+            this.txtApt.Numbers = false;
+            this.txtApt.Size = new System.Drawing.Size(99, 22);
+            this.txtApt.TabIndex = 48;
+            this.txtApt.Validate = false;
+            // 
+            // txtStreet
+            // 
+            this.txtStreet.Email = false;
+            this.txtStreet.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtStreet.Letters = false;
+            this.txtStreet.Location = new System.Drawing.Point(84, 23);
+            this.txtStreet.Name = "txtStreet";
+            this.txtStreet.Numbers = false;
+            this.txtStreet.Size = new System.Drawing.Size(350, 22);
+            this.txtStreet.TabIndex = 47;
+            this.txtStreet.Validate = true;
             // 
             // label10
             // 
@@ -287,65 +346,6 @@
             this.txtDLN.TabIndex = 46;
             this.txtDLN.Validate = true;
             // 
-            // cmbState
-            // 
-            this.cmbState.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbState.FormattingEnabled = true;
-            this.cmbState.Location = new System.Drawing.Point(84, 90);
-            this.cmbState.Name = "cmbState";
-            this.cmbState.Size = new System.Drawing.Size(138, 24);
-            this.cmbState.TabIndex = 51;
-            this.cmbState.Validate = true;
-            // 
-            // txtZipcode
-            // 
-            this.txtZipcode.Email = false;
-            this.txtZipcode.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtZipcode.Letters = false;
-            this.txtZipcode.Location = new System.Drawing.Point(350, 90);
-            this.txtZipcode.MaxLength = 5;
-            this.txtZipcode.Name = "txtZipcode";
-            this.txtZipcode.Numbers = true;
-            this.txtZipcode.Size = new System.Drawing.Size(84, 22);
-            this.txtZipcode.TabIndex = 50;
-            this.txtZipcode.Validate = true;
-            // 
-            // txtCity
-            // 
-            this.txtCity.Email = false;
-            this.txtCity.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCity.Letters = true;
-            this.txtCity.Location = new System.Drawing.Point(274, 58);
-            this.txtCity.Name = "txtCity";
-            this.txtCity.Numbers = false;
-            this.txtCity.Size = new System.Drawing.Size(160, 22);
-            this.txtCity.TabIndex = 49;
-            this.txtCity.Validate = true;
-            // 
-            // txtApt
-            // 
-            this.txtApt.Email = false;
-            this.txtApt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtApt.Letters = false;
-            this.txtApt.Location = new System.Drawing.Point(123, 58);
-            this.txtApt.Name = "txtApt";
-            this.txtApt.Numbers = false;
-            this.txtApt.Size = new System.Drawing.Size(99, 22);
-            this.txtApt.TabIndex = 48;
-            this.txtApt.Validate = false;
-            // 
-            // txtStreet
-            // 
-            this.txtStreet.Email = false;
-            this.txtStreet.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtStreet.Letters = false;
-            this.txtStreet.Location = new System.Drawing.Point(84, 23);
-            this.txtStreet.Name = "txtStreet";
-            this.txtStreet.Numbers = false;
-            this.txtStreet.Size = new System.Drawing.Size(350, 22);
-            this.txtStreet.TabIndex = 47;
-            this.txtStreet.Validate = true;
-            // 
             // NewCustomer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -366,6 +366,8 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label3);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximumSize = new System.Drawing.Size(544, 529);
+            this.MinimumSize = new System.Drawing.Size(544, 529);
             this.Name = "NewCustomer";
             this.Text = "New Customer";
             this.Controls.SetChildIndex(this.label3, 0);
@@ -407,15 +409,15 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private Security.ValidateTxtBox txtDLN;
-        private Security.ValidateTxtBox txtName;
-        private Security.ValidateTxtBox txtLastname;
-        private Security.ValidateTxtBox txtPhone;
-        private Security.ValidateTxtBox txtEmail;
-        private Security.ValidateTxtBox txtStreet;
-        private Security.ValidateTxtBox txtZipcode;
-        private Security.ValidateTxtBox txtCity;
-        private Security.ValidateTxtBox txtApt;
+        private Security.ValidateTextBox txtDLN;
+        private Security.ValidateTextBox txtName;
+        private Security.ValidateTextBox txtLastname;
+        private Security.ValidateTextBox txtPhone;
+        private Security.ValidateTextBox txtEmail;
+        private Security.ValidateTextBox txtStreet;
+        private Security.ValidateTextBox txtZipcode;
+        private Security.ValidateTextBox txtCity;
+        private Security.ValidateTextBox txtApt;
         private Security.ValidateComboBox cmbState;
     }
 }

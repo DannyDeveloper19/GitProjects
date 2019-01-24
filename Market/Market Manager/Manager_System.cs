@@ -203,7 +203,7 @@ namespace Market_Manager
 
         private void detailsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Details frmDetails = new Details();
+            Billing frmDetails = new Billing();
             frmDetails.MdiParent = this;
             frmDetails.StartPosition = FormStartPosition.CenterScreen;
             frmDetails.Show();

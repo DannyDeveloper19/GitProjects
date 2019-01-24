@@ -1,5 +1,7 @@
-﻿using Market_Manager.DataConnection;
+﻿using Connection;
+using Market_Manager.DataConnection;
 using Market_Manager.Models;
+using Market_Manager.Sales;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,7 +20,7 @@ namespace Market_Manager
         EmployerModel _employer;
         CustomerModel _cusotmer { get; set; }
         int in_stock = 0;
-        string id_purshase;
+        string id_purshase = "";
 
         public SalesControl(EmployerModel employer)
         {
@@ -30,12 +32,23 @@ namespace Market_Manager
 
         private void InitializeSale()
         {
+            txtCustomerId.Focus();
+            _cusotmer = new CustomerModel();
+            txtCustomerId.Text = "";
+            txtCustomerName.Text = "";
+            txtCode.Text = "";
+            dgvProducts.Rows.Clear();
             txtCurrentAmount.Text = "0";
+            txtNameProduct.Text = "";
+            txtMark.Text = "";
+            txtPrice.Text = "";
+            txtQuantity.Text = "";
+            btnSearch.Enabled = true;
             btnFind.Enabled = false;
             txtQuantity.Enabled = false;
             btnSum.Enabled = false;
             btnMinus.Enabled = false;
-            id_purshase = "SHP" + Security.Security.generateIdNumber();
+            this.id_purshase = "";
             foreach (var item in Controls.OfType<Button>().Where(btn => btn.Name != "btnCustomer" && btn.Name != "btnCancel"))
             {
                 item.Enabled = false;
@@ -102,6 +115,8 @@ namespace Market_Manager
                 btnFind.Enabled = true;
                 btnItems.Enabled = true;
                 btnSearch.Enabled = false;
+                this.id_purshase = "SHP" + Security.Security.generateIdNumber();
+
             }
             catch (Exception)
             {
@@ -143,6 +158,7 @@ namespace Market_Manager
                 btnFind.Enabled = true;
                 btnItems.Enabled = true;
                 btnSearch.Enabled = false;
+                this.id_purshase = "SHP" + Security.Security.generateIdNumber();
             }
             catch (Exception)
             {
@@ -188,7 +204,7 @@ namespace Market_Manager
                 var id_product = txtCode.Text;
                 var quantity = int.Parse(txtQuantity.Text);
                 if (quantity > 0 && quantity <= in_stock)
-                    Purshase.AddProduct(id_purshase, id_customer, id_product, quantity);
+                    Purshase.AddProduct(id_purshase, id_customer, id_product, quantity,_employer.id_employer);
                 else
                     MessageBox.Show("The amount must not be 0 or greater than " + in_stock.ToString(), "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
@@ -238,20 +254,26 @@ namespace Market_Manager
 
         public override void Save()
         {
-            try
+            if (dgvProducts.Rows.Count != 0)
             {
                 var dialog = MessageBox.Show("Do you really want to process the order?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                 if (dialog == DialogResult.OK)
                 {
-                    Purshase.ProcessSaleOrder(this.id_purshase);
-                    _cusotmer = new CustomerModel();
-                    this.id_purshase = "SHP" + Security.Security.generateIdNumber();
-                    txtCustomerName.Text = "";
-                    txtCode.Text = "";
-                    dgvProducts.Rows.Clear();
+                    try
+                    {
+                        Purshase.ProcessSaleOrder(this.id_purshase);
+                        Billing bill = new Billing(this.id_purshase);
+                        bill.ShowDialog();
+                    }
+                    catch (Exception ex)
+                    {
+                        //The sale could not be completed
 
+                        MessageBox.Show("Error: " + ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        this.Close();
+                    }
+                    
                 }
-                MessageBox.Show("Order Processed!", "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 dialog = MessageBox.Show("Do you want to process a new order?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                 if (dialog == DialogResult.OK)
                 {
@@ -261,35 +283,66 @@ namespace Market_Manager
                 {
                     this.Close();
                 }
+                
             }
-            catch (Exception)
+            else
             {
-                //The sale could not be completed
-
-                MessageBox.Show("The sale could not be completed.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                this.Close();
+                MessageBox.Show("We can't process this purshase without products.", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            
 
         }
         public override void Cancel()
         {
-            try
+            if (this.id_purshase != "")
             {
-                var dialog = MessageBox.Show("Do you really want to cancel the order?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-                if (dialog == DialogResult.OK)
+                try
                 {
-                    Purshase.CancelSaleOrder(this.id_purshase);
-                    MessageBox.Show("Order Cancelled!", "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    this.Close();
+                    var dialog = MessageBox.Show("Do you really want to cancel the order?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                    if (dialog == DialogResult.OK)
+                    {
+                        Purshase.CancelSaleOrder(this.id_purshase);
+                        //MessageBox.Show("Order Cancelled!", "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        this.Close();
+
+                    }
+
 
                 }
+                catch (Exception)
+                {
 
-
+                    MessageBox.Show("There was a problem cancelling de order", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            catch (Exception)
+            else
             {
+                this.Close();
+            }
+        }
 
-                MessageBox.Show("There was a problem cancelling de order", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (dgvProducts.Rows[dgvProducts.CurrentRow.Index].Selected)
+            {
+                //Develop this action
+                var id_item = dgvProducts.Rows[dgvProducts.CurrentRow.Index].Cells[0].Value.ToString();
+                Purshase.RemoveProduct(this.id_purshase, id_item);
+                dgvProducts.Rows.RemoveAt(dgvProducts.CurrentRow.Index);
+            }
+            else
+            {
+                MessageBox.Show("You must select the product to remove.", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void btnNew_Click(object sender, EventArgs e)
+        {
+            var dialog = MessageBox.Show("Do you really want to cancel this order and begin a new one?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            if (dialog == DialogResult.OK)
+            {
+                Purshase.CancelSaleOrder(this.id_purshase);
+                InitializeSale();
             }
         }
     }

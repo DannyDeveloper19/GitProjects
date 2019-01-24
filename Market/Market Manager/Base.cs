@@ -12,10 +12,7 @@ namespace Market_Manager
     public class Base : Form
     {
         public Button btnCancel;
-        private IContainer components;
         public Button btnAccept;
-
-        public IContainer Components => components;
 
         public Base()
         {

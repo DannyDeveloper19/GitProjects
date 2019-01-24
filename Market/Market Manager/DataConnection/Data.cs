@@ -140,12 +140,17 @@ namespace Market_Manager.DataConnection
     class Purshase
     {
         //Add new product to a purshase
-        public static void AddProduct(string id_purshase, string id_customer, string id_item, int quantity)
+        public static void AddProduct(string id_purshase, string id_customer, string id_item, int quantity, string id_employer)
         {
-            string cmd = string.Format("EXEC AddProduct '{0}','{1}','{2}','{3}'", id_purshase, id_customer, id_item, quantity);
+            string cmd = string.Format("EXEC AddProductToPurshase '{0}','{1}','{2}','{3}','{4}'", id_purshase, id_customer, id_item, quantity, id_employer);
             Utilities.execute(cmd);
         }
 
+        public static void RemoveProduct(string id_purshase, string id_item)
+        {
+            string cmd = string.Format("EXEC RemoveProductFromPurshase '{0}','{1}'",id_purshase,id_item);
+            Utilities.execute(cmd);
+        }
         //Get product selected info
         public static Purshase_Product GetProductSelected(string id_purshase, string id_product, string id_customer)
         {
@@ -166,11 +171,13 @@ namespace Market_Manager.DataConnection
         //Get Purshase processed
         public static PurshaseInfo GetPurshase(string id_purshase)
         {
+            //fix the proccess
             string cmd = string.Format("EXEC GetPurshaseProcessed '{0}'", id_purshase);
             DataSet data = Utilities.execute(cmd);
             List<Purshase_Product> products = new List<Purshase_Product>();
             if (data.Tables[0].Rows.Count != 0)
             {
+                var id_employer = data.Tables[0].Rows[0]["id_employer"].ToString().Trim();
                 var id_customer = data.Tables[0].Rows[0]["id_customer"].ToString().Trim();
                 var customer_name = data.Tables[0].Rows[0]["customer_name"].ToString().Trim();
                 customer_name += " " + data.Tables[0].Rows[0]["customer_lastname"].ToString().Trim();
@@ -191,7 +198,7 @@ namespace Market_Manager.DataConnection
                     products.Add(product);
                 }
 
-                return new PurshaseInfo(id_purshase, id_customer, customer_name, date, products);
+                return new PurshaseInfo(id_employer,id_purshase, id_customer, customer_name, date, products);
             }
             else
                 return new PurshaseInfo();            

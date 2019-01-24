@@ -58,5 +58,10 @@ namespace Market_Manager
         {
             this.Close();
         }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+          
+        }
     }
 }

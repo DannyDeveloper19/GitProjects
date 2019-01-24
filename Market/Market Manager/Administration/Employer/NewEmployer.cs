@@ -17,6 +17,17 @@ namespace Market_Manager.Administration
             InitializeComponent();
         }
 
-        
+        public override void Save()
+        {
+            if (!Security.Validating.validateFields(this))
+            {
+
+            }
+        }
+
+        public override void Cancel()
+        {
+            this.Close();
+        }
     }
 }

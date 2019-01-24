@@ -146,10 +146,11 @@
             // 
             // dgvQuery
             // 
+            this.dgvQuery.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvQuery.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvQuery.Location = new System.Drawing.Point(38, 99);
+            this.dgvQuery.Location = new System.Drawing.Point(12, 99);
             this.dgvQuery.Name = "dgvQuery";
-            this.dgvQuery.Size = new System.Drawing.Size(482, 348);
+            this.dgvQuery.Size = new System.Drawing.Size(532, 337);
             this.dgvQuery.TabIndex = 18;
             // 
             // btnNew
@@ -172,6 +173,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.dgvQuery);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximumSize = new System.Drawing.Size(572, 544);
             this.MinimumSize = new System.Drawing.Size(572, 544);
             this.Name = "EmployerQuery";

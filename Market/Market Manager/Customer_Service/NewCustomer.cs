@@ -18,7 +18,7 @@ namespace Market_Manager.Admission
             {
                 try
                 {
-                   /* string id = "MBR" + Security.Security.generateIdNumber().Trim();
+                    string id = "MBR" + Security.Security.generateIdNumber().Trim();
                     string dni = txtDLN.Text.Trim();
                     string name = txtName.Text.Trim();
                     string lastname = txtLastname.Text.Trim();
@@ -28,7 +28,7 @@ namespace Market_Manager.Admission
                     string address = (txtApt.Text != "")
                         ? txtStreet.Text.Trim() + ", Apt. " + txtApt.Text.Trim() + ", " + txtCity.Text.Trim() + ", " + cmbState.Text.Trim() + ", " + txtZipcode.Text.Trim() : txtStreet.Text.Trim() + ", " + txtCity.Text.Trim() + ", " + cmbState.Text.Trim() + ", " + txtZipcode.Text.Trim();
                     var newCustomer = new CustomerModel(id, name, lastname, phone, address, email, dni);
-                    Customer_Data.newCustomer(newCustomer);*/
+                    Customer_Data.newCustomer(newCustomer);
 
                     MessageBox.Show("New Customer added", "Success", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     this.Close();

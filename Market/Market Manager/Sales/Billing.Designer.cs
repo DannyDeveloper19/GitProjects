@@ -31,22 +31,27 @@
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Billing));
-            this.getPurshaseProcessedTableAdapter1 = new Market_Manager.Reports.InvoiceTableAdapters.GetPurshaseProcessedTableAdapter();
-            this.invoice = new Market_Manager.Reports.Invoice();
-            this.reportViewer = new Microsoft.Reporting.WinForms.ReportViewer();
             this.GetPurshaseProcessedBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.invoice)).BeginInit();
+            this.invoice = new Market_Manager.Reports.Invoice();
+            this.getPurshaseProcessedTableAdapter1 = new Market_Manager.Reports.InvoiceTableAdapters.GetPurshaseProcessedTableAdapter();
+            this.reportViewer = new Microsoft.Reporting.WinForms.ReportViewer();
             ((System.ComponentModel.ISupportInitialize)(this.GetPurshaseProcessedBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.invoice)).BeginInit();
             this.SuspendLayout();
             // 
-            // getPurshaseProcessedTableAdapter1
+            // GetPurshaseProcessedBindingSource
             // 
-            this.getPurshaseProcessedTableAdapter1.ClearBeforeFill = true;
+            this.GetPurshaseProcessedBindingSource.DataMember = "GetPurshaseProcessed";
+            this.GetPurshaseProcessedBindingSource.DataSource = this.invoice;
             // 
             // invoice
             // 
             this.invoice.DataSetName = "Invoice";
             this.invoice.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // getPurshaseProcessedTableAdapter1
+            // 
+            this.getPurshaseProcessedTableAdapter1.ClearBeforeFill = true;
             // 
             // reportViewer
             // 
@@ -58,26 +63,25 @@
             this.reportViewer.Location = new System.Drawing.Point(0, 0);
             this.reportViewer.Name = "reportViewer";
             this.reportViewer.ServerReport.BearerToken = null;
-            this.reportViewer.Size = new System.Drawing.Size(693, 536);
+            this.reportViewer.Size = new System.Drawing.Size(709, 511);
             this.reportViewer.TabIndex = 0;
-            // 
-            // GetPurshaseProcessedBindingSource
-            // 
-            this.GetPurshaseProcessedBindingSource.DataMember = "GetPurshaseProcessed";
-            this.GetPurshaseProcessedBindingSource.DataSource = this.invoice;
             // 
             // Billing
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(693, 536);
+            this.ClientSize = new System.Drawing.Size(709, 511);
             this.Controls.Add(this.reportViewer);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(725, 550);
+            this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(725, 550);
             this.Name = "Billing";
-            this.Text = "Billing";
+            this.Text = "Invoice";
             this.Load += new System.EventHandler(this.Billing_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.invoice)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GetPurshaseProcessedBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.invoice)).EndInit();
             this.ResumeLayout(false);
 
         }

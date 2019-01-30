@@ -2,6 +2,7 @@
 using System.Data;
 using System.Windows.Forms;
 using Connection;
+using Market_Manager.DataConnection;
 using Market_Manager.Models;
 
 namespace Market_Manager
@@ -20,32 +21,26 @@ namespace Market_Manager
         {
             try
             {
-                string sql_query = string.Format("Select * from Employers where id_employer = '{0}'",txtIdNumber.Text.Trim());
-                DataSet dataSet = Utilities.execute(sql_query);
-
-                string password = dataSet.Tables[0].Rows[0]["employer_password"].ToString().Trim();
-                if (password != txtPassword.Text.Trim())
+                var answer = Employer_Data.Login(txtIdNumber.Text.Trim(), txtPassword.Text.Trim());
+                if (answer is Boolean)
                 {
+                    txtPassword.Text = "";
                     MessageBox.Show("Password incorrect","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
                 }
                 else
                 {
-                    string id = dataSet.Tables[0].Rows[0]["id_employer"].ToString().Trim();
-                    string name = dataSet.Tables[0].Rows[0]["employer_name"].ToString() + " " + dataSet.Tables[0].Rows[0]["employer_lastname"].ToString();
-                    sql_query = string.Format("Select role_name from Roles inner join Employer_Role on Employer_Role.id_role = Roles.id_role where Employer_Role.id_employer = '{0}'",id);
-                    dataSet = Utilities.execute(sql_query);
-                    string role = dataSet.Tables[0].Rows[0]["role_name"].ToString();
-                    var employer = new EmployerModel(id, name,role);
-                    Manager_System frmManager = new Manager_System(employer, this);
+                    var employer = (answer is EmployerModel) ? answer : new EmployerModel();
+                    Manager_System frmManager = new Manager_System((EmployerModel)employer, this);
                     this.Hide();
                     frmManager.Show();
                 }
                 
             }
-            catch (Exception err)
+            catch (Exception)
             {
-
-                MessageBox.Show("Error: " + err.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtIdNumber.Text = "";
+                txtPassword.Text = "";
+                MessageBox.Show("Employer number wrong.", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

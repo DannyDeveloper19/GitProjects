@@ -31,15 +31,13 @@ namespace Market_Manager
 
         private void Profile_Load(object sender, EventArgs e)
         {
-            DataSet data = Utilities.execute(string.Format("Select * from Employers where id_employer = '{0}'", _employer.id_employer));
-            txtId.Text = data.Tables[0].Rows[0]["id_employer"].ToString();
-            txtName.Text = data.Tables[0].Rows[0]["employer_name"].ToString();
-            txtLastname.Text = data.Tables[0].Rows[0]["employer_lastname"].ToString();
-            txtPhone.Text = data.Tables[0].Rows[0]["employer_phone"].ToString();
-            txtEmail.Text = data.Tables[0].Rows[0]["employer_email"].ToString();
-            txtAddress.Text = data.Tables[0].Rows[0]["employer_address"].ToString();
-            data = Utilities.execute(string.Format("Select role_name from Roles inner join Employer_Role on Employer_Role.id_role = Roles.id_role where Employer_Role.id_employer = '{0}'", _employer.id_employer));
-            txtRole.Text = data.Tables[0].Rows[0]["role_name"].ToString();
+            txtId.Text = _employer.id_employer;
+            txtName.Text = _employer.employer_name;
+            txtLastname.Text = _employer.employer_lastname;
+            txtPhone.Text = _employer.employer_phone;
+            txtEmail.Text = _employer.employer_email;
+            txtAddress.Text = _employer.employer_address;
+            txtRole.Text = _employer.employer_role;
             Mode("info");
             
         }
@@ -88,19 +86,23 @@ namespace Market_Manager
             Mode("edit");
             
         }
-
-        private void btnAccept_Click(object sender, EventArgs e)
+        public override void Save()
         {
             if (mode == "edit")
             {
                 MessageBox.Show("Your changes have been saved!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                Mode("info");                
+                Mode("info");
             }
+        }
+
+        public override void Cancel()
+        {
+            this.Close();
         }
 
         private void btnCPassword_Click(object sender, EventArgs e)
         {
-            ChangePassword changePassword = new ChangePassword();
+            ChangePassword changePassword = new ChangePassword(_employer);
             changePassword.StartPosition = FormStartPosition.CenterScreen;
             changePassword.ShowDialog();
         }

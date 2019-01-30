@@ -320,6 +320,7 @@
     <Content Include="Resourses\exit.png" />
     <Content Include="Resourses\Folder.png" />
     <Content Include="Resourses\Inventory.ico" />
+    <None Include="Resourses\Logo.png" />
     <Content Include="Resourses\minus.png" />
     <Content Include="Resourses\Print.ico" />
     <Content Include="Resourses\Print.png" />

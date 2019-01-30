@@ -21,6 +21,17 @@ namespace Security
             Initialize();
         }
 
+        public bool Validate { get; set; }
+        public bool Numbers { get; set; }
+        public bool Email { get; set; }
+        public bool Letters { get; set; }
+        public bool Password { get; set; }
+
+        public bool CompareWith(string text)
+        {
+            return this.Text.Equals(text);
+        }
+
         public bool isValidated()
         {
             error.SetError(this, "");
@@ -28,7 +39,7 @@ namespace Security
             {
                 if (string.IsNullOrEmpty(this.Text.Trim()))
                 {
-                    
+
                     error.SetError(this, "this field can't be empty.");
                     tltMessage.SetToolTip(this, "this field can't be empty.");
                     return true;
@@ -52,6 +63,15 @@ namespace Security
                     return true;
                 }
             }
+            if (this.Password)
+            {
+                Regex reg = new Regex(@"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{8,15}$");
+                if (!reg.IsMatch(this.Text.Trim()))
+                {
+                    error.SetError(this, "No less than 8 and no more than 15 characters,\nAt least one capital letter,\nAt least one lowercase letter,\nAt least none special character($@$!%*?&),\nNo whitespace.");
+                    return true;
+                }
+            }
 
             return false;
         }
@@ -72,7 +92,7 @@ namespace Security
             }
             if (this.Numbers)
             {
-                tltMessage.SetToolTip(this, "This field is for email");
+                tltMessage.SetToolTip(this, "This field is for numbers");
                 int cont = 0;
                 foreach (var digit in this.Text.Trim())
                 {
@@ -81,7 +101,7 @@ namespace Security
                         cont++;
                     }
                 }
-                if(cont != 0)
+                if (cont != 0)
                 {
                     this.BackColor = Color.LightSalmon;
                 }
@@ -116,13 +136,19 @@ namespace Security
                     this.BackColor = Color.White;
                 }
             }
+            if (this.Password)
+            {
+                Regex regex = new Regex(@"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{8,15}$");
+                if (!regex.IsMatch(this.Text.Trim()))
+                {
+                    this.BackColor = Color.LightSalmon;
+                }
+                else
+                {
+                    this.BackColor = Color.White;
+                }
+            }
         }
-
-        public bool Validate { get; set; }
-        public bool Numbers { get; set; }
-        public bool Email { get; set; }
-        public bool Letters { get; set; }
-
         private static Icon ResizeIcon(Icon icon)
         {
             Bitmap bitmap = new Bitmap(16, 16);

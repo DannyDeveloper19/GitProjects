@@ -1,10 +1,12 @@
 ﻿using Market_Manager.Administration;
 using Market_Manager.Administration.Warehouse;
 using Market_Manager.Admission;
+using Market_Manager.DataConnection;
 using Market_Manager.Models;
 using Market_Manager.Sales;
 using System;
 using System.Windows.Forms;
+using System.Runtime.InteropServices;
 
 namespace Market_Manager
 {
@@ -23,7 +25,25 @@ namespace Market_Manager
             InitializeComponent();
             this.employer = employer;
             _frmLogin = frmlogin;
+            tmrInactive.Start();
             this.MinimumSize = Screen.PrimaryScreen.WorkingArea.Size;
+        }
+
+        [DllImport("User32.dll")]
+        private static extern bool GetLastInputInfo(ref LASTINPUTINFO plii);
+
+        internal struct LASTINPUTINFO
+        {
+            public uint cbSize;
+            public uint dwTime;
+        }
+
+        public static uint GetIdleTime()
+        {
+            LASTINPUTINFO lastInput = new LASTINPUTINFO();
+            lastInput.cbSize = (uint)System.Runtime.InteropServices.Marshal.SizeOf(lastInput);
+            GetLastInputInfo(ref lastInput);
+            return ((uint)Environment.TickCount - lastInput.dwTime);
         }
 
         private void ShowNewForm(object sender, EventArgs e)
@@ -112,16 +132,44 @@ namespace Market_Manager
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            employer = new EmployerModel();
-            _frmLogin.Close();
-            this.Close();
+            DialogResult dialog = MessageBox.Show("Do you really want to exit?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            if (dialog == DialogResult.OK)
+            {
+                try
+                {
+                    Employer_Data.LogOut(employer.id_employer, employer.id_logged);
+                    employer = new EmployerModel();
+                    _frmLogin.Close();
+                    this.Close();
+                }
+                catch (Exception ex)
+                {
+
+                    MessageBox.Show("Error:" +ex.Message, "", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                }
+                
+            }
         }
 
         private void logOutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            employer = new EmployerModel();
-            _frmLogin.Show();
-            this.Close();
+            DialogResult dialog = MessageBox.Show("Do you really want to log out?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            if (dialog == DialogResult.OK)
+            {
+                try
+                {
+                    Employer_Data.LogOut(employer.id_employer, employer.id_logged);
+                    employer = new EmployerModel();
+                    _frmLogin.Show();
+                    this.Close();
+                }
+                catch (Exception ex)
+                {
+
+                    MessageBox.Show("Error:" + ex.Message, "", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                }
+                
+            }            
         }
 
         private void Manager_System_Load(object sender, EventArgs e)
@@ -207,6 +255,17 @@ namespace Market_Manager
             frmDetails.MdiParent = this;
             frmDetails.StartPosition = FormStartPosition.CenterScreen;
             frmDetails.Show();
+        }
+
+        private void tmrInactive_Tick(object sender, EventArgs e)
+        {
+            if (GetIdleTime() >1000*60*5)
+            {
+                Employer_Data.LogOut(employer.id_employer, employer.id_logged);
+                employer = new EmployerModel();
+                _frmLogin.Show();
+                this.Close();
+            }
         }
     }
 }

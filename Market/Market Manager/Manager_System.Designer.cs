@@ -69,6 +69,7 @@
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.tmrInactive = new System.Windows.Forms.Timer(this.components);
             this.menuStrip.SuspendLayout();
             this.toolStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
@@ -245,13 +246,13 @@
             this.salesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.allBillsToolStripMenuItem});
             this.salesToolStripMenuItem.Name = "salesToolStripMenuItem";
-            this.salesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.salesToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
             this.salesToolStripMenuItem.Text = "&Invoices";
             // 
             // allBillsToolStripMenuItem
             // 
             this.allBillsToolStripMenuItem.Name = "allBillsToolStripMenuItem";
-            this.allBillsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.allBillsToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
             this.allBillsToolStripMenuItem.Text = "All Invoices";
             // 
             // tsmProcess
@@ -267,21 +268,21 @@
             // billingToolStripMenuItem
             // 
             this.billingToolStripMenuItem.Name = "billingToolStripMenuItem";
-            this.billingToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.billingToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
             this.billingToolStripMenuItem.Text = "Billing";
             this.billingToolStripMenuItem.Click += new System.EventHandler(this.billingToolStripMenuItem_Click);
             // 
             // returnsToolStripMenuItem
             // 
             this.returnsToolStripMenuItem.Name = "returnsToolStripMenuItem";
-            this.returnsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.returnsToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
             this.returnsToolStripMenuItem.Text = "Returns";
             this.returnsToolStripMenuItem.Click += new System.EventHandler(this.returnsToolStripMenuItem_Click);
             // 
             // detailsToolStripMenuItem
             // 
             this.detailsToolStripMenuItem.Name = "detailsToolStripMenuItem";
-            this.detailsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.detailsToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
             this.detailsToolStripMenuItem.Text = "Details";
             this.detailsToolStripMenuItem.Click += new System.EventHandler(this.detailsToolStripMenuItem_Click);
             // 
@@ -396,6 +397,10 @@
             this.toolStripStatusLabel.Size = new System.Drawing.Size(39, 17);
             this.toolStripStatusLabel.Text = "Status";
             // 
+            // tmrInactive
+            // 
+            this.tmrInactive.Tick += new System.EventHandler(this.tmrInactive_Tick);
+            // 
             // Manager_System
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -463,6 +468,7 @@
         private System.Windows.Forms.ToolStripMenuItem addProductToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem inventoryToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem allBillsToolStripMenuItem;
+        private System.Windows.Forms.Timer tmrInactive;
     }
 }
 

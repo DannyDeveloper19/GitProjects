@@ -64,6 +64,8 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.BackgroundImage = global::Market_Manager.Properties.Resources.Logo;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Location = new System.Drawing.Point(21, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(180, 79);

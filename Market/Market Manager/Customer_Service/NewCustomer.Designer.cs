@@ -109,60 +109,60 @@
             // 
             // cmbState
             // 
-            this.cmbState.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbState.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbState.FormattingEnabled = true;
             this.cmbState.Location = new System.Drawing.Point(84, 90);
             this.cmbState.Name = "cmbState";
-            this.cmbState.Size = new System.Drawing.Size(138, 24);
+            this.cmbState.Size = new System.Drawing.Size(138, 26);
             this.cmbState.TabIndex = 51;
             this.cmbState.Validate = true;
             // 
             // txtZipcode
             // 
             this.txtZipcode.Email = false;
-            this.txtZipcode.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtZipcode.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtZipcode.Letters = false;
             this.txtZipcode.Location = new System.Drawing.Point(350, 90);
             this.txtZipcode.MaxLength = 5;
             this.txtZipcode.Name = "txtZipcode";
             this.txtZipcode.Numbers = true;
-            this.txtZipcode.Size = new System.Drawing.Size(84, 22);
+            this.txtZipcode.Size = new System.Drawing.Size(84, 24);
             this.txtZipcode.TabIndex = 50;
             this.txtZipcode.Validate = true;
             // 
             // txtCity
             // 
             this.txtCity.Email = false;
-            this.txtCity.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCity.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCity.Letters = true;
             this.txtCity.Location = new System.Drawing.Point(274, 58);
             this.txtCity.Name = "txtCity";
             this.txtCity.Numbers = false;
-            this.txtCity.Size = new System.Drawing.Size(160, 22);
+            this.txtCity.Size = new System.Drawing.Size(160, 24);
             this.txtCity.TabIndex = 49;
             this.txtCity.Validate = true;
             // 
             // txtApt
             // 
             this.txtApt.Email = false;
-            this.txtApt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtApt.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtApt.Letters = false;
             this.txtApt.Location = new System.Drawing.Point(123, 58);
             this.txtApt.Name = "txtApt";
             this.txtApt.Numbers = false;
-            this.txtApt.Size = new System.Drawing.Size(99, 22);
+            this.txtApt.Size = new System.Drawing.Size(99, 24);
             this.txtApt.TabIndex = 48;
             this.txtApt.Validate = false;
             // 
             // txtStreet
             // 
             this.txtStreet.Email = false;
-            this.txtStreet.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtStreet.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtStreet.Letters = false;
             this.txtStreet.Location = new System.Drawing.Point(84, 23);
             this.txtStreet.Name = "txtStreet";
             this.txtStreet.Numbers = false;
-            this.txtStreet.Size = new System.Drawing.Size(350, 22);
+            this.txtStreet.Size = new System.Drawing.Size(350, 24);
             this.txtStreet.TabIndex = 47;
             this.txtStreet.Validate = true;
             // 
@@ -280,7 +280,7 @@
             // txtEmail
             // 
             this.txtEmail.Email = true;
-            this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmail.Letters = false;
             this.txtEmail.Location = new System.Drawing.Point(87, 227);
             this.txtEmail.Multiline = true;
@@ -293,7 +293,7 @@
             // txtPhone
             // 
             this.txtPhone.Email = false;
-            this.txtPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPhone.Letters = false;
             this.txtPhone.Location = new System.Drawing.Point(87, 182);
             this.txtPhone.MaxLength = 10;
@@ -307,7 +307,7 @@
             // txtLastname
             // 
             this.txtLastname.Email = false;
-            this.txtLastname.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLastname.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLastname.Letters = true;
             this.txtLastname.Location = new System.Drawing.Point(87, 134);
             this.txtLastname.Multiline = true;
@@ -321,7 +321,7 @@
             // txtName
             // 
             this.txtName.Email = false;
-            this.txtName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtName.Letters = true;
             this.txtName.Location = new System.Drawing.Point(87, 89);
             this.txtName.Multiline = true;
@@ -335,7 +335,7 @@
             // txtDLN
             // 
             this.txtDLN.Email = false;
-            this.txtDLN.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDLN.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDLN.Letters = false;
             this.txtDLN.Location = new System.Drawing.Point(87, 42);
             this.txtDLN.MaxLength = 8;

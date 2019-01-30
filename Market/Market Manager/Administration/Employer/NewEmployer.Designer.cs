@@ -46,13 +46,13 @@
             this.label11 = new System.Windows.Forms.Label();
             this.cmbState = new Security.ValidateComboBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.validateTextBox4 = new Security.ValidateTextBox();
-            this.validateTextBox5 = new Security.ValidateTextBox();
+            this.txtZipcode = new Security.ValidateTextBox();
+            this.txtCity = new Security.ValidateTextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.validateTextBox6 = new Security.ValidateTextBox();
+            this.txtApt = new Security.ValidateTextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
-            this.validateTextBox7 = new Security.ValidateTextBox();
+            this.txtStreet = new Security.ValidateTextBox();
             this.txtDLN = new Security.ValidateTextBox();
             this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.ptPicture)).BeginInit();
@@ -61,6 +61,7 @@
             // 
             // btnCancel
             // 
+            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancel.Location = new System.Drawing.Point(300, 422);
             this.btnCancel.Size = new System.Drawing.Size(129, 40);
             // 
@@ -72,6 +73,7 @@
             // txtEmail
             // 
             this.txtEmail.Email = true;
+            this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmail.Letters = false;
             this.txtEmail.Location = new System.Drawing.Point(94, 207);
             this.txtEmail.Multiline = true;
@@ -84,8 +86,10 @@
             // txtPhone
             // 
             this.txtPhone.Email = false;
+            this.txtPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPhone.Letters = false;
             this.txtPhone.Location = new System.Drawing.Point(93, 164);
+            this.txtPhone.MaxLength = 10;
             this.txtPhone.Multiline = true;
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Numbers = true;
@@ -106,6 +110,7 @@
             // txtLastname
             // 
             this.txtLastname.Email = false;
+            this.txtLastname.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLastname.Letters = true;
             this.txtLastname.Location = new System.Drawing.Point(94, 117);
             this.txtLastname.Multiline = true;
@@ -118,13 +123,14 @@
             // txtName
             // 
             this.txtName.Email = false;
+            this.txtName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtName.Letters = true;
             this.txtName.Location = new System.Drawing.Point(94, 71);
             this.txtName.Multiline = true;
             this.txtName.Name = "txtName";
             this.txtName.Numbers = false;
             this.txtName.Size = new System.Drawing.Size(203, 24);
-            this.txtName.TabIndex = 0;
+            this.txtName.TabIndex = 1;
             this.txtName.Validate = true;
             // 
             // label4
@@ -171,7 +177,7 @@
             // 
             this.btnUpload.BackgroundImage = global::Market_Manager.Properties.Resources.Camera;
             this.btnUpload.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnUpload.Location = new System.Drawing.Point(439, 200);
+            this.btnUpload.Location = new System.Drawing.Point(439, 216);
             this.btnUpload.Name = "btnUpload";
             this.btnUpload.Size = new System.Drawing.Size(40, 35);
             this.btnUpload.TabIndex = 27;
@@ -181,7 +187,7 @@
             // 
             this.btnCamera.BackgroundImage = global::Market_Manager.Properties.Resources.upload;
             this.btnCamera.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnCamera.Location = new System.Drawing.Point(373, 200);
+            this.btnCamera.Location = new System.Drawing.Point(373, 216);
             this.btnCamera.Name = "btnCamera";
             this.btnCamera.Size = new System.Drawing.Size(40, 35);
             this.btnCamera.TabIndex = 26;
@@ -192,7 +198,7 @@
             this.ptPicture.BackgroundImage = global::Market_Manager.Properties.Resources.user_person;
             this.ptPicture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ptPicture.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ptPicture.Location = new System.Drawing.Point(350, 23);
+            this.ptPicture.Location = new System.Drawing.Point(350, 39);
             this.ptPicture.Name = "ptPicture";
             this.ptPicture.Size = new System.Drawing.Size(146, 171);
             this.ptPicture.TabIndex = 11;
@@ -205,7 +211,7 @@
             this.cmbRole.Location = new System.Drawing.Point(93, 251);
             this.cmbRole.Name = "cmbRole";
             this.cmbRole.Size = new System.Drawing.Size(96, 26);
-            this.cmbRole.TabIndex = 4;
+            this.cmbRole.TabIndex = 5;
             this.cmbRole.Validate = true;
             // 
             // groupBox2
@@ -213,13 +219,13 @@
             this.groupBox2.Controls.Add(this.label11);
             this.groupBox2.Controls.Add(this.cmbState);
             this.groupBox2.Controls.Add(this.label12);
-            this.groupBox2.Controls.Add(this.validateTextBox4);
-            this.groupBox2.Controls.Add(this.validateTextBox5);
+            this.groupBox2.Controls.Add(this.txtZipcode);
+            this.groupBox2.Controls.Add(this.txtCity);
             this.groupBox2.Controls.Add(this.label13);
-            this.groupBox2.Controls.Add(this.validateTextBox6);
+            this.groupBox2.Controls.Add(this.txtApt);
             this.groupBox2.Controls.Add(this.label14);
             this.groupBox2.Controls.Add(this.label15);
-            this.groupBox2.Controls.Add(this.validateTextBox7);
+            this.groupBox2.Controls.Add(this.txtStreet);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(23, 283);
             this.groupBox2.Name = "groupBox2";
@@ -244,7 +250,7 @@
             this.cmbState.Location = new System.Drawing.Point(71, 89);
             this.cmbState.Name = "cmbState";
             this.cmbState.Size = new System.Drawing.Size(138, 26);
-            this.cmbState.TabIndex = 8;
+            this.cmbState.TabIndex = 9;
             this.cmbState.Validate = true;
             // 
             // label12
@@ -257,27 +263,28 @@
             this.label12.TabIndex = 7;
             this.label12.Text = "Zipcode:";
             // 
-            // validateTextBox4
+            // txtZipcode
             // 
-            this.validateTextBox4.Email = false;
-            this.validateTextBox4.Letters = false;
-            this.validateTextBox4.Location = new System.Drawing.Point(372, 91);
-            this.validateTextBox4.Name = "validateTextBox4";
-            this.validateTextBox4.Numbers = true;
-            this.validateTextBox4.Size = new System.Drawing.Size(75, 24);
-            this.validateTextBox4.TabIndex = 9;
-            this.validateTextBox4.Validate = true;
+            this.txtZipcode.Email = false;
+            this.txtZipcode.Letters = false;
+            this.txtZipcode.Location = new System.Drawing.Point(372, 91);
+            this.txtZipcode.MaxLength = 5;
+            this.txtZipcode.Name = "txtZipcode";
+            this.txtZipcode.Numbers = true;
+            this.txtZipcode.Size = new System.Drawing.Size(75, 24);
+            this.txtZipcode.TabIndex = 10;
+            this.txtZipcode.Validate = true;
             // 
-            // validateTextBox5
+            // txtCity
             // 
-            this.validateTextBox5.Email = false;
-            this.validateTextBox5.Letters = true;
-            this.validateTextBox5.Location = new System.Drawing.Point(296, 56);
-            this.validateTextBox5.Name = "validateTextBox5";
-            this.validateTextBox5.Numbers = false;
-            this.validateTextBox5.Size = new System.Drawing.Size(151, 24);
-            this.validateTextBox5.TabIndex = 7;
-            this.validateTextBox5.Validate = true;
+            this.txtCity.Email = false;
+            this.txtCity.Letters = true;
+            this.txtCity.Location = new System.Drawing.Point(296, 56);
+            this.txtCity.Name = "txtCity";
+            this.txtCity.Numbers = false;
+            this.txtCity.Size = new System.Drawing.Size(151, 24);
+            this.txtCity.TabIndex = 8;
+            this.txtCity.Validate = true;
             // 
             // label13
             // 
@@ -289,16 +296,16 @@
             this.label13.TabIndex = 4;
             this.label13.Text = "City:";
             // 
-            // validateTextBox6
+            // txtApt
             // 
-            this.validateTextBox6.Email = false;
-            this.validateTextBox6.Letters = false;
-            this.validateTextBox6.Location = new System.Drawing.Point(117, 56);
-            this.validateTextBox6.Name = "validateTextBox6";
-            this.validateTextBox6.Numbers = false;
-            this.validateTextBox6.Size = new System.Drawing.Size(92, 24);
-            this.validateTextBox6.TabIndex = 6;
-            this.validateTextBox6.Validate = false;
+            this.txtApt.Email = false;
+            this.txtApt.Letters = false;
+            this.txtApt.Location = new System.Drawing.Point(117, 56);
+            this.txtApt.Name = "txtApt";
+            this.txtApt.Numbers = false;
+            this.txtApt.Size = new System.Drawing.Size(92, 24);
+            this.txtApt.TabIndex = 7;
+            this.txtApt.Validate = false;
             // 
             // label14
             // 
@@ -320,21 +327,21 @@
             this.label15.TabIndex = 1;
             this.label15.Text = "Street:";
             // 
-            // validateTextBox7
+            // txtStreet
             // 
-            this.validateTextBox7.Email = false;
-            this.validateTextBox7.Letters = false;
-            this.validateTextBox7.Location = new System.Drawing.Point(71, 23);
-            this.validateTextBox7.Name = "validateTextBox7";
-            this.validateTextBox7.Numbers = false;
-            this.validateTextBox7.Size = new System.Drawing.Size(376, 24);
-            this.validateTextBox7.TabIndex = 5;
-            this.validateTextBox7.Validate = true;
+            this.txtStreet.Email = false;
+            this.txtStreet.Letters = false;
+            this.txtStreet.Location = new System.Drawing.Point(71, 23);
+            this.txtStreet.Name = "txtStreet";
+            this.txtStreet.Numbers = false;
+            this.txtStreet.Size = new System.Drawing.Size(376, 24);
+            this.txtStreet.TabIndex = 6;
+            this.txtStreet.Validate = true;
             // 
             // txtDLN
             // 
             this.txtDLN.Email = false;
-            this.txtDLN.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDLN.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDLN.Letters = false;
             this.txtDLN.Location = new System.Drawing.Point(94, 26);
             this.txtDLN.MaxLength = 8;
@@ -342,7 +349,7 @@
             this.txtDLN.Name = "txtDLN";
             this.txtDLN.Numbers = false;
             this.txtDLN.Size = new System.Drawing.Size(203, 24);
-            this.txtDLN.TabIndex = 48;
+            this.txtDLN.TabIndex = 0;
             this.txtDLN.Validate = true;
             // 
             // label6
@@ -357,8 +364,10 @@
             // 
             // NewEmployer
             // 
+            this.AcceptButton = this.btnAccept;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btnCancel;
             this.ClientSize = new System.Drawing.Size(528, 490);
             this.Controls.Add(this.txtDLN);
             this.Controls.Add(this.label6);
@@ -425,13 +434,13 @@
         private System.Windows.Forms.Label label11;
         private Security.ValidateComboBox cmbState;
         private System.Windows.Forms.Label label12;
-        private Security.ValidateTextBox validateTextBox4;
-        private Security.ValidateTextBox validateTextBox5;
+        private Security.ValidateTextBox txtZipcode;
+        private Security.ValidateTextBox txtCity;
         private System.Windows.Forms.Label label13;
-        private Security.ValidateTextBox validateTextBox6;
+        private Security.ValidateTextBox txtApt;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
-        private Security.ValidateTextBox validateTextBox7;
+        private Security.ValidateTextBox txtStreet;
         private Security.ValidateTextBox txtDLN;
         private System.Windows.Forms.Label label6;
     }

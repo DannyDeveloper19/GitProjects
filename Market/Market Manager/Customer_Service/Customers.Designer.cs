@@ -237,9 +237,11 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.BackgroundImage = global::Market_Manager.Properties.Resources.Logo;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Location = new System.Drawing.Point(12, 12);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(253, 79);
+            this.pictureBox1.Size = new System.Drawing.Size(204, 79);
             this.pictureBox1.TabIndex = 30;
             this.pictureBox1.TabStop = false;
             // 
@@ -256,7 +258,9 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(781, 544);
             this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(781, 544);
             this.Name = "CustomerQuery";
             this.Text = " Customers";
             this.Load += new System.EventHandler(this.CustomerQuery_Load);

@@ -28,12 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ChangePassword));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.txtConfirmPassword = new Security.ValidateTextBox();
+            this.txtNewPassword = new Security.ValidateTextBox();
+            this.txtCurentPassword = new Security.ValidateTextBox();
             this.SuspendLayout();
             // 
             // btnCancel
@@ -50,32 +51,11 @@
             this.btnAccept.Location = new System.Drawing.Point(43, 192);
             this.btnAccept.Size = new System.Drawing.Size(129, 38);
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(132, 37);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(197, 20);
-            this.textBox1.TabIndex = 20;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(132, 85);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(197, 20);
-            this.textBox2.TabIndex = 21;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(132, 134);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(197, 20);
-            this.textBox3.TabIndex = 22;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 38);
+            this.label1.Location = new System.Drawing.Point(14, 43);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(115, 16);
             this.label1.TabIndex = 23;
@@ -85,7 +65,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(24, 86);
+            this.label2.Location = new System.Drawing.Point(29, 91);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(100, 16);
             this.label2.TabIndex = 24;
@@ -95,11 +75,53 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(11, 135);
+            this.label3.Location = new System.Drawing.Point(11, 139);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(118, 16);
             this.label3.TabIndex = 25;
             this.label3.Text = "Confirm password:";
+            // 
+            // txtConfirmPassword
+            // 
+            this.txtConfirmPassword.Email = false;
+            this.txtConfirmPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtConfirmPassword.Letters = false;
+            this.txtConfirmPassword.Location = new System.Drawing.Point(132, 134);
+            this.txtConfirmPassword.Name = "txtConfirmPassword";
+            this.txtConfirmPassword.Numbers = false;
+            this.txtConfirmPassword.Password = true;
+            this.txtConfirmPassword.PasswordChar = '*';
+            this.txtConfirmPassword.Size = new System.Drawing.Size(197, 24);
+            this.txtConfirmPassword.TabIndex = 22;
+            this.txtConfirmPassword.Validate = true;
+            // 
+            // txtNewPassword
+            // 
+            this.txtNewPassword.Email = false;
+            this.txtNewPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNewPassword.Letters = false;
+            this.txtNewPassword.Location = new System.Drawing.Point(132, 86);
+            this.txtNewPassword.Name = "txtNewPassword";
+            this.txtNewPassword.Numbers = false;
+            this.txtNewPassword.Password = true;
+            this.txtNewPassword.PasswordChar = '*';
+            this.txtNewPassword.Size = new System.Drawing.Size(197, 24);
+            this.txtNewPassword.TabIndex = 21;
+            this.txtNewPassword.Validate = true;
+            // 
+            // txtCurentPassword
+            // 
+            this.txtCurentPassword.Email = false;
+            this.txtCurentPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCurentPassword.Letters = false;
+            this.txtCurentPassword.Location = new System.Drawing.Point(132, 38);
+            this.txtCurentPassword.Name = "txtCurentPassword";
+            this.txtCurentPassword.Numbers = false;
+            this.txtCurentPassword.Password = false;
+            this.txtCurentPassword.PasswordChar = '*';
+            this.txtCurentPassword.Size = new System.Drawing.Size(197, 24);
+            this.txtCurentPassword.TabIndex = 20;
+            this.txtCurentPassword.Validate = true;
             // 
             // ChangePassword
             // 
@@ -108,17 +130,18 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtConfirmPassword);
+            this.Controls.Add(this.txtNewPassword);
+            this.Controls.Add(this.txtCurentPassword);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ChangePassword";
             this.Text = "Change Password";
             this.Controls.SetChildIndex(this.btnAccept, 0);
             this.Controls.SetChildIndex(this.btnCancel, 0);
-            this.Controls.SetChildIndex(this.textBox1, 0);
-            this.Controls.SetChildIndex(this.textBox2, 0);
-            this.Controls.SetChildIndex(this.textBox3, 0);
+            this.Controls.SetChildIndex(this.txtCurentPassword, 0);
+            this.Controls.SetChildIndex(this.txtNewPassword, 0);
+            this.Controls.SetChildIndex(this.txtConfirmPassword, 0);
             this.Controls.SetChildIndex(this.label1, 0);
             this.Controls.SetChildIndex(this.label2, 0);
             this.Controls.SetChildIndex(this.label3, 0);
@@ -129,9 +152,9 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private Security.ValidateTextBox txtCurentPassword;
+        private Security.ValidateTextBox txtNewPassword;
+        private Security.ValidateTextBox txtConfirmPassword;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;

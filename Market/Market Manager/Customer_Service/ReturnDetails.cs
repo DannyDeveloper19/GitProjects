@@ -75,8 +75,16 @@ namespace Market_Manager.Customer_Service
         {
             if (updateQuantity != null)
             {
-                updateQuantity(int.Parse(txtQuantity.Text), cmbCondition.Text);
-                this.Close();
+                if (cmbCondition.Text != "")
+                {
+                    updateQuantity(int.Parse(txtQuantity.Text), cmbCondition.Text);
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("You must select a condition", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                
             }
         }
 

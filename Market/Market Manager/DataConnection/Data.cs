@@ -11,11 +11,42 @@ namespace Market_Manager.DataConnection
 {
     class Employer_Data
     {
-        //Employer log in
-        public static EmployerModel Login(string id_employer, string password)
+        //Employer log in --Done
+        public static object Login(string id_employer, string password)
         {
-            //It's not done
-            return new EmployerModel();
+            string sql_query = string.Format("Select * from Employers where id_employer = '{0}'", id_employer);
+            DataSet dataSet = Utilities.execute(sql_query);
+
+            //Check password encrypted
+            string pass = dataSet.Tables[0].Rows[0]["employer_password"].ToString().Trim();
+            //!Security.Security.ComparePassword(password,pass)
+            if (!Security.Security.ComparePassword(password, pass))
+            {
+                return false;
+            }
+            else
+            {
+                string id = dataSet.Tables[0].Rows[0]["id_employer"].ToString().Trim();
+                string name = dataSet.Tables[0].Rows[0]["employer_name"].ToString().Trim();
+                string lastname = dataSet.Tables[0].Rows[0]["employer_lastname"].ToString().Trim();
+                string address = dataSet.Tables[0].Rows[0]["employer_address"].ToString().Trim();
+                string phone = dataSet.Tables[0].Rows[0]["employer_phone"].ToString().Trim();
+                string email = dataSet.Tables[0].Rows[0]["employer_email"].ToString().Trim();
+                string dln = dataSet.Tables[0].Rows[0]["employer_dln"].ToString().Trim();
+                sql_query = string.Format("Select role_name from Roles inner join Employer_Role on Employer_Role.id_role = Roles.id_role where Employer_Role.id_employer = '{0}'", id);
+                dataSet = Utilities.execute(sql_query);
+                string role = dataSet.Tables[0].Rows[0]["role_name"].ToString();
+                DataSet data = Utilities.execute(string.Format("EXEC Log_In_Out '{0}','{1}'", id, 1));
+                var id_logged = data.Tables[0].Rows[0]["id_logged"].ToString().Trim();
+                var employer = new EmployerModel(id, name, lastname, address, phone, email, dln, role,id_logged);
+                return employer;
+            }
+            
+        }
+
+        public static void LogOut(string id, string id_logged)
+        {
+            DataSet data = Utilities.execute(string.Format("EXEC Log_In_Out '{0}','{1}','{2}'", id, 0, id_logged));
         }
 
         //Employer information
@@ -25,7 +56,30 @@ namespace Market_Manager.DataConnection
             return new EmployerModel();
         }
 
-        //Add new employer
+        //Add new employer --Done
+        public static void NewEmployer(EmployerModel employer)
+        {
+            string cmd = string.Format("EXEC UpdateEmployer '{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}'"
+                , employer.id_employer, employer.employer_name, employer.employer_lastname,employer.employer_phone,
+                employer.employer_email,employer.employer_role,employer.employer_address,employer.employer_dln);
+            Utilities.execute(cmd);
+        }
+
+        //Change password
+        public static bool ChangePassword(string id, string oldpassword, string newpassword)
+        {
+            DataSet data = Utilities.execute(string.Format("Select employer_password from Employers where id_employer = '{0}'",id));
+            string selected = data.Tables[0].Rows[0]["employer_password"].ToString().Trim();
+            //Security.Security.ComparePassword(oldpassword,selected)
+            //Old Password can't be equal new password
+            if (!Security.Security.ComparePassword(oldpassword, selected))
+            {
+                return false;
+            }
+            string cmd = string.Format("EXEC ChangePassword '{0}','{1}'", id, newpassword);
+            Utilities.execute(cmd);
+            return true;
+        }
 
         //Update employer infomation
 

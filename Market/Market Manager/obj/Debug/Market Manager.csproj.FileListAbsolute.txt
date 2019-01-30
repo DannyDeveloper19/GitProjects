@@ -154,3 +154,4 @@ C:\GitProjects\Market\Market Manager\bin\Debug\BarcodeLib.dll
 C:\GitProjects\Market\Market Manager\bin\Debug\Gma.QrCodeNet.Encoding.dll
 C:\GitProjects\Market\Market Manager\bin\Debug\Gma.QrCodeNet.Encoding.pdb
 C:\GitProjects\Market\Market Manager\bin\Debug\Gma.QrCodeNet.Encoding.xml
+C:\GitProjects\Market\Market Manager\obj\Debug\Market Manager.csprojAssemblyReference.cache

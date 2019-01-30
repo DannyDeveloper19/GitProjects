@@ -18,7 +18,7 @@ namespace Market_Manager.Admission
             {
                 try
                 {
-                    string id = "MBR" + Security.Security.generateIdNumber().Trim();
+                    string id = "MBR" + Security.Security.generateIdNumber();
                     string dni = txtDLN.Text.Trim();
                     string name = txtName.Text.Trim();
                     string lastname = txtLastname.Text.Trim();
@@ -26,7 +26,7 @@ namespace Market_Manager.Admission
                     string email = txtEmail.Text.Trim();
 
                     string address = (txtApt.Text != "")
-                        ? txtStreet.Text.Trim() + ", Apt. " + txtApt.Text.Trim() + ", " + txtCity.Text.Trim() + ", " + cmbState.Text.Trim() + ", " + txtZipcode.Text.Trim() : txtStreet.Text.Trim() + ", " + txtCity.Text.Trim() + ", " + cmbState.Text.Trim() + ", " + txtZipcode.Text.Trim();
+                        ? txtStreet.Text.Trim() + ", Apt# " + txtApt.Text.Trim() + ", " + txtCity.Text.Trim() + ", " + cmbState.Text.Trim() + ", " + txtZipcode.Text.Trim() : txtStreet.Text.Trim() + ", " + txtCity.Text.Trim() + ", " + cmbState.Text.Trim() + ", " + txtZipcode.Text.Trim();
                     var newCustomer = new CustomerModel(id, name, lastname, phone, address, email, dni);
                     Customer_Data.newCustomer(newCustomer);
 
@@ -36,7 +36,7 @@ namespace Market_Manager.Admission
                 catch (Exception)
                 {
 
-                    MessageBox.Show("There were an error trying to add this user", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("There were an error trying to add this user", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }

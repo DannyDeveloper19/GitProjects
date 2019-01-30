@@ -37,17 +37,43 @@ namespace Market_Manager.Admission
 
         public override void Save()
         {
-            string id_product = dgvProducts.Rows[dgvProducts.SelectedCells[0].RowIndex].Cells[0].Value.ToString();
-            string name = dgvProducts.Rows[dgvProducts.SelectedCells[0].RowIndex].Cells[1].Value.ToString();
-            string mark = dgvProducts.Rows[dgvProducts.SelectedCells[0].RowIndex].Cells[2].Value.ToString();
-            double price = double.Parse(dgvProducts.Rows[dgvProducts.SelectedCells[0].RowIndex].Cells[3].Value.ToString());
-            int quantity = int.Parse(dgvProducts.Rows[dgvProducts.SelectedCells[0].RowIndex].Cells[4].Value.ToString());
-            double amount = double.Parse(dgvProducts.Rows[dgvProducts.SelectedCells[0].RowIndex].Cells[5].Value.ToString());
-            double total_amount = double.Parse(txtCurrentAmount.Text);
-            var product = new Purshase_Product(id_product,name,mark,price,quantity,amount,total_amount);
-            ReturnDetails returnDetails = new ReturnDetails(txtIdPurshase.Text,product);
-            returnDetails.updateQuantity = new ReturnDetails.UpdateQuantity(UpdateQuantityEventHandler);
-            returnDetails.ShowDialog();
+            if (ckbCancelOrder.Checked)
+            {
+                try
+                {
+                    Purshase.CancelSaleOrder(txtIdPurshase.Text);
+                    MessageBox.Show("The order has been cancel.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    var dialog = MessageBox.Show("Do you want to process a new order?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                    if (dialog == DialogResult.OK)
+                    {
+                        Initialize();
+                    }
+                    else
+                    {
+                        this.Close();
+                    }
+                }
+                catch (Exception ex)
+                {
+
+                    MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                string id_product = dgvProducts.Rows[dgvProducts.SelectedCells[0].RowIndex].Cells[0].Value.ToString();
+                string name = dgvProducts.Rows[dgvProducts.SelectedCells[0].RowIndex].Cells[1].Value.ToString();
+                string mark = dgvProducts.Rows[dgvProducts.SelectedCells[0].RowIndex].Cells[2].Value.ToString();
+                double price = double.Parse(dgvProducts.Rows[dgvProducts.SelectedCells[0].RowIndex].Cells[3].Value.ToString());
+                int quantity = int.Parse(dgvProducts.Rows[dgvProducts.SelectedCells[0].RowIndex].Cells[4].Value.ToString());
+                double amount = double.Parse(dgvProducts.Rows[dgvProducts.SelectedCells[0].RowIndex].Cells[5].Value.ToString());
+                double total_amount = double.Parse(txtCurrentAmount.Text);
+                var product = new Purshase_Product(id_product, name, mark, price, quantity, amount, total_amount);
+                ReturnDetails returnDetails = new ReturnDetails(txtIdPurshase.Text, product);
+                returnDetails.updateQuantity = new ReturnDetails.UpdateQuantity(UpdateQuantityEventHandler);
+                returnDetails.ShowDialog();
+            }
+            
         }
 
         private void UpdateQuantityEventHandler(object sender, object sender2)
@@ -56,7 +82,6 @@ namespace Market_Manager.Admission
             {
                 string id_product = dgvProducts.Rows[dgvProducts.SelectedCells[0].RowIndex].Cells[0].Value.ToString();
                 int quantity = int.Parse(dgvProducts.Rows[dgvProducts.SelectedCells[0].RowIndex].Cells[4].Value.ToString());
-                //MessageBox.Show(string.Format("Order: '{0}, Product: '{1}', Quantity: '{2}', Condition: '{3}'", txtIdPurshase.Text, id_product, sender.ToString(), sender2.ToString()));
                 int count = int.Parse(sender.ToString());
                 string condition = sender2.ToString();
                 if (count > 0)

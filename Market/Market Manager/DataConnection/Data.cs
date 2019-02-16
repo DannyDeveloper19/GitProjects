@@ -33,22 +33,24 @@ namespace Market_Manager.DataConnection
                 return false;
             }
 
-                string id = dataSet.Tables[0].Rows[0]["id_employer"].ToString().Trim();
-                string name = dataSet.Tables[0].Rows[0]["employer_name"].ToString().Trim();
-                string lastname = dataSet.Tables[0].Rows[0]["employer_lastname"].ToString().Trim();
-                string address = dataSet.Tables[0].Rows[0]["employer_address"].ToString().Trim();
-                string phone = dataSet.Tables[0].Rows[0]["employer_phone"].ToString().Trim();
-                string email = dataSet.Tables[0].Rows[0]["employer_email"].ToString().Trim();
-                string dln = dataSet.Tables[0].Rows[0]["employer_dln"].ToString().Trim();
-                sql_query = string.Format("Select role_name from Roles inner join Employer_Role on Employer_Role.id_role = Roles.id_role where Employer_Role.id_employer = '{0}'", id);
-                dataSet = Utilities.execute(sql_query);
-                string role = dataSet.Tables[0].Rows[0]["role_name"].ToString();
-                dataSet = Utilities.execute(string.Format("Select Picture from Employer_Picture where id_employer = '{0}'", id));
-                byte[] picture = (byte[])dataSet.Tables[0].Rows[0]["Picture"];
-                DataSet data = Utilities.execute(string.Format("EXEC Log_In_Out '{0}','{1}'", id, 1));
-                var id_logged = data.Tables[0].Rows[0]["id_logged"].ToString().Trim();
-                var employer =(picture != null)? new EmployerModel(id, name, lastname, address, phone, email, dln, role, id_logged,picture) : new EmployerModel(id, name, lastname, address, phone, email, dln, role,id_logged);
-                return employer;
+            string id = dataSet.Tables[0].Rows[0]["id_employer"].ToString().Trim();
+            string name = dataSet.Tables[0].Rows[0]["employer_name"].ToString().Trim();
+            string lastname = dataSet.Tables[0].Rows[0]["employer_lastname"].ToString().Trim();
+            string address = dataSet.Tables[0].Rows[0]["employer_address"].ToString().Trim();
+            string phone = dataSet.Tables[0].Rows[0]["employer_phone"].ToString().Trim();
+            string email = dataSet.Tables[0].Rows[0]["employer_email"].ToString().Trim();
+            string dln = dataSet.Tables[0].Rows[0]["employer_dln"].ToString().Trim();
+            sql_query = string.Format("Select role_name from Roles inner join Employer_Role on Employer_Role.id_role = Roles.id_role where Employer_Role.id_employer = '{0}'", id);
+            dataSet = Utilities.execute(sql_query);
+            string role = dataSet.Tables[0].Rows[0]["role_name"].ToString();
+            dataSet = Utilities.execute(string.Format("Select Picture from Employer_Picture where id_employer = '{0}'", id));
+            byte[] picture = null;
+            if (dataSet.Tables[0].Rows.Count != 0)
+                picture = (byte[])dataSet.Tables[0].Rows[0]["Picture"];
+            DataSet data = Utilities.execute(string.Format("EXEC Log_In_Out '{0}','{1}'", id, 1));
+            var id_logged = data.Tables[0].Rows[0]["id_logged"].ToString().Trim();
+            var employer =(picture != null)? new EmployerModel(id, name, lastname, address, phone, email, dln, role, id_logged,picture) : new EmployerModel(id, name, lastname, address, phone, email, dln, role,id_logged);
+            return employer;
             
         }
 

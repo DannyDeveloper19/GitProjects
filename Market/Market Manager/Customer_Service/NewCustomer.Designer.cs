@@ -76,6 +76,7 @@
             this.btnUpload.Size = new System.Drawing.Size(40, 35);
             this.btnUpload.TabIndex = 43;
             this.btnUpload.UseVisualStyleBackColor = true;
+            this.btnUpload.Click += new System.EventHandler(this.btnUpload_Click);
             // 
             // btnCamera
             // 

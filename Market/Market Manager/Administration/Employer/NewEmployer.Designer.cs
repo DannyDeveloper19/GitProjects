@@ -79,6 +79,7 @@
             this.txtEmail.Multiline = true;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Numbers = false;
+            this.txtEmail.Password = false;
             this.txtEmail.Size = new System.Drawing.Size(203, 24);
             this.txtEmail.TabIndex = 4;
             this.txtEmail.Validate = true;
@@ -93,6 +94,7 @@
             this.txtPhone.Multiline = true;
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Numbers = true;
+            this.txtPhone.Password = false;
             this.txtPhone.Size = new System.Drawing.Size(203, 24);
             this.txtPhone.TabIndex = 3;
             this.txtPhone.Validate = true;
@@ -116,6 +118,7 @@
             this.txtLastname.Multiline = true;
             this.txtLastname.Name = "txtLastname";
             this.txtLastname.Numbers = false;
+            this.txtLastname.Password = false;
             this.txtLastname.Size = new System.Drawing.Size(203, 24);
             this.txtLastname.TabIndex = 2;
             this.txtLastname.Validate = true;
@@ -129,6 +132,7 @@
             this.txtName.Multiline = true;
             this.txtName.Name = "txtName";
             this.txtName.Numbers = false;
+            this.txtName.Password = false;
             this.txtName.Size = new System.Drawing.Size(203, 24);
             this.txtName.TabIndex = 1;
             this.txtName.Validate = true;
@@ -182,6 +186,7 @@
             this.btnUpload.Size = new System.Drawing.Size(40, 35);
             this.btnUpload.TabIndex = 27;
             this.btnUpload.UseVisualStyleBackColor = true;
+            this.btnUpload.Click += new System.EventHandler(this.btnUpload_Click_1);
             // 
             // btnCamera
             // 
@@ -271,6 +276,7 @@
             this.txtZipcode.MaxLength = 5;
             this.txtZipcode.Name = "txtZipcode";
             this.txtZipcode.Numbers = true;
+            this.txtZipcode.Password = false;
             this.txtZipcode.Size = new System.Drawing.Size(75, 24);
             this.txtZipcode.TabIndex = 10;
             this.txtZipcode.Validate = true;
@@ -282,6 +288,7 @@
             this.txtCity.Location = new System.Drawing.Point(296, 56);
             this.txtCity.Name = "txtCity";
             this.txtCity.Numbers = false;
+            this.txtCity.Password = false;
             this.txtCity.Size = new System.Drawing.Size(151, 24);
             this.txtCity.TabIndex = 8;
             this.txtCity.Validate = true;
@@ -303,6 +310,7 @@
             this.txtApt.Location = new System.Drawing.Point(117, 56);
             this.txtApt.Name = "txtApt";
             this.txtApt.Numbers = false;
+            this.txtApt.Password = false;
             this.txtApt.Size = new System.Drawing.Size(92, 24);
             this.txtApt.TabIndex = 7;
             this.txtApt.Validate = false;
@@ -334,6 +342,7 @@
             this.txtStreet.Location = new System.Drawing.Point(71, 23);
             this.txtStreet.Name = "txtStreet";
             this.txtStreet.Numbers = false;
+            this.txtStreet.Password = false;
             this.txtStreet.Size = new System.Drawing.Size(376, 24);
             this.txtStreet.TabIndex = 6;
             this.txtStreet.Validate = true;
@@ -348,6 +357,7 @@
             this.txtDLN.Multiline = true;
             this.txtDLN.Name = "txtDLN";
             this.txtDLN.Numbers = false;
+            this.txtDLN.Password = false;
             this.txtDLN.Size = new System.Drawing.Size(203, 24);
             this.txtDLN.TabIndex = 0;
             this.txtDLN.Validate = true;

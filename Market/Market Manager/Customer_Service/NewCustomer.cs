@@ -1,5 +1,6 @@
 ﻿using Market_Manager.DataConnection;
 using Market_Manager.Models;
+using Market_Manager.Shared;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
@@ -64,5 +65,28 @@ namespace Market_Manager.Admission
             ptPicture.BackgroundImage = Image.FromFile(filename: base.UploadPicture());
             ptPicture.BackgroundImageLayout = ImageLayout.Stretch;
        }
+
+        private void btnUpload_Click(object sender, EventArgs e)
+        {
+            CapturePicture capture = new CapturePicture();
+            capture.pictureCaptured = new CapturePicture.GetPictureCaptured(PictureCaptureEventHandler);
+            capture.StartPosition = FormStartPosition.CenterScreen;
+            capture.ShowDialog();
+        }
+
+        private void PictureCaptureEventHandler(object sender)
+        {
+            try
+            {
+                ptPicture.BackgroundImage = (Image)sender;
+                ptPicture.Tag = true;
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Error: "+ex.Message);
+            }
+            
+        }
     }
 }

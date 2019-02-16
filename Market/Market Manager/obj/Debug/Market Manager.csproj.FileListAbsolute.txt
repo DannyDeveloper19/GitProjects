@@ -427,3 +427,14 @@ C:\Users\dhsim\Documents\Visual Studio 2017\Projects\Market\Market Manager\bin\D
 C:\Users\dhsim\Documents\Visual Studio 2017\Projects\Market\Market Manager\bin\Debug\AForge.Math.dll
 C:\Users\dhsim\Documents\Visual Studio 2017\Projects\Market\Market Manager\bin\Debug\AForge.Imaging.xml
 C:\Users\dhsim\Documents\Visual Studio 2017\Projects\Market\Market Manager\bin\Debug\AForge.Math.xml
+C:\GitProjects\Market\Market Manager\bin\Debug\AForge.Video.DirectShow.dll
+C:\GitProjects\Market\Market Manager\bin\Debug\AForge.Imaging.dll
+C:\GitProjects\Market\Market Manager\bin\Debug\AForge.Video.dll
+C:\GitProjects\Market\Market Manager\bin\Debug\AForge.dll
+C:\GitProjects\Market\Market Manager\bin\Debug\AForge.Math.dll
+C:\GitProjects\Market\Market Manager\bin\Debug\AForge.Video.DirectShow.xml
+C:\GitProjects\Market\Market Manager\bin\Debug\AForge.Imaging.xml
+C:\GitProjects\Market\Market Manager\bin\Debug\AForge.Video.xml
+C:\GitProjects\Market\Market Manager\bin\Debug\AForge.xml
+C:\GitProjects\Market\Market Manager\bin\Debug\AForge.Math.xml
+C:\GitProjects\Market\Market Manager\obj\Debug\Market_Manager.Shared.CapturePicture.resources

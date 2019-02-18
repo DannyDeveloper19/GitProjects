@@ -78,7 +78,7 @@ namespace Market_Manager.Administration
             ptPicture.Tag = true;
         }
 
-        private void btnUpload_Click_1(object sender, EventArgs e)
+        private void btnCamera_Click(object sender, EventArgs e)
         {
             CapturePicture capture = new CapturePicture();
             capture.pictureCaptured = new CapturePicture.GetPictureCaptured(PictureCaptureEventHandler);

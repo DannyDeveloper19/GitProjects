@@ -38,8 +38,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnUpload = new System.Windows.Forms.Button();
             this.btnCamera = new System.Windows.Forms.Button();
+            this.btnUpload = new System.Windows.Forms.Button();
             this.ptPicture = new System.Windows.Forms.PictureBox();
             this.cmbRole = new Security.ValidateComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -177,26 +177,27 @@
             this.label1.TabIndex = 24;
             this.label1.Text = "Email:";
             // 
-            // btnUpload
-            // 
-            this.btnUpload.BackgroundImage = global::Market_Manager.Properties.Resources.Camera;
-            this.btnUpload.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnUpload.Location = new System.Drawing.Point(439, 216);
-            this.btnUpload.Name = "btnUpload";
-            this.btnUpload.Size = new System.Drawing.Size(40, 35);
-            this.btnUpload.TabIndex = 27;
-            this.btnUpload.UseVisualStyleBackColor = true;
-            this.btnUpload.Click += new System.EventHandler(this.btnUpload_Click_1);
-            // 
             // btnCamera
             // 
-            this.btnCamera.BackgroundImage = global::Market_Manager.Properties.Resources.upload;
+            this.btnCamera.BackgroundImage = global::Market_Manager.Properties.Resources.Camera;
             this.btnCamera.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnCamera.Location = new System.Drawing.Point(373, 216);
+            this.btnCamera.Location = new System.Drawing.Point(439, 216);
             this.btnCamera.Name = "btnCamera";
             this.btnCamera.Size = new System.Drawing.Size(40, 35);
-            this.btnCamera.TabIndex = 26;
+            this.btnCamera.TabIndex = 27;
             this.btnCamera.UseVisualStyleBackColor = true;
+            this.btnCamera.Click += new System.EventHandler(this.btnCamera_Click);
+            // 
+            // btnUpload
+            // 
+            this.btnUpload.BackgroundImage = global::Market_Manager.Properties.Resources.upload;
+            this.btnUpload.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnUpload.Location = new System.Drawing.Point(373, 216);
+            this.btnUpload.Name = "btnUpload";
+            this.btnUpload.Size = new System.Drawing.Size(40, 35);
+            this.btnUpload.TabIndex = 26;
+            this.btnUpload.UseVisualStyleBackColor = true;
+            this.btnUpload.Click += new System.EventHandler(this.btnUpload_Click);
             // 
             // ptPicture
             // 
@@ -382,8 +383,8 @@
             this.Controls.Add(this.txtDLN);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.cmbRole);
-            this.Controls.Add(this.btnUpload);
             this.Controls.Add(this.btnCamera);
+            this.Controls.Add(this.btnUpload);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtEmail);
@@ -411,8 +412,8 @@
             this.Controls.SetChildIndex(this.txtEmail, 0);
             this.Controls.SetChildIndex(this.label1, 0);
             this.Controls.SetChildIndex(this.groupBox2, 0);
-            this.Controls.SetChildIndex(this.btnCamera, 0);
             this.Controls.SetChildIndex(this.btnUpload, 0);
+            this.Controls.SetChildIndex(this.btnCamera, 0);
             this.Controls.SetChildIndex(this.cmbRole, 0);
             this.Controls.SetChildIndex(this.btnAccept, 0);
             this.Controls.SetChildIndex(this.btnCancel, 0);
@@ -437,8 +438,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox ptPicture;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnCamera;
         private System.Windows.Forms.Button btnUpload;
+        private System.Windows.Forms.Button btnCamera;
         private Security.ValidateComboBox cmbRole;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label11;

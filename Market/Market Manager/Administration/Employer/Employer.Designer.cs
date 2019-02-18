@@ -51,19 +51,21 @@
             this.btnBenefits = new System.Windows.Forms.Button();
             this.txtDLN = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.btnCamera = new System.Windows.Forms.Button();
+            this.btnUpload = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ptPicture)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(353, 397);
+            this.btnCancel.Location = new System.Drawing.Point(353, 424);
             // 
             // btnAccept
             // 
             this.btnAccept.AllowDrop = true;
             this.btnAccept.AutoEllipsis = true;
-            this.btnAccept.Location = new System.Drawing.Point(353, 363);
+            this.btnAccept.Location = new System.Drawing.Point(353, 390);
             // 
             // ptPicture
             // 
@@ -162,7 +164,7 @@
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(38, 218);
+            this.groupBox2.Location = new System.Drawing.Point(38, 245);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(461, 139);
             this.groupBox2.TabIndex = 10;
@@ -224,7 +226,7 @@
             // btnCPassword
             // 
             this.btnCPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCPassword.Location = new System.Drawing.Point(55, 363);
+            this.btnCPassword.Location = new System.Drawing.Point(55, 390);
             this.btnCPassword.Name = "btnCPassword";
             this.btnCPassword.Size = new System.Drawing.Size(129, 28);
             this.btnCPassword.TabIndex = 0;
@@ -235,7 +237,7 @@
             // btnEProfile
             // 
             this.btnEProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEProfile.Location = new System.Drawing.Point(55, 397);
+            this.btnEProfile.Location = new System.Drawing.Point(55, 424);
             this.btnEProfile.Name = "btnEProfile";
             this.btnEProfile.Size = new System.Drawing.Size(129, 28);
             this.btnEProfile.TabIndex = 1;
@@ -246,7 +248,7 @@
             // btnStatement
             // 
             this.btnStatement.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStatement.Location = new System.Drawing.Point(205, 363);
+            this.btnStatement.Location = new System.Drawing.Point(205, 390);
             this.btnStatement.Name = "btnStatement";
             this.btnStatement.Size = new System.Drawing.Size(129, 28);
             this.btnStatement.TabIndex = 10;
@@ -256,7 +258,7 @@
             // btnBenefits
             // 
             this.btnBenefits.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBenefits.Location = new System.Drawing.Point(205, 397);
+            this.btnBenefits.Location = new System.Drawing.Point(205, 424);
             this.btnBenefits.Name = "btnBenefits";
             this.btnBenefits.Size = new System.Drawing.Size(129, 28);
             this.btnBenefits.TabIndex = 11;
@@ -283,11 +285,37 @@
             this.label8.TabIndex = 20;
             this.label8.Text = "DLN:";
             // 
+            // btnCamera
+            // 
+            this.btnCamera.BackgroundImage = global::Market_Manager.Properties.Resources.Camera;
+            this.btnCamera.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCamera.Location = new System.Drawing.Point(121, 189);
+            this.btnCamera.Name = "btnCamera";
+            this.btnCamera.Size = new System.Drawing.Size(40, 35);
+            this.btnCamera.TabIndex = 29;
+            this.btnCamera.UseVisualStyleBackColor = true;
+            this.btnCamera.Visible = false;
+            this.btnCamera.Click += new System.EventHandler(this.btnCamera_Click);
+            // 
+            // btnUpload
+            // 
+            this.btnUpload.BackgroundImage = global::Market_Manager.Properties.Resources.upload;
+            this.btnUpload.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnUpload.Location = new System.Drawing.Point(55, 189);
+            this.btnUpload.Name = "btnUpload";
+            this.btnUpload.Size = new System.Drawing.Size(40, 35);
+            this.btnUpload.TabIndex = 28;
+            this.btnUpload.UseVisualStyleBackColor = true;
+            this.btnUpload.Visible = false;
+            this.btnUpload.Click += new System.EventHandler(this.btnUpload_Click);
+            // 
             // Profile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(546, 450);
+            this.ClientSize = new System.Drawing.Size(546, 482);
+            this.Controls.Add(this.btnCamera);
+            this.Controls.Add(this.btnUpload);
             this.Controls.Add(this.txtDLN);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.btnBenefits);
@@ -321,11 +349,13 @@
             this.Controls.SetChildIndex(this.btnEProfile, 0);
             this.Controls.SetChildIndex(this.groupBox2, 0);
             this.Controls.SetChildIndex(this.btnStatement, 0);
-            this.Controls.SetChildIndex(this.btnAccept, 0);
-            this.Controls.SetChildIndex(this.btnCancel, 0);
             this.Controls.SetChildIndex(this.btnBenefits, 0);
             this.Controls.SetChildIndex(this.label8, 0);
             this.Controls.SetChildIndex(this.txtDLN, 0);
+            this.Controls.SetChildIndex(this.btnUpload, 0);
+            this.Controls.SetChildIndex(this.btnCamera, 0);
+            this.Controls.SetChildIndex(this.btnAccept, 0);
+            this.Controls.SetChildIndex(this.btnCancel, 0);
             ((System.ComponentModel.ISupportInitialize)(this.ptPicture)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
@@ -358,5 +388,7 @@
         private System.Windows.Forms.Button btnBenefits;
         private System.Windows.Forms.TextBox txtDLN;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button btnCamera;
+        private System.Windows.Forms.Button btnUpload;
     }
 }

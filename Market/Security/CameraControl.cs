@@ -72,10 +72,37 @@ namespace Security
 
         private void Video_NewFrame(object sender, NewFrameEventArgs eventArgs)
         {
+            
             brightness = new BrightnessCorrection(trbBrightness.Value);
             contrast = new ContrastCorrection(trbContrast.Value);
             gamma = new GammaCorrection(trbGamma.Value);
             Bitmap image = (Bitmap)eventArgs.Frame.Clone();
+            
+            Graphics graphics = Graphics.FromImage(image);
+            using (Pen pen = new Pen(Color.Green, 7))
+            {
+                //Top, left
+                graphics.DrawLine(pen, 80, 28, 100, 28);
+                graphics.DrawLine(pen, 80, 28, 80, 48);
+                //Top, right
+                graphics.DrawLine(pen, 80 + 146, 28, 80 + 126, 28);
+                graphics.DrawLine(pen, 80 + 146, 28, 80 + 146, 48);
+                //Bottom, left
+                graphics.DrawLine(pen, 80, 35 + 171, 100, 35 + 171);
+                graphics.DrawLine(pen, 80, 35 + 171, 80, 35 + 151);
+                //Bottom, right
+                graphics.DrawLine(pen, 80 + 146, 35 + 171, 80 + 126, 35 + 171);
+                graphics.DrawLine(pen, 80 + 146, 35 + 171, 80 + 146, 35 + 151);
+                //Middle left size
+                graphics.DrawLine(pen, 80, 113, 80, 113 + 20);
+                //Middle right size
+                graphics.DrawLine(pen, 80 + 146, 113, 80 + 146, 113 + 20);
+                //Middle top size
+                graphics.DrawLine(pen, 146, 28, 166, 28);
+                //Middle botom size
+                graphics.DrawLine(pen, 146, 35 + 171, 166, 35 + 171);
+                //graphics.DrawRectangle(pen, rectangle);
+            }
             ptbImage.Image = brightness.Apply(gamma.Apply(contrast.Apply(image)));
             //ptbImage.Image = image;
             lblBrightness.Text = trbBrightness.Value.ToString();
@@ -88,10 +115,19 @@ namespace Security
             if (video != null && video.IsRunning == true)
             {
                 Stop_Camera();
-                ImageCaptured = ptbImage.Image;
+                ImageCaptured = cropImage(ptbImage.Image);
             }
             else
                 MessageBox.Show("You must select a device!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
+
+        private static System.Drawing.Image cropImage(System.Drawing.Image img)
+        {
+            Rectangle rectangle = new Rectangle(87, 35, 136, 164);
+            Bitmap bmpImage = new Bitmap(img);
+            Bitmap bmpCrop = bmpImage.Clone(rectangle,
+            bmpImage.PixelFormat);
+            return (System.Drawing.Image)(bmpCrop);
         }
 
         public void Stop_Camera()

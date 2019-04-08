@@ -1,0 +1,68 @@
+C:\Users\dhsim\source\repos\Market Manager\Security\bin\Debug\Security.dll
+C:\Users\dhsim\source\repos\Market Manager\Security\bin\Debug\Security.pdb
+C:\Users\dhsim\source\repos\Market Manager\Security\obj\Debug\Security.csprojAssemblyReference.cache
+C:\Users\dhsim\source\repos\Market Manager\Security\obj\Debug\Security.csproj.CoreCompileInputs.cache
+C:\Users\dhsim\source\repos\Market Manager\Security\obj\Debug\Security.dll
+C:\Users\dhsim\source\repos\Market Manager\Security\obj\Debug\Security.pdb
+C:\GitProjects\Market\Security\bin\Debug\Security.dll
+C:\GitProjects\Market\Security\bin\Debug\Security.pdb
+C:\GitProjects\Market\Security\obj\Debug\Security.csproj.CoreCompileInputs.cache
+C:\GitProjects\Market\Security\obj\Debug\Security.dll
+C:\GitProjects\Market\Security\obj\Debug\Security.pdb
+C:\GitProjects\Market\Security\bin\Debug\BarcodeLib.dll
+C:\GitProjects\Market\Security\bin\Debug\Gma.QrCodeNet.Encoding.dll
+C:\GitProjects\Market\Security\bin\Debug\Microsoft.ReportViewer.Common.dll
+C:\GitProjects\Market\Security\bin\Debug\Microsoft.ReportViewer.ProcessingObjectModel.DLL
+C:\GitProjects\Market\Security\bin\Debug\Microsoft.ReportViewer.WebForms.DLL
+C:\GitProjects\Market\Security\bin\Debug\Gma.QrCodeNet.Encoding.pdb
+C:\GitProjects\Market\Security\bin\Debug\Gma.QrCodeNet.Encoding.xml
+C:\GitProjects\Market\Security\obj\Debug\Security.csproj.CopyComplete
+C:\GitProjects\Market\Security\obj\Debug\Security.csprojAssemblyReference.cache
+C:\GitProjects\GitProjects-master\Market\Security\bin\Debug\Security.dll
+C:\GitProjects\GitProjects-master\Market\Security\bin\Debug\Security.pdb
+C:\GitProjects\GitProjects-master\Market\Security\bin\Debug\Microsoft.ReportViewer.Common.dll
+C:\GitProjects\GitProjects-master\Market\Security\bin\Debug\Microsoft.ReportViewer.ProcessingObjectModel.DLL
+C:\GitProjects\GitProjects-master\Market\Security\bin\Debug\Microsoft.ReportViewer.WebForms.DLL
+C:\GitProjects\GitProjects-master\Market\Security\bin\Debug\Gma.QrCodeNet.Encoding.pdb
+C:\GitProjects\GitProjects-master\Market\Security\bin\Debug\Gma.QrCodeNet.Encoding.xml
+C:\GitProjects\GitProjects-master\Market\Security\obj\Debug\Security.csprojAssemblyReference.cache
+C:\GitProjects\GitProjects-master\Market\Security\obj\Debug\Security.csproj.CoreCompileInputs.cache
+C:\GitProjects\GitProjects-master\Market\Security\obj\Debug\Security.csproj.CopyComplete
+C:\GitProjects\GitProjects-master\Market\Security\obj\Debug\Security.dll
+C:\GitProjects\GitProjects-master\Market\Security\obj\Debug\Security.pdb
+C:\Users\dhsim\Documents\Visual Studio 2017\Projects\Market\Security\bin\Debug\Security.dll
+C:\Users\dhsim\Documents\Visual Studio 2017\Projects\Market\Security\bin\Debug\Security.pdb
+C:\Users\dhsim\Documents\Visual Studio 2017\Projects\Market\Security\bin\Debug\Microsoft.ReportViewer.Common.dll
+C:\Users\dhsim\Documents\Visual Studio 2017\Projects\Market\Security\bin\Debug\Microsoft.ReportViewer.ProcessingObjectModel.DLL
+C:\Users\dhsim\Documents\Visual Studio 2017\Projects\Market\Security\bin\Debug\Microsoft.ReportViewer.WebForms.DLL
+C:\Users\dhsim\Documents\Visual Studio 2017\Projects\Market\Security\obj\Debug\Security.csproj.CoreCompileInputs.cache
+C:\Users\dhsim\Documents\Visual Studio 2017\Projects\Market\Security\obj\Debug\Security.csproj.CopyComplete
+C:\Users\dhsim\Documents\Visual Studio 2017\Projects\Market\Security\obj\Debug\Security.dll
+C:\Users\dhsim\Documents\Visual Studio 2017\Projects\Market\Security\obj\Debug\Security.pdb
+C:\Users\dhsim\Documents\Visual Studio 2017\Projects\Market\Security\obj\Debug\Security.csprojAssemblyReference.cache
+C:\Users\dhsim\Documents\Visual Studio 2017\Projects\Market\Security\bin\Debug\AForge.dll
+C:\Users\dhsim\Documents\Visual Studio 2017\Projects\Market\Security\bin\Debug\AForge.Imaging.dll
+C:\Users\dhsim\Documents\Visual Studio 2017\Projects\Market\Security\bin\Debug\AForge.Video.DirectShow.dll
+C:\Users\dhsim\Documents\Visual Studio 2017\Projects\Market\Security\bin\Debug\AForge.Video.dll
+C:\Users\dhsim\Documents\Visual Studio 2017\Projects\Market\Security\bin\Debug\AForge.Math.dll
+C:\Users\dhsim\Documents\Visual Studio 2017\Projects\Market\Security\bin\Debug\AForge.xml
+C:\Users\dhsim\Documents\Visual Studio 2017\Projects\Market\Security\bin\Debug\AForge.Imaging.xml
+C:\Users\dhsim\Documents\Visual Studio 2017\Projects\Market\Security\bin\Debug\AForge.Video.xml
+C:\Users\dhsim\Documents\Visual Studio 2017\Projects\Market\Security\bin\Debug\AForge.Video.DirectShow.xml
+C:\Users\dhsim\Documents\Visual Studio 2017\Projects\Market\Security\bin\Debug\AForge.Math.xml
+C:\Users\dhsim\Documents\Visual Studio 2017\Projects\Market\Security\obj\Debug\Security.CameraControl.resources
+C:\Users\dhsim\Documents\Visual Studio 2017\Projects\Market\Security\obj\Debug\Security.csproj.GenerateResource.cache
+C:\Users\dhsim\Documents\Visual Studio 2017\Projects\Market\Security\obj\Debug\Security.Properties.Resources.resources
+C:\GitProjects\Market\Security\bin\Debug\AForge.dll
+C:\GitProjects\Market\Security\bin\Debug\AForge.Imaging.dll
+C:\GitProjects\Market\Security\bin\Debug\AForge.Video.DirectShow.dll
+C:\GitProjects\Market\Security\bin\Debug\AForge.Video.dll
+C:\GitProjects\Market\Security\bin\Debug\AForge.Math.dll
+C:\GitProjects\Market\Security\bin\Debug\AForge.xml
+C:\GitProjects\Market\Security\bin\Debug\AForge.Imaging.xml
+C:\GitProjects\Market\Security\bin\Debug\AForge.Video.xml
+C:\GitProjects\Market\Security\bin\Debug\AForge.Video.DirectShow.xml
+C:\GitProjects\Market\Security\bin\Debug\AForge.Math.xml
+C:\GitProjects\Market\Security\obj\Debug\Security.CameraControl.resources
+C:\GitProjects\Market\Security\obj\Debug\Security.Properties.Resources.resources
+C:\GitProjects\Market\Security\obj\Debug\Security.csproj.GenerateResource.cache

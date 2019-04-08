@@ -1,0 +1,3 @@
+function inScript(){
+    alert('work')
+}

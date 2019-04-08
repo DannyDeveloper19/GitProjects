@@ -1,0 +1,16 @@
+.ancestors * { 
+    display: block;
+    border: 2px solid lightgrey;
+    padding: 5px;
+    margin: 15px;
+}
+input[type="button"]{
+    border: 2px solid #102b53;
+    background: #102b53;
+    color: #ffffff;
+}
+#div{
+    background: #73b14a;
+    width: 100px;
+    height: 100px;
+}

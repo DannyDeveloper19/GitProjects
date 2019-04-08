@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+</head>
+<body class="ancestors">body(great great-grandparent)
+<div id="div"></div>
+<div style="width:500px;">div (great-grandparent)
+    <ul>ul (grandparent)
+        <li> li (sibling)
+            <input type="button" value="Hide" id="hide">
+            <input type="button" value="Fade" id="fade">
+        </li>
+        <li> li (sibling)
+            <p id='hello'></p>
+        </li>
+        <li>li (direct parent)
+            <span>span
+
+                <div id="text">
+                    <p id="first">Text changed in first paragraph</p>
+                    <p id="second"></p>
+                    <p class="important"></p>
+                </div>
+            </span>
+        </li>
+    </ul>
+</div>
+
+     <input type="text" name="name" id="name">
+    <input type="text" name="lastname" id="lastname">
+    <button id="sendAjax">Send Ajax</button>
+    <button id="sendGet">Send Get</button>
+    <button id="sendGetMessage">Send Get Message</button>
+    <button id="sendPost">Send Post</button>
+    <button id="getScript">Get Script</button>
+    <button id="getJSON">Get JSON</button>
+    <button id="load">Use load</button>
+    <p id="info"></p>
+</body>
+</html>

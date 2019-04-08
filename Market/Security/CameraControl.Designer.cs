@@ -63,6 +63,7 @@
             this.trbBrightness.Orientation = System.Windows.Forms.Orientation.Vertical;
             this.trbBrightness.Size = new System.Drawing.Size(45, 317);
             this.trbBrightness.TabIndex = 1;
+            this.trbBrightness.Scroll += new System.EventHandler(this.trbBrightness_Scroll);
             // 
             // trbContrast
             // 
@@ -73,6 +74,7 @@
             this.trbContrast.Orientation = System.Windows.Forms.Orientation.Vertical;
             this.trbContrast.Size = new System.Drawing.Size(45, 317);
             this.trbContrast.TabIndex = 2;
+            this.trbContrast.Scroll += new System.EventHandler(this.trbContrast_Scroll);
             // 
             // trbGamma
             // 
@@ -82,6 +84,7 @@
             this.trbGamma.Orientation = System.Windows.Forms.Orientation.Vertical;
             this.trbGamma.Size = new System.Drawing.Size(45, 317);
             this.trbGamma.TabIndex = 3;
+            this.trbGamma.Scroll += new System.EventHandler(this.trbGamma_Scroll);
             // 
             // ckbBrightness
             // 

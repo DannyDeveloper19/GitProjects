@@ -22,6 +22,7 @@ namespace Security
         BrightnessCorrection brightness;
         ContrastCorrection contrast;
         GammaCorrection gamma;
+        int brightValue, contrastValue, gammaValue;
         public System.Drawing.Image ImageCaptured { get; private set; }
 
         public CameraControl()
@@ -60,6 +61,9 @@ namespace Security
             trbBrightness.Value = 0;
             trbContrast.Value = 10;
             trbGamma.Value = (int)1;
+            brightValue = trbBrightness.Value;
+            contrastValue = trbContrast.Value;
+            gammaValue = trbGamma.Value;
         }
 
         private void cmbDevices_SelectedIndexChanged(object sender, EventArgs e)
@@ -73,9 +77,9 @@ namespace Security
         private void Video_NewFrame(object sender, NewFrameEventArgs eventArgs)
         {
             
-            brightness = new BrightnessCorrection(trbBrightness.Value);
-            contrast = new ContrastCorrection(trbContrast.Value);
-            gamma = new GammaCorrection(trbGamma.Value);
+            brightness = new BrightnessCorrection(brightValue);
+            contrast = new ContrastCorrection(contrastValue);
+            gamma = new GammaCorrection(gammaValue);
             Bitmap image = (Bitmap)eventArgs.Frame.Clone();
             
             Graphics graphics = Graphics.FromImage(image);
@@ -105,9 +109,9 @@ namespace Security
             }
             ptbImage.Image = brightness.Apply(gamma.Apply(contrast.Apply(image)));
             //ptbImage.Image = image;
-            lblBrightness.Text = trbBrightness.Value.ToString();
-            lblContrast.Text = trbContrast.Value.ToString();
-            lblGamma.Text = trbGamma.Value.ToString();
+            lblBrightness.Text = brightValue.ToString();
+            lblContrast.Text = contrastValue.ToString();
+            lblGamma.Text = gammaValue.ToString();
         }
 
         private void btnCapture_Click(object sender, EventArgs e)
@@ -128,6 +132,21 @@ namespace Security
             Bitmap bmpCrop = bmpImage.Clone(rectangle,
             bmpImage.PixelFormat);
             return (System.Drawing.Image)(bmpCrop);
+        }
+
+        private void trbBrightness_Scroll(object sender, EventArgs e)
+        {
+            brightValue = trbBrightness.Value;
+        }
+
+        private void trbContrast_Scroll(object sender, EventArgs e)
+        {
+            contrastValue = trbContrast.Value;
+        }
+
+        private void trbGamma_Scroll(object sender, EventArgs e)
+        {
+            gammaValue = trbGamma.Value;
         }
 
         public void Stop_Camera()

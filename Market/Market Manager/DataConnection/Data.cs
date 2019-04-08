@@ -67,22 +67,40 @@ namespace Market_Manager.DataConnection
         }
 
         //Add new employer --Done
-        public static void NewEmployer(EmployerModel employer)
+        public static void Update_NewEmployer(EmployerModel employer)
         {
-            string cmd = string.Format("EXEC UpdateEmployer '{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}'"
-                , employer.id_employer, employer.employer_name, employer.employer_lastname,employer.employer_phone,
-                employer.employer_email,employer.employer_role,employer.employer_address,employer.employer_dln);
-            Utilities.execute(cmd);
             if (employer.picture != null)
             {
                 Tuple<string, object>[] args =
-                {
-                Tuple.Create<string, object>(item1:"@id",item2:employer.id_employer),
-                Tuple.Create<string, object>(item1:"@picture",item2:employer.picture)
-                };
-                Utilities.execute("Insert into Employer_Picture(Image_Id,id_employer,Picture) values(NEWID(),@id,@picture)", args);
-
+            {
+               Tuple.Create<string, object>(item1:"@id",item2:employer.id_employer),
+               Tuple.Create<string, object>(item1:"@name",item2:employer.employer_name),
+               Tuple.Create<string, object>(item1:"@lastname",item2:employer.employer_lastname),
+               Tuple.Create<string, object>(item1:"@phone",item2:employer.employer_phone),
+               Tuple.Create<string, object>(item1:"@email",item2:employer.employer_email),
+               Tuple.Create<string, object>(item1:"@role",item2:employer.employer_role),
+               Tuple.Create<string, object>(item1:"@address",item2:employer.employer_address),
+               Tuple.Create<string, object>(item1:"@dln",item2:employer.employer_dln),
+               Tuple.Create<string, object>(item1:"@picture",item2:employer.picture)
+            };
+                Utilities.execute("EXEC UpdateEmployer @id,@name,@lastname,@phone,@email,@role,@address,@dln,@picture", args);
             }
+            else
+            {
+                Tuple<string, object>[] args =
+            {
+               Tuple.Create<string, object>(item1:"@id",item2:employer.id_employer),
+               Tuple.Create<string, object>(item1:"@name",item2:employer.employer_name),
+               Tuple.Create<string, object>(item1:"@lastname",item2:employer.employer_lastname),
+               Tuple.Create<string, object>(item1:"@phone",item2:employer.employer_phone),
+               Tuple.Create<string, object>(item1:"@email",item2:employer.employer_email),
+               Tuple.Create<string, object>(item1:"@role",item2:employer.employer_role),
+               Tuple.Create<string, object>(item1:"@address",item2:employer.employer_address),
+               Tuple.Create<string, object>(item1:"@dln",item2:employer.employer_dln)
+            };
+                Utilities.execute("EXEC UpdateEmployer @id,@name,@lastname,@phone,@email,@role,@address,@dln", args);
+            }
+
         }
 
         //Change password

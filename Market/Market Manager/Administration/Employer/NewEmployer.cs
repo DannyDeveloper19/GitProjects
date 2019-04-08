@@ -49,8 +49,8 @@ namespace Market_Manager.Administration
 
                     }
 
-                    EmployerModel employer = (picture != null )? new EmployerModel(id, name, lastname, address, phone, email, dln, role,"",picture) : new EmployerModel(id, name, lastname, address, phone, email, dln, role);
-                    Employer_Data.NewEmployer(employer);
+                    EmployerModel employer = new EmployerModel(id, name, lastname, address, phone, email, dln, role,"",picture);
+                    Employer_Data.Update_NewEmployer(employer);
                     MessageBox.Show("New employer added.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Close();
                 }

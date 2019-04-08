@@ -1,5 +1,6 @@
 ﻿using Connection;
 using Market_Manager.Administration.Employer;
+using Market_Manager.DataConnection;
 using Market_Manager.Models;
 using Market_Manager.Shared;
 using System;
@@ -7,6 +8,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -66,7 +68,7 @@ namespace Market_Manager
                     }
                     foreach (var item in this.Controls.OfType<TextBox>())
                     {
-                        if (item.Name != "txtId")
+                        if (item.Name != "txtId" && item.Name != "txtRole")
                         {
                             item.BackColor = this.BackColor;
                             item.ReadOnly = false;
@@ -80,12 +82,37 @@ namespace Market_Manager
                     }
                     this.Text = "Edit Information";
                     break;
+                case "cancel":
+                    this.mode = "info";
+                    btnCamera.Visible = false;
+                    btnUpload.Visible = false;
+                    btnAccept.Enabled = false;
+                    if (ptPicture.Tag is bool == true) ptPicture.BackgroundImage = null;
+                    btnEProfile.Text = "Edit Profile";
+                    groupBox2.Location = new Point(38, 218);
+                    foreach (Button item in this.Controls.OfType<Button>())
+                    {
+                        item.Location = new Point(item.Location.X, item.Location.Y - 27);
+                    }
+                    foreach (var item in this.Controls.OfType<TextBox>())
+                    {
+                        item.ReadOnly = true;
+                        item.BackColor = Color.Silver;
+                    }
+
+                    foreach (var item in groupBox2.Controls.OfType<TextBox>())
+                    {
+                        item.ReadOnly = true;
+                        item.BackColor = Color.Silver;
+                    }
+
+                    this.Text = "Employer Information";
+                    break;
                 default:
                     this.mode = mode;
                     btnCamera.Visible = false;
                     btnUpload.Visible = false;
                     btnAccept.Enabled = false;
-                    if (ptPicture.Tag is bool == true) ptPicture.BackgroundImage = null;
                     btnEProfile.Text = "Edit Profile";
                     groupBox2.Location = new Point(38, 218);
                     foreach (Button item in this.Controls.OfType<Button>())
@@ -114,17 +141,42 @@ namespace Market_Manager
             {
                 Mode("edit");
             }
-            else Mode("info");
+            else Mode("cancel");
             
             
         }
         public override void Save()
         {
-            if (mode == "edit")
+            try
             {
-                MessageBox.Show("Your changes have been saved!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                Mode("info");
+                if (mode == "edit")
+                {
+                    _employer.employer_name = txtName.Text;
+                    _employer.employer_lastname = txtLastname.Text;
+                    _employer.employer_phone = txtPhone.Text;
+                    _employer.employer_email = txtEmail.Text;
+                    _employer.employer_address = txtAddress.Text;
+                    _employer.employer_role = txtRole.Text;
+                    _employer.employer_dln = txtDLN.Text;
+
+                    if ((bool)ptPicture.Tag == true)
+                    {
+                        MemoryStream stream = new MemoryStream();
+                        ptPicture.BackgroundImage.Save(stream, ImageFormat.Jpeg);
+                        _employer.picture = stream.ToArray();
+
+                    }
+                    Employer_Data.Update_NewEmployer(_employer);
+                    MessageBox.Show("Your changes have been saved!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Mode("info");
+                }
             }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Error: " + ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
         }
 
         public override void Cancel()

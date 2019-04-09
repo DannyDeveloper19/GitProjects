@@ -1,0 +1,71 @@
+* if ($_GET){
+    if (isset($_GET['controller'])) {
+        //if it's received the controller name
+        if($_GET['controller'] == "Account")
+            $index_controller = "Account";
+        if ($_SESSION) {
+            if (isset($_SESSION['user_id'])) {
+                if (has_Privileges($_SESSION['user_id'],$_GET['controller'])) {
+                    $index_controller = $_GET['controller'];
+                    require(__DIR__."/Controllers/".$index_controller."Controller.php");
+                }
+                else
+                    die("Have not privileges");
+            }
+            
+        }
+        else 
+            require(__DIR__."/Controllers/".$index_controller."Controller.php");
+    }
+}
+//if somebody is signed up
+
+elseif ($_SESSION) {
+    if ($_SESSION['user_id']) {
+        $index_controller = has_Privileges($user);
+        require(__DIR__."/Controllers/".$index_controller."Controller.php");
+}
+else 
+    require(__DIR__."/Controllers/".$index_controller."Controller.php");
+}
+else
+   require(__DIR__."/Controllers/".$index_controller."Controller.php"); */
+
+   
+  function savebase64AsImageFile (folderpath, filename, content, contentType) {
+    // Convert the base64 string in a Blob
+    var DataBlob = b64toBlob(content, contentType)
+    console.log('Starting to write the file :3')
+    window.resolveLocalFileSystemURL(folderpath, function (dir) {
+      console.log('Access to the directory granted succesfully')
+      dir.getFile(filename, {create: true}, function (file) {
+        console.log('File created succesfully.')
+        file.createWriter(function (fileWriter) {
+          console.log('Writing content to file')
+          fileWriter.write(DataBlob)
+        }, function () {
+          alert('Unable to save file in path ' + folderpath)
+        })
+      })
+    })
+  } 
+  
+   savebase64AsImageFile('./Content/tmp/','user_image.png',data,contentType)
+ 
+  function b64toBlob (b64Data, contentType, sliceSize) {
+    contentType = contentType || ''
+    sliceSize = sliceSize || 512
+    var byteCharacters = atob(b64Data)
+    var byteArrays = []
+    for (var offset = 0; offset < byteCharacters.length; offset += sliceSize) {
+      var slice = byteCharacters.slice(offset, offset + sliceSize)
+      var byteNumbers = new Array(slice.length)
+      for (var i = 0; i < slice.length; i++) {
+        byteNumbers[i] = slice.charCodeAt(i)
+      }
+      var byteArray = new Uint8Array(byteNumbers)
+      byteArrays.push(byteArray)
+    }
+    var blob = new Blob(byteArrays, {type: contentType})
+    return blob
+  }
